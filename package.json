@@ -1,7 +1,8 @@
 {
   "scripts": {
     "lint": "eslint \"*/**/*.{js,ts,tsx}\" --quiet --fix",
-    "bootstrap": "lerna exec -- yarn && lerna add @forward-ui/core --scope=@forward-ui/site && lerna bootstrap",
+    "postinstall": "lerna exec -- yarn",
+    "bootstrap": "lerna add @forward-ui/core --scope=@forward-ui/site && lerna bootstrap",
     "dev": "concurrently \"yarn dev:ui-core\" \"yarn dev:ui-site\"",
     "dev:ui-core": "lerna exec --scope=@forward-ui/core -- yarn start",
     "dev:ui-site": "lerna exec --scope=@forward-ui/site -- yarn start"
