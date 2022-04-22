@@ -1,5 +1,5 @@
-import Button, { A } from './Button';
+import Button from './Button';
 import Card from './Card';
 
 export { Button, Card };
-export type { A };
+// export type { A };

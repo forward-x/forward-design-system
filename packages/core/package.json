@@ -2,9 +2,9 @@
   "name": "@forward-ui/core",
   "version": "0.1.0",
   "private": true,
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "rimraf dist && rollup -c ./rollup.config.ts",
+    "build": "rollup -c ./rollup.config.ts",
     "start": "nodemon index.ts -L -q"
   },
   "dependencies": {
@@ -37,8 +37,7 @@
     "rollup": "^2.70.2",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-scss": "^3.0.0",
-    "sass": "^1.50.1",
-    "tsc-alias": "^1.6.6"
+    "sass": "^1.50.1"
   },
   "eslintConfig": {
     "extends": [

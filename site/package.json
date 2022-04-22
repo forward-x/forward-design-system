@@ -7,7 +7,7 @@
     "lint": "eslint \"*/**/*.{js,ts,tsx}\" --quiet --fix"
   },
   "dependencies": {
-    "@forward-ui/core": "file:../packages/core/dist",
+    "@forward-ui/core": "^0.1.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.1",
