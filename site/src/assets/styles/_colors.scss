@@ -1,0 +1,154 @@
+$black: black;
+$white: white;
+
+$gradient-forward-red: linear-gradient(
+  85.7deg,
+  #aa448f 0%,
+  #ff1665 54.13%,
+  #fa6c81 101.89%
+);
+$forward-red: #fb3a70;
+//base
+$white-transparent: rgba(255, 255, 255, 0.8);
+$dark-background: #141421;
+$light-background: #fafafa;
+$grey-dark: #141518;
+$grey-glass: #2f324180;
+$gray-tranparent: rgba(47, 50, 65, 0.5);
+$grey-110: #191919;
+$grey-100: #1e1f25;
+$grey-90: #2f3241;
+$grey-85: #24252c;
+$grey-80: #34384c;
+$grey-60: #5d6588;
+$grey-40: #a5adcf;
+$grey-secondary: #A4A4CD;
+$grey-20: #e5e6ed;
+$grey-10: #fafafa;
+$grey-5: #f9f9f9;
+$grey-0: #ffffff;
+
+//Accent
+$red-primary: #fa2256;
+$green-primary: #11cabe;
+$green-light: #30e0a1;
+$purple: #bd47fb;
+$orange: #f27f16;
+$sunlight: rgba(255, 175, 55, 1);
+$accent: rgba(63, 140, 255, 1);
+
+$gradient-rainbow: linear-gradient(90deg, #ff5858, #fc5792, #ffc657, #95fe10);
+$gradient-gold: linear-gradient(90.04deg, #f2c94c 3.68%, #ebff00 54.19%);
+$gradient-green: linear-gradient(101.25deg, #aeff2a 6.67%, #2affa4 97.29%);
+$gradient-grey: linear-gradient(
+  270deg,
+  rgba(255, 255, 255, 0) 8.39%,
+  #ffffff 69.49%
+);
+$gradient-grey-invert: linear-gradient(
+  90deg,
+  #5d6588 0%,
+  rgba(255, 255, 255, 0) 100%
+);
+$gradient-white-grey: linear-gradient(90deg, #ffffff 1.46%, #818181 100%);
+$gradient-light-pink: linear-gradient(
+  85.7deg,
+  #ef90d6 0%,
+  #ff7aa7 54.13%,
+  #ffadb9 101.89%
+);
+$gradient-light-gold: linear-gradient(
+  85.7deg,
+  #ef9090 0%,
+  #ff9a7a 54.13%,
+  #fdffad 101.89%
+);
+$gradient-light-green: linear-gradient(
+  85.7deg,
+  #d6ef90 0%,
+  #7affdf 54.13%,
+  #adb5ff 101.89%
+);
+$gradient-light-purple: linear-gradient(
+  85.7deg,
+  #90a5ef 0%,
+  #ec7aff 54.13%,
+  #ffadad 101.89%
+);
+$gradient-light-yellow: linear-gradient(
+  85.7deg,
+  #efb890 0%,
+  #fcff7a 54.13%,
+  #afffad 101.89%
+);
+$gradient-green-neon: linear-gradient(101.25deg, #aeff2a 6.67%, #2affa4 97.29%);
+
+//Border
+$gradient-sliver-border-01: linear-gradient(
+    rgba(white, 0.26),
+    rgba(white, 0.26)
+  ),
+  linear-gradient(rgba(white, 0), rgba(white, 1), rgba(white, 0));
+
+$gradient-sliver-border-02: linear-gradient(90deg, #656770, #ffffff, #525252);
+$gradient-sliver-border-03: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff 51.56%,
+    rgba(255, 255, 255, 0) 100%
+  ),
+  linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.26) 0%,
+    rgba(255, 255, 255, 0.26) 100%
+  );
+$gradient-sliver-border-04: linear-gradient(
+  90deg,
+  #656770 0%,
+  #ffffff 48.96%,
+  #525252 100%
+);
+$gradient-sliver-border-05: linear-gradient(
+  92.61deg,
+  rgba(104, 105, 114, 0.26) 2.2%,
+  rgba(175, 175, 175, 0) 97.78%
+);
+$gradient-grey-60: radial-gradient(rgba($grey-60, 1) 0%, rgba($grey-60, 0) 65%);
+
+$gradient-silver: linear-gradient(
+  225.18deg,
+  #f0f0f0 -6.74%,
+  #a2a2a2 18.14%,
+  #d0d0d0 37.09%,
+  #ffffff 52.84%,
+  #808080 90.93%,
+  #ffffff 129.52%
+);
+
+$gradient-bronze: linear-gradient(
+  224.57deg,
+  #d8a72b 2.02%,
+  #ff922e 23.14%,
+  #f3b66f 38.26%,
+  #ffcf97 54.63%,
+  #c76b00 86.33%,
+  #f48f45 117.73%
+);
+
+//Market
+$nero-black: #191919;
+$dark-russian-black: #11142d;
+$russian-black: #242731;
+$russian-black-tranparent: #24273113;
+
+$whisper-white: #e4e4e4;
+$whisper-white-transparent: #e4e4e405;
+
+$manatee: #808191;
+
+$onahau: #bceaff;
+$neon-blue: #355dff;
+
+$emerald: #4fbf67;
+
+$line: #34384c;
