@@ -1,0 +1,6 @@
+{
+  "execMap": {
+    "ts": ""
+  },
+  "watch": ["index.ts", "components"]
+}
