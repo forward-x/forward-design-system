@@ -6,23 +6,26 @@ This project is a UI library developed based on [company's design system](https:
 This project is composed of 3 smaller packages:
 
 1. [@forward-ui/core](./packages/core) containing core UI components
-2. [@forward-ui/icons](.) WIP
+2. [@forward-ui/icons](./packages/icons) containing useful icons
 3. [@forward-ui/site](./site) containing demo website for above packages
 
-## Setting up
+## Getting started
 
-1. Run yarn install in root directory
+1. Run yarn bootstrap in root directory
 
 ```shell
-  yarn install
+  yarn bootstrap
 ```
+
+Lerna (a package for working with monorepository) will run `yarn` in all packages, and then it will link 'local' dependencies together \
+Because of integration with yarn workspaces, *node_modules* will be created at the root directory only.
 
 2. Run yarn dev
 
-```
+```shell
   yarn dev
 ```
 
-Lerna (a package for working with monorepository) will concurrently run `yarn start` in all packages. \
+Lerna will concurrently run `yarn start` in all packages. \
 Each package is already set to re-build whenever there are any changes in the source code (using nodemon). \
 A website should be ready in [http://localhost:3000](http://localhost:3000)

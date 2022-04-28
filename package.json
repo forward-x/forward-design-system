@@ -6,7 +6,7 @@
     "site"
   ],
   "scripts": {
-    "lint": "eslint \"*/**/*.{js,ts,tsx}\" --quiet --fix",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet --fix",
     "bootstrap": "lerna add @forward-ui/core --scope=@forward-ui/site && lerna add @forward-ui/icons --scope=@forward-ui/site && lerna bootstrap",
     "dev": "concurrently \"yarn dev:ui-core\" \"yarn dev:ui-icons\" \"yarn dev:ui-site\"",
     "dev:ui-core": "lerna exec --scope=@forward-ui/core -- yarn start",
