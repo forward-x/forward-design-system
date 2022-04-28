@@ -17,8 +17,8 @@ This project is composed of 3 smaller packages:
   yarn bootstrap
 ```
 
-Lerna (a package for working with monorepository) will run `yarn` in all packages, and then it will link 'local' dependencies together \
-Because of integration with yarn workspaces, *node_modules* will be created at the root directory only.
+Lerna (a package for working with monorepository) will install all packages in every projects, and then it will link 'local' dependencies together. \
+Because of integration with yarn workspaces, all overlapping packages will be grouped into *node_modules* at the root directory. \
 
 2. Run yarn dev
 

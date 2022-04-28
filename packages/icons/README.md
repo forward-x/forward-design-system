@@ -2,7 +2,7 @@
 
 ## About
 
-This package contains all core UI components.
+This package contains useful icons.
 
 ## Available Scripts
 
