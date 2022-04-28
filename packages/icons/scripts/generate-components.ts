@@ -72,7 +72,7 @@ const generateComponents = (fileInfo: FileInfo[]): void => {
   const progressBar = new SingleBar(
     {
       format:
-        'Creating icon components |' +
+        'Creating components |' +
         '{bar}| ' +
         '{percentage}% | ' +
         '{value}/{total} Files | ' +

@@ -2,10 +2,10 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as {{iconName}} } from '../../assets/icons/{{{iconPath}}}';
+import { ReactComponent as {{iconName}} } from '../../assets/logos/{{{iconPath}}}';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
-const {{componentName}}: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {
+const {{componentName}}: FC<Omit<ICryptoLogoProps, 'logo'>> = ({ size, className }) => {
   return (
     <CryptoLogo logo={<{{iconName}} />} size={size} className={className} />
   );
