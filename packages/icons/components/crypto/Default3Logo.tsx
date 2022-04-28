@@ -2,10 +2,10 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as Default3 } from '../../assets/icons/crypto/Default3.svg';
+import { ReactComponent as Default3 } from '../../assets/logos/crypto/Default3.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
-const Default3Logo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({
+const Default3Logo: FC<Omit<ICryptoLogoProps, 'logo'>> = ({
   size,
   className,
 }) => {

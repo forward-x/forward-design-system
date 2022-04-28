@@ -2,10 +2,10 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as WalletConnect } from '../../../assets/icons/wallet/WalletConnect.svg';
+import { ReactComponent as WalletConnect } from '../../assets/logos/wallet/WalletConnect.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
-const WalletConnectLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({
+const WalletConnectLogo: FC<Omit<ICryptoLogoProps, 'logo'>> = ({
   size,
   className,
 }) => {

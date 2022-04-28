@@ -2,10 +2,10 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as LINK } from '../../assets/icons/crypto/LINK.svg';
+import { ReactComponent as LINK } from '../../assets/logos/crypto/LINK.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
-const LINKLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {
+const LINKLogo: FC<Omit<ICryptoLogoProps, 'logo'>> = ({ size, className }) => {
   return <CryptoLogo logo={<LINK />} size={size} className={className} />;
 };
 

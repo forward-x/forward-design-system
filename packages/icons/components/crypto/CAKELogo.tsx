@@ -2,10 +2,10 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as CAKE } from '../../assets/icons/crypto/CAKE.svg';
+import { ReactComponent as CAKE } from '../../assets/logos/crypto/CAKE.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
-const CAKELogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {
+const CAKELogo: FC<Omit<ICryptoLogoProps, 'logo'>> = ({ size, className }) => {
   return <CryptoLogo logo={<CAKE />} size={size} className={className} />;
 };
 

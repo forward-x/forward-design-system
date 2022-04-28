@@ -2,10 +2,10 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as TWT } from '../../assets/icons/crypto/TWT.svg';
+import { ReactComponent as TWT } from '../../assets/logos/crypto/TWT.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
-const TWTLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {
+const TWTLogo: FC<Omit<ICryptoLogoProps, 'logo'>> = ({ size, className }) => {
   return <CryptoLogo logo={<TWT />} size={size} className={className} />;
 };
 

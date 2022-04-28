@@ -2,10 +2,10 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as Metamask } from '../../../assets/icons/wallet/Metamask.svg';
+import { ReactComponent as Metamask } from '../../assets/logos/wallet/Metamask.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
-const MetamaskLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({
+const MetamaskLogo: FC<Omit<ICryptoLogoProps, 'logo'>> = ({
   size,
   className,
 }) => {

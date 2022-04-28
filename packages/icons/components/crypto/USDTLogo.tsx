@@ -2,10 +2,10 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as USDT } from '../../assets/icons/crypto/USDT.svg';
+import { ReactComponent as USDT } from '../../assets/logos/crypto/USDT.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
-const USDTLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {
+const USDTLogo: FC<Omit<ICryptoLogoProps, 'logo'>> = ({ size, className }) => {
   return <CryptoLogo logo={<USDT />} size={size} className={className} />;
 };
 

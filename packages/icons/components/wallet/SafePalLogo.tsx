@@ -2,10 +2,10 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as SafePal } from '../../../assets/icons/wallet/SafePal.svg';
+import { ReactComponent as SafePal } from '../../assets/logos/wallet/SafePal.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
-const SafePalLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({
+const SafePalLogo: FC<Omit<ICryptoLogoProps, 'logo'>> = ({
   size,
   className,
 }) => {

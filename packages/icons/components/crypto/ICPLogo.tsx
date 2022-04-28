@@ -2,10 +2,10 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as ICP } from '../../assets/icons/crypto/ICP.svg';
+import { ReactComponent as ICP } from '../../assets/logos/crypto/ICP.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
-const ICPLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {
+const ICPLogo: FC<Omit<ICryptoLogoProps, 'logo'>> = ({ size, className }) => {
   return <CryptoLogo logo={<ICP />} size={size} className={className} />;
 };
 

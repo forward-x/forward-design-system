@@ -2,10 +2,10 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as DOT } from '../../assets/icons/crypto/DOT.svg';
+import { ReactComponent as DOT } from '../../assets/logos/crypto/DOT.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
-const DOTLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {
+const DOTLogo: FC<Omit<ICryptoLogoProps, 'logo'>> = ({ size, className }) => {
   return <CryptoLogo logo={<DOT />} size={size} className={className} />;
 };
 

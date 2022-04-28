@@ -2,10 +2,10 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as AVAX } from '../../assets/icons/crypto/AVAX.svg';
+import { ReactComponent as AVAX } from '../../assets/logos/crypto/AVAX.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
-const AVAXLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {
+const AVAXLogo: FC<Omit<ICryptoLogoProps, 'logo'>> = ({ size, className }) => {
   return <CryptoLogo logo={<AVAX />} size={size} className={className} />;
 };
 

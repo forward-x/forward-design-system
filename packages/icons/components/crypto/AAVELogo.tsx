@@ -2,10 +2,10 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as AAVE } from '../../assets/icons/crypto/AAVE.svg';
+import { ReactComponent as AAVE } from '../../assets/logos/crypto/AAVE.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
-const AAVELogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {
+const AAVELogo: FC<Omit<ICryptoLogoProps, 'logo'>> = ({ size, className }) => {
   return <CryptoLogo logo={<AAVE />} size={size} className={className} />;
 };
 

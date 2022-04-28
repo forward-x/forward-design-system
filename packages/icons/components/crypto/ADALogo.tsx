@@ -2,10 +2,10 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as ADA } from '../../assets/icons/crypto/ADA.svg';
+import { ReactComponent as ADA } from '../../assets/logos/crypto/ADA.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
-const ADALogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {
+const ADALogo: FC<Omit<ICryptoLogoProps, 'logo'>> = ({ size, className }) => {
   return <CryptoLogo logo={<ADA />} size={size} className={className} />;
 };
 

@@ -2,10 +2,10 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as Coin98 } from '../../../assets/icons/wallet/Coin98.svg';
+import { ReactComponent as Coin98 } from '../../assets/logos/wallet/Coin98.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
-const Coin98Logo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({
+const Coin98Logo: FC<Omit<ICryptoLogoProps, 'logo'>> = ({
   size,
   className,
 }) => {

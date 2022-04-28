@@ -2,10 +2,10 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as BTC } from '../../assets/icons/crypto/BTC.svg';
+import { ReactComponent as BTC } from '../../assets/logos/crypto/BTC.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
-const BTCLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {
+const BTCLogo: FC<Omit<ICryptoLogoProps, 'logo'>> = ({ size, className }) => {
   return <CryptoLogo logo={<BTC />} size={size} className={className} />;
 };
 

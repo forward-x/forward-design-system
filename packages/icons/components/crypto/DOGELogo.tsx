@@ -2,10 +2,10 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as DOGE } from '../../assets/icons/crypto/DOGE.svg';
+import { ReactComponent as DOGE } from '../../assets/logos/crypto/DOGE.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
-const DOGELogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {
+const DOGELogo: FC<Omit<ICryptoLogoProps, 'logo'>> = ({ size, className }) => {
   return <CryptoLogo logo={<DOGE />} size={size} className={className} />;
 };
 

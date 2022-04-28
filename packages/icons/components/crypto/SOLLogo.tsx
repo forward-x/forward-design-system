@@ -2,10 +2,10 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as SOL } from '../../assets/icons/crypto/SOL.svg';
+import { ReactComponent as SOL } from '../../assets/logos/crypto/SOL.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
-const SOLLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {
+const SOLLogo: FC<Omit<ICryptoLogoProps, 'logo'>> = ({ size, className }) => {
   return <CryptoLogo logo={<SOL />} size={size} className={className} />;
 };
 

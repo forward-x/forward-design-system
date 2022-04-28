@@ -2,10 +2,10 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as Binance } from '../../../assets/icons/wallet/Binance.svg';
+import { ReactComponent as Binance } from '../../assets/logos/wallet/Binance.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
-const BinanceLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({
+const BinanceLogo: FC<Omit<ICryptoLogoProps, 'logo'>> = ({
   size,
   className,
 }) => {

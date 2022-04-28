@@ -2,10 +2,10 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as ETH } from '../../assets/icons/crypto/ETH.svg';
+import { ReactComponent as ETH } from '../../assets/logos/crypto/ETH.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
-const ETHLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {
+const ETHLogo: FC<Omit<ICryptoLogoProps, 'logo'>> = ({ size, className }) => {
   return <CryptoLogo logo={<ETH />} size={size} className={className} />;
 };
 

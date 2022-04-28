@@ -2,10 +2,10 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as NEAR } from '../../assets/icons/crypto/NEAR.svg';
+import { ReactComponent as NEAR } from '../../assets/logos/crypto/NEAR.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
-const NEARLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {
+const NEARLogo: FC<Omit<ICryptoLogoProps, 'logo'>> = ({ size, className }) => {
   return <CryptoLogo logo={<NEAR />} size={size} className={className} />;
 };
 
