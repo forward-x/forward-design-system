@@ -1,16 +1,11 @@
 .logo {
   font-size: 24px;
-  fill: black;
-
-  &_light {
-    fill: white;
-  }
-
-  &_small {
+  
+  &_large {
     font-size: 20px;
   }
 
-  &_extra_small {
+  &_extra_large {
     font-size: 16px;
   }
 }
