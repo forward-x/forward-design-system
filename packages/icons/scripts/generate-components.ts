@@ -46,9 +46,9 @@ const extractFileInfo = (filePaths: string[]): FileInfo[] => {
   return filePaths.map((filePath) => {
     console.log(filePath);
     const [iconPath, iconFile] = filePath
-      .replace(iconRootPath, '') // Remove root path
-      .replace(/[\\]/g, '/') // Convert all backslash to slash
-      .replace(/^\/[^\/]*\//, '') //
+      .replace(iconRootPath, '')
+      .replace(/[\\]/g, '/')
+      .replace(/^\/[^\/]*\//, '')
       .split(/(?:\/(?!.*\/))+/);
     console.log('aa');
     console.log(filePath.replace(iconRootPath, ''));
@@ -174,7 +174,5 @@ const generateEntryFile = (fileInfo: FileInfo[]): void => {
 
 const iconPaths = getFilePaths(iconRootPath);
 const fileInfo = extractFileInfo(iconPaths);
-console.log(iconRootPath);
-console.log(fileInfo);
 
 generateComponents(fileInfo);
