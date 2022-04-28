@@ -1,1 +1,21 @@
-export { Icon } from './components';
+export {
+  Icon,
+  AddIcon,
+  CalendarIcon,
+  ChocalateBarIcon,
+  ContactIcon,
+  CopyIcon,
+  DeleteIcon,
+  EditIcon,
+  FilterIcon,
+  HamburgerIcon,
+  InformationIcon,
+  LinkIcon,
+  ListIcon,
+  LoadingIcon,
+  QrCodeIcon,
+  SearchIcon,
+  SettingsIcon,
+  SliderIcon,
+  UserIcon,
+} from './components';
