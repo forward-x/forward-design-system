@@ -7,7 +7,13 @@ import postcss from 'rollup-plugin-postcss';
 export default defineConfig({
   input: './index.ts',
   output: [
-    { dir: 'dist', format: 'commonjs', sourcemap: true, preserveModules: true },
+    {
+      dir: 'dist',
+      format: 'commonjs',
+      sourcemap: true,
+      preserveModules: true,
+      preserveModulesRoot: '.',
+    },
   ],
   plugins: [
     url(),
