@@ -2,6 +2,7 @@
 
 import CheckmarkIcon from './alerts/CheckmarkIcon';
 import CloseIcon from './alerts/CloseIcon';
+import ArrowDownIcon from './arrows/ArrowDownIcon';
 import ArrowLeftIcon from './arrows/ArrowLeftIcon';
 import ArrowRightIcon from './arrows/ArrowRightIcon';
 import ArrowUpIcon from './arrows/ArrowUpIcon';
@@ -38,10 +39,43 @@ import SettingsIcon from './basic/SettingsIcon';
 import SliderIcon from './basic/SliderIcon';
 import StarIcon from './basic/StarIcon';
 import UserIcon from './basic/UserIcon';
+import AAVELogo from './crypto/AAVELogo';
+import ADALogo from './crypto/ADALogo';
+import ANCLogo from './crypto/ANCLogo';
+import AVAXLogo from './crypto/AVAXLogo';
+import BNBLogo from './crypto/BNBLogo';
+import BTCLogo from './crypto/BTCLogo';
+import BUSDLogo from './crypto/BUSDLogo';
+import CAKELogo from './crypto/CAKELogo';
+import Default1Logo from './crypto/Default1Logo';
+import Default2Logo from './crypto/Default2Logo';
+import Default3Logo from './crypto/Default3Logo';
+import Default4Logo from './crypto/Default4Logo';
+import DOGELogo from './crypto/DOGELogo';
+import DOTLogo from './crypto/DOTLogo';
+import ETHLogo from './crypto/ETHLogo';
+import ICPLogo from './crypto/ICPLogo';
+import LINKLogo from './crypto/LINKLogo';
+import LUNALogo from './crypto/LUNALogo';
+import MATICLogo from './crypto/MATICLogo';
+import NEARLogo from './crypto/NEARLogo';
+import SFPLogo from './crypto/SFPLogo';
+import SHIBLogo from './crypto/SHIBLogo';
+import SOLLogo from './crypto/SOLLogo';
+import TWTLogo from './crypto/TWTLogo';
+import UNILogo from './crypto/UNILogo';
+import USDTLogo from './crypto/USDTLogo';
+import XRPLogo from './crypto/XRPLogo';
 import Icon from './Icon';
 import LockIcon from './security/LockIcon';
 import ViewIcon from './security/ViewIcon';
 import ViewOffIcon from './security/ViewOffIcon';
+import BinanceLogo from './wallet/BinanceLogo';
+import Coin98Logo from './wallet/Coin98Logo';
+import CoinbaseLogo from './wallet/CoinbaseLogo';
+import MetamaskLogo from './wallet/MetamaskLogo';
+import SafePalLogo from './wallet/SafePalLogo';
+import WalletConnectLogo from './wallet/WalletConnectLogo';
 
 export {
   Icon,
@@ -87,4 +121,37 @@ export {
   LockIcon,
   ViewIcon,
   ViewOffIcon,
+  AAVELogo,
+  ADALogo,
+  ANCLogo,
+  AVAXLogo,
+  BNBLogo,
+  BTCLogo,
+  BUSDLogo,
+  CAKELogo,
+  Default1Logo,
+  Default2Logo,
+  Default3Logo,
+  Default4Logo,
+  DOGELogo,
+  DOTLogo,
+  ETHLogo,
+  ICPLogo,
+  LINKLogo,
+  LUNALogo,
+  MATICLogo,
+  NEARLogo,
+  SFPLogo,
+  SHIBLogo,
+  SOLLogo,
+  TWTLogo,
+  UNILogo,
+  USDTLogo,
+  XRPLogo,
+  BinanceLogo,
+  Coin98Logo,
+  CoinbaseLogo,
+  MetamaskLogo,
+  SafePalLogo,
+  WalletConnectLogo,
 };

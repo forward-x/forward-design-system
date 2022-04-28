@@ -1,16 +1,11 @@
 .icon {
   font-size: 24px;
-  fill: black;
 
-  &_light {
-    fill: white;
+  &_large {
+    font-size: 40px;
   }
 
-  &_small {
-    font-size: 20px;
-  }
-
-  &_extra_small {
-    font-size: 16px;
+  &_extra_large {
+    font-size: 48px;
   }
 }
