@@ -2,7 +2,7 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as LINK } from '../../../assets/icons/crypto/LINK.svg';
+import { ReactComponent as LINK } from '../../assets/icons/crypto/LINK.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
 const LINKLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {

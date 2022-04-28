@@ -2,7 +2,7 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as DOGE } from '../../../assets/icons/crypto/DOGE.svg';
+import { ReactComponent as DOGE } from '../../assets/icons/crypto/DOGE.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
 const DOGELogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {

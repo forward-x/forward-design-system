@@ -2,7 +2,7 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as BUSD } from '../../../assets/icons/crypto/BUSD.svg';
+import { ReactComponent as BUSD } from '../../assets/icons/crypto/BUSD.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
 const BUSDLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {

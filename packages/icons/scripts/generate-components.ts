@@ -44,26 +44,16 @@ const getFilePaths = (filePath: string): string[] => {
 
 const extractFileInfo = (filePaths: string[]): FileInfo[] => {
   return filePaths.map((filePath) => {
-    console.log(filePath);
     const [iconPath, iconFile] = filePath
       .replace(iconRootPath, '')
       .replace(/[\\]/g, '/')
       .replace(/^\/[^\/]*\//, '')
       .split(/(?:\/(?!.*\/))+/);
-    console.log('aa');
-    console.log(filePath.replace(iconRootPath, ''));
-    console.log(filePath.replace(iconRootPath, '').replace(/[\\]/g, '/'));
-    console.log(
-      filePath
-        .replace(iconRootPath, '')
-        .replace(/[\\]/g, '/')
-        .replace(/^\/[^\/]*/, '')
-    );
-    console.log('bb');
     const [iconName, fileExtension] = iconFile.split('.');
     const componentName = filePath.includes('logo')
       ? `${iconName}Logo`
       : `${iconName}Icon`;
+
     const directoryPath = path.join(__dirname, '../components/', iconPath);
     const componentPath = path.join(directoryPath, `${componentName}.tsx`);
 

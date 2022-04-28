@@ -2,7 +2,7 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as SHIB } from '../../../assets/icons/crypto/SHIB.svg';
+import { ReactComponent as SHIB } from '../../assets/icons/crypto/SHIB.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
 const SHIBLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {

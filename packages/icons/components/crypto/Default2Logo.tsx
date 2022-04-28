@@ -2,7 +2,7 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as Default2 } from '../../../assets/icons/crypto/Default2.svg';
+import { ReactComponent as Default2 } from '../../assets/icons/crypto/Default2.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
 const Default2Logo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({

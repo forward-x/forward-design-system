@@ -2,7 +2,7 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as LUNA } from '../../../assets/icons/crypto/LUNA.svg';
+import { ReactComponent as LUNA } from '../../assets/icons/crypto/LUNA.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
 const LUNALogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {

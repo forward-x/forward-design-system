@@ -2,7 +2,7 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as SOL } from '../../../assets/icons/crypto/SOL.svg';
+import { ReactComponent as SOL } from '../../assets/icons/crypto/SOL.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
 const SOLLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {

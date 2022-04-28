@@ -2,7 +2,7 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as XRP } from '../../../assets/icons/crypto/XRP.svg';
+import { ReactComponent as XRP } from '../../assets/icons/crypto/XRP.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
 const XRPLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {

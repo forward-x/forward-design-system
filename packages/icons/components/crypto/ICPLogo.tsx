@@ -2,7 +2,7 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as ICP } from '../../../assets/icons/crypto/ICP.svg';
+import { ReactComponent as ICP } from '../../assets/icons/crypto/ICP.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
 const ICPLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {

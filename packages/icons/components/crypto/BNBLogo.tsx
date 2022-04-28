@@ -2,7 +2,7 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as BNB } from '../../../assets/icons/crypto/BNB.svg';
+import { ReactComponent as BNB } from '../../assets/icons/crypto/BNB.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
 const BNBLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {

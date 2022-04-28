@@ -2,7 +2,7 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as ANC } from '../../../assets/icons/crypto/ANC.svg';
+import { ReactComponent as ANC } from '../../assets/icons/crypto/ANC.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
 const ANCLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {

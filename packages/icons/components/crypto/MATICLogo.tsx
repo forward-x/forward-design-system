@@ -2,7 +2,7 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as MATIC } from '../../../assets/icons/crypto/MATIC.svg';
+import { ReactComponent as MATIC } from '../../assets/icons/crypto/MATIC.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
 const MATICLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {

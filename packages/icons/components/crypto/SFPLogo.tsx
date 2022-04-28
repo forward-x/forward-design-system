@@ -2,7 +2,7 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as SFP } from '../../../assets/icons/crypto/SFP.svg';
+import { ReactComponent as SFP } from '../../assets/icons/crypto/SFP.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
 const SFPLogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {

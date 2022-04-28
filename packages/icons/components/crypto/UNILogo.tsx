@@ -2,7 +2,7 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as UNI } from '../../../assets/icons/crypto/UNI.svg';
+import { ReactComponent as UNI } from '../../assets/icons/crypto/UNI.svg';
 import CryptoLogo, { ICryptoLogoProps } from '../CryptoLogo';
 
 const UNILogo: FC<Omit<ICryptoLogoProps, 'icon'>> = ({ size, className }) => {
