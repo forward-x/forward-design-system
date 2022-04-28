@@ -1,8 +1,8 @@
-import { defineConfig } from 'rollup';
 import typescript from '@rollup/plugin-typescript';
-import postcss from 'rollup-plugin-postcss';
-import svgr from '@svgr/rollup';
 import url from '@rollup/plugin-url';
+import svgr from '@svgr/rollup';
+import { defineConfig } from 'rollup';
+import postcss from 'rollup-plugin-postcss';
 
 export default defineConfig({
   input: './index.ts',
