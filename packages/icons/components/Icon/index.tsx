@@ -1,5 +1,6 @@
-import clsx from 'clsx';
 import React, { FC, ReactNode } from 'react';
+
+import clsx from 'clsx';
 
 import styles from './index.module.scss';
 
