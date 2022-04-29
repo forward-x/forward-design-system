@@ -1,0 +1,19 @@
+.icon {
+  font-size: 24px;
+
+  svg * {
+    fill: #454561;
+  }
+
+  &_light svg * {
+    fill: white;
+  }
+
+  &_small {
+    font-size: 20px;
+  }
+
+  &_extra_small {
+    font-size: 16px;
+  }
+}

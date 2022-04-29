@@ -1,11 +1,17 @@
 {
+  "name": "forward-design-system",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "site"
+  ],
   "scripts": {
-    "lint": "eslint \"*/**/*.{js,ts,tsx}\" --quiet --fix",
-    "postinstall": "lerna exec -- yarn",
-    "bootstrap": "lerna add @forward-ui/core --scope=@forward-ui/site && lerna bootstrap",
-    "dev": "concurrently \"yarn dev:ui-core\" \"yarn dev:ui-site\"",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet --fix",
+    "bootstrap": "lerna add @forward-ui/core --scope=@forward-ui/site && lerna add @forward-ui/icons --scope=@forward-ui/site && lerna bootstrap",
+    "dev": "concurrently \"yarn dev:ui-core\" \"yarn dev:ui-icons\" \"yarn dev:ui-site\"",
     "dev:ui-core": "lerna exec --scope=@forward-ui/core -- yarn start",
-    "dev:ui-site": "lerna exec --scope=@forward-ui/site -- yarn start"
+    "dev:ui-site": "lerna exec --scope=@forward-ui/site -- yarn start",
+    "dev:ui-icons": "lerna exec --scope=@forward-ui/icons -- yarn start"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.20.0",
@@ -22,6 +28,5 @@
     "nodemon": "^2.0.15",
     "prettier": "^2.6.2",
     "typescript": "^4.6.3"
-  },
-  "name": "forward-design-system"
+  }
 }
