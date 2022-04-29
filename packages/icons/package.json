@@ -36,7 +36,6 @@
     "prettier": "^2.6.2",
     "rollup": "^2.70.2",
     "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-scss": "^3.0.0",
     "sass": "^1.50.1",
     "ts-node": "^10.7.0"
   },
