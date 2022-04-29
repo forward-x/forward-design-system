@@ -33,7 +33,6 @@
     "eslint-plugin-react-hooks": "^4.4.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.6.2",
-    "rimraf": "^3.0.2",
     "rollup": "^2.70.2",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-scss": "^3.0.0",
