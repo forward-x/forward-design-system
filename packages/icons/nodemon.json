@@ -1,7 +1,0 @@
-{
-  "execMap": {
-    "ts": "yarn build"
-  },
-  "ext": "*",
-  "watch": ["index.ts", "components"]
-}

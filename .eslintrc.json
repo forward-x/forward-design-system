@@ -7,21 +7,14 @@
       "jsx": false
     }
   },
-  "ignorePatterns": [
-    "**/node_modules",
-    "**/dist/",
-    "**/extension/",
-    "**/.yarn/",
-    "**/.pnp.js",
-    "**/tests/"
-  ],
+  "ignorePatterns": ["node_modules/**/*"],
   "settings": {
     "react": {
       "version": "detect"
     },
     "import/resolver": {
       "node": {
-        "paths": ["site/src"]
+        "paths": ["site/src", "packages/core/components"]
       }
     }
   },
@@ -50,24 +43,34 @@
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
     "import/no-unresolved": "off",
     "semi": [2, "always"],
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "classnames",
+            "message": "Please import 'clsx' instead."
+          }
+        ],
+        "patterns": ["!./*.scss"]
+      }
+    ],
     "import/order": [
       "error",
       {
         "groups": [
           "builtin",
-          "external",
-          "internal",
+          ["external", "internal"],
           "parent",
           ["sibling", "index"]
         ],
         "pathGroups": [
           {
-            "pattern": "react",
-            "group": "builtin",
+            "pattern": "@forward-ui/**",
+            "group": "internal",
             "position": "after"
           }
         ],
-        "pathGroupsExcludedImportTypes": ["react"],
         "newlines-between": "always",
         "alphabetize": {
           "order": "asc",
