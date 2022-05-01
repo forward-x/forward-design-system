@@ -8,7 +8,7 @@ import { ReactComponent as ForwardMan } from '../../../assets/icons/ForwardMan.s
 import styles from './index.module.scss';
 
 export interface IAvatarProps extends Omit<HTMLProps<HTMLDivElement>, 'size'> {
-  variant: 'Default' | 'Name' | 'Forward';
+  variant: 'default' | 'name' | 'forward';
   size: 'XL' | 'L' | 'M' | 'S';
   name?: string;
   className?: string;
@@ -30,10 +30,10 @@ const Avatar: FC<IAvatarProps> = ({
 
   let content;
   switch (variant) {
-    case 'Name':
+    case 'name':
       content = name;
       break;
-    case 'Forward':
+    case 'forward':
       content = <ForwardMan className={styles.icon} />;
       break;
     default:
@@ -49,7 +49,7 @@ const Avatar: FC<IAvatarProps> = ({
         [styles.small]: size === 'S',
         [styles.large]: size === 'L',
         [styles.extra_large]: size === 'XL',
-        [styles.forward_man]: variant === 'Forward',
+        [styles.forward_man]: variant === 'forward',
       })}
       {...props}
     >
