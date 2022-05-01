@@ -2,6 +2,7 @@ import typescript from '@rollup/plugin-typescript';
 import url from '@rollup/plugin-url';
 import svgr from '@svgr/rollup';
 import { defineConfig } from 'rollup';
+import copy from 'rollup-plugin-copy';
 import postcss from 'rollup-plugin-postcss';
 
 export default defineConfig({
@@ -9,14 +10,14 @@ export default defineConfig({
   output: [
     {
       dir: 'dist',
-      format: 'esm',
+      format: 'commonjs',
       sourcemap: true,
       preserveModules: true,
       preserveModulesRoot: '.',
     },
   ],
   plugins: [
-    url(),
+    url({ destDir: 'dist/assets' }),
     svgr({ icon: true }),
     typescript({
       declaration: true,
@@ -24,9 +25,26 @@ export default defineConfig({
       rootDir: '.',
     }),
     postcss({
-      extract: false,
+      extract: 'assets/styles/index.css',
       modules: true,
-      use: ['sass'],
+      use: {
+        sass: {
+          data: '@import "assets/styles/index.scss";',
+        },
+        less: null,
+        stylus: null,
+      },
+    }),
+    copy({
+      targets: [
+        {
+          src: 'assets/styles/_colors.scss',
+          dest: 'dist/assets/styles',
+        },
+        { src: 'assets/styles/_fonts.scss', dest: 'dist/assets/styles' },
+        { src: 'assets/styles/_mixins.scss', dest: 'dist/assets/styles' },
+        { src: 'assets/fonts/*', dest: 'dist/assets/fonts' },
+      ],
     }),
   ],
 });

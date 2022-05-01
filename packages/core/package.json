@@ -9,6 +9,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet --fix"
   },
   "dependencies": {
+    "@forward-ui/icons": "^0.1.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "^5.0.1",
@@ -29,6 +30,7 @@
     "nodemon": "^2.0.15",
     "prettier": "^2.6.2",
     "rollup": "^2.70.2",
+    "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-postcss": "^4.0.2",
     "sass": "^1.50.1"
   },
