@@ -1,0 +1,50 @@
+.avatar {
+  border-radius: 50%;
+  background-color: $dark-base-1;
+  color: $xiketic-30;
+  border: 1.5px solid $xiketic-50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 32px;
+  height: 32px;
+  font-size: $text-tiny;
+  line-height: $line-height-tiny;
+
+  &.small {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  &.large {
+    width: 40px;
+    height: 40px;
+    font-size: $text-tiny;
+    line-height: $line-height-tiny;
+  }
+
+  &.extra_large {
+    width: 64px;
+    height: 64px;
+    font-size: $text-title;
+    line-height: $line-height-title;
+  }
+
+  &.forward_man {
+    border: none;
+  }
+}
+
+.user_icon {
+  svg * {
+    fill: $xiketic-30;
+  }
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+}
