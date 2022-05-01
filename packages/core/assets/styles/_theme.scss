@@ -1,0 +1,13 @@
+@import "colors";
+
+body {
+  // === Light theme ===
+  --body-bg: #{$dark-background};
+  --primary-text: #{$dark-primary-text};
+
+  // === Dark theme ===
+  &[data-theme="dark"] {
+    --body-bg: #{$dark-background};
+    --primary-text: #{$dark-primary-text};
+  }
+}
