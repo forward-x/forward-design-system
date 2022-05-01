@@ -2,13 +2,17 @@
   display: flex;
   gap: 8px;
   width: fit-content;
-  font-size: $text-body;
-  line-height: $line-height-body;
+  font-size: $text-small;
+  line-height: $line-height-small;
   color: $dark-secondary-text;
 
   @include smallMedia {
-    font-size: $text-small;
-    line-height: $line-height-small;
+    font-size: $text-body;
+    line-height: $line-height-body;
+  }
+
+  &.light {
+    color: $light-secondary-text;
   }
 
   .item {
@@ -16,8 +20,20 @@
       color: $dark-secondary-text;
     }
 
-    &.active * {
-      color: $dark-primary-text;
+    &.light * {
+      color: $light-secondary-text;
+    }
+
+    &.active {
+      &.light * {
+        font-weight: $font-semibold;
+        color: $light-primary-text;
+      }
+
+      * {
+        font-weight: $font-semibold;
+        color: $dark-primary-text;
+      }
     }
   }
 }
