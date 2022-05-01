@@ -6,14 +6,21 @@ import clsx from 'clsx';
 import { ReactComponent as ForwardMan } from '../../../assets/icons/ForwardMan.svg';
 
 import styles from './index.module.scss';
-export interface IAvatarProps {
+
+export interface IAvatarProps extends Omit<HTMLProps<HTMLDivElement>, 'size'> {
   variant: 'Default' | 'Name' | 'Forward';
   size: 'XL' | 'L' | 'M' | 'S';
   name?: string;
   className?: string;
 }
 
-const Avatar: FC<IAvatarProps> = ({ variant, name, size, className }) => {
+const Avatar: FC<IAvatarProps> = ({
+  variant,
+  name,
+  size,
+  className,
+  ...props
+}) => {
   const avatarSize = {
     XL: 'L',
     L: 'S',
@@ -44,6 +51,7 @@ const Avatar: FC<IAvatarProps> = ({ variant, name, size, className }) => {
         [styles.extra_large]: size === 'XL',
         [styles.forward_man]: variant === 'Forward',
       })}
+      {...props}
     >
       {content}
     </div>
