@@ -13,9 +13,9 @@ export interface ICryptoLogoProps {
 const CryptoLogo: FC<ICryptoLogoProps> = ({ size, className, logo }) => {
   return (
     <div
-      className={clsx(className, styles.logo, {
-        [styles.logo_large]: size === 'L',
-        [styles.logo_extra_large]: size === 'XL',
+      className={clsx(styles.logo, className, {
+        [styles.large]: size === 'L',
+        [styles.extra_large]: size === 'XL',
       })}
     >
       {logo}

@@ -7,17 +7,19 @@ import styles from './index.module.scss';
 export interface IIconProps {
   className?: string;
   icon: ReactNode;
-  size: 'M' | 'S' | 'XS';
-  color: 'dark' | 'light';
+  size: 'XXS' | 'XS' | 'S' | 'M' | 'L';
+  color?: 'dark' | 'light';
 }
 
 const Icon: FC<IIconProps> = ({ size, color, className, icon }) => {
   return (
     <div
-      className={clsx(className, styles.icon, {
-        [styles.icon_light]: color === 'light',
-        [styles.icon_small]: size === 'S',
-        [styles.icon_extra_small]: size === 'XS',
+      className={clsx(styles.icon, className, {
+        [styles.light]: color === 'light',
+        [styles.large]: size === 'L',
+        [styles.small]: size === 'S',
+        [styles.extra_small]: size === 'XS',
+        [styles.extra_extra_small]: size === 'XXS',
       })}
     >
       {icon}
