@@ -4,6 +4,34 @@
 
 This package contains useful icons.
 
+## Table of contents
+
+- [Installation](#installation)
+- [Example usage](#example-usage)
+
+## Installation
+
+with npm
+
+```shell
+  npm install @forward-ui/icons
+```
+
+with yarn
+
+```shell
+  yarn add @forward-ui/icons
+```
+
+## Example usage
+
+```typescript
+import { UserIcon } from '@forward-ui/icons';
+
+// Then use it as a normal React component
+<UserIcon size="M" />;
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
