@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "react-app-rewired start",
-    "lint": "eslint \"*/**/*.{js,ts,tsx}\" --quiet --fix"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet --fix"
   },
   "dependencies": {
     "@forward-ui/core": "^0.1.0",
