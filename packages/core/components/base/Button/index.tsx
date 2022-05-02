@@ -1,64 +1,56 @@
-import React, { FC, HTMLProps, ReactNode } from 'react';
+import React, { ButtonHTMLAttributes, FC, ReactNode } from 'react';
 
 import clsx from 'clsx';
 
 import styles from './index.module.scss';
 
-export enum ButtonStyle {
-  None = '',
-  Default = 'default',
-  Secondary = 'Secondary',
-  Tertiary = 'tertiary',
-  Danger = 'danger',
-  Icon = 'icon',
-}
-
-export interface IButton extends HTMLProps<HTMLButtonElement> {
+export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  buttonStyle?: ButtonStyle;
   className?: string;
   disabled?: boolean;
   startIcon?: ReactNode;
   endIcon?: ReactNode;
-  buttonSize?: 'small' | 'medium' | 'standard';
-  type?: 'button' | 'submit' | 'reset';
+  color?: 'dark' | 'light';
+  size?: 'S' | 'M' | 'L';
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'link' | 'icon';
 }
 
-const Button: FC<IButton> = ({
+const Button: FC<IButtonProps> = ({
   children,
-  buttonStyle = ButtonStyle.Default,
   className,
   disabled,
   startIcon,
   endIcon,
-  buttonSize = 'standard',
+  size = 'L',
+  color = 'light',
   type = 'button',
+  variant = 'primary',
   ...props
 }) => {
-  const classes = clsx(
-    className,
-    {
-      [styles.small]: buttonSize === 'small',
-      [styles.medium]: buttonSize === 'medium',
-      [styles.standard]: buttonSize === 'standard',
-      [styles.default]: buttonStyle === ButtonStyle.Default,
-      [styles.secondary]: buttonStyle === ButtonStyle.Secondary,
-      [styles.tertiary]: buttonStyle === ButtonStyle.Tertiary,
-      [styles.danger]: buttonStyle === ButtonStyle.Danger,
-      [styles.icon]:
-        buttonStyle === ButtonStyle.Icon ||
-        startIcon !== undefined ||
-        endIcon !== undefined,
-      [styles.disabled]: disabled,
-    },
-    styles.container
-  );
-
   return (
-    <button type={type} className={classes} {...props}>
-      {startIcon && <div className={styles.startIcon}>{startIcon}</div>}
+    <button
+      type={type}
+      className={clsx(
+        styles.button,
+        {
+          [styles.small]: size === 'S',
+          [styles.medium]: size === 'M',
+          [styles.light]: color === 'light',
+          [styles.primary]: variant === 'primary',
+          [styles.secondary]: variant === 'secondary',
+          [styles.tertiary]: variant === 'tertiary',
+          [styles.danger]: variant === 'danger',
+          [styles.link]: variant === 'link',
+          [styles.icon]: variant === 'icon',
+        },
+        className
+      )}
+      {...props}
+      disabled={disabled}
+    >
+      {variant !== 'icon' && startIcon}
       {children}
-      {endIcon && <div className={styles.endIcon}>{endIcon}</div>}
+      {variant !== 'icon' && endIcon}
     </button>
   );
 };

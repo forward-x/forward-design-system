@@ -1,37 +1,33 @@
-.container {
+.button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  text-transform: none;
   border-radius: 8px;
-  box-sizing: border-box;
   width: 100%;
-  border: none;
-  box-sizing: border-box;
-  cursor: pointer;
   transition: all 0.8s ease;
-  color: var(--primary-text);
-  &.small {
-    height: 25px;
-    padding: 2px 10px 1px;
-    font-weight: $font-medium;
-    font-size: 14px;
+  color: $dark-primary-text;
+  font-size: 20px;
+  height: 40px;
+  padding: 5px 10px;
+  font-weight: $font-bold;
+  font-size: $text-title;
+  line-height: $line-height-title;
+  path {
+    transition: all 0.8s ease;
+    fill: $dark-primary-text;
   }
-  &.medium {
-    font-size: 16px;
-    height: 32px;
-    padding: 4px 10px;
-    font-weight: $font-medium;
+  &.light {
+    color: $light-secondary-text;
+    path {
+      fill: $light-secondary-text;
+    }
   }
-  &.standard {
-    font-size: 20px;
-    height: 40px;
-    padding: 5px 10px;
-    font-weight: $font-bold;
-  }
-  &.default {
+
+  &.primary {
     background: $forward-red;
     z-index: 0;
-    // box-shadow: 0px 4px 10px rgba(251, 58, 112, 0.5);
-
     &::after {
       content: "";
       position: absolute;
@@ -48,55 +44,131 @@
     }
 
     &:hover,
-    :focus {
+    &:focus {
       &::after {
         opacity: 1;
       }
-
-      &::before {
-        opacity: 0;
+    }
+    &.light {
+      color: $light-base-1;
+      path {
+        fill: $light-base-1;
       }
     }
   }
 
-  &.secondary {
+  &.small {
+    height: 24px;
+    padding: 2px 10px 1px;
+    font-weight: $font-medium;
+    font-size: $text-small;
+    line-height: $line-height-small;
+  }
+  &.medium {
+    height: 32px;
+    padding: 4px 10px;
+    font-weight: $font-medium;
+    font-size: $text-body;
+    line-height: $line-height-body;
+  }
+
+  &.secondary,
+  &.icon {
     background: $dark-base-2;
+    &.light {
+      background: $light-base-2;
+      path {
+        fill: $light-primary-text;
+      }
+    }
+
     &:hover,
     &:focus {
       background: $xiketic-50;
+      color: $xiketic-20;
+      path {
+        fill: $xiketic-20;
+      }
+
+      &.light {
+        color: $xiketic-30;
+        background: $light-base-2;
+        path {
+          fill: $xiketic-30;
+        }
+      }
+    }
+  }
+  &.tertiary {
+    background: transparent !important;
+    border: 1.5px solid $dark-base-2;
+    &.light {
+      border-color: $light-base-2;
+    }
+
+    &:hover,
+    &:focus {
+      color: $xiketic-20;
+      border-color: $xiketic-50;
+      path {
+        fill: $xiketic-20;
+      }
+      &.light {
+        color: $xiketic-30;
+        border-color: $xiketic-10;
+        path {
+          fill: $xiketic-30;
+        }
+      }
+    }
+
+    &:disabled {
+      border-color: $dark-base-1;
+      &.light {
+        border-color: $light-base-2;
+      }
     }
   }
   &.danger {
+    color: $dark-primary-text;
     background: $forward-red-50;
+    &.light {
+      background: $forward-red-40;
+    }
+
     &:hover,
     &:focus {
       background: $forward-red-40;
+      &.light {
+        background: $forward-red-50;
+      }
+    }
+  }
+  &.link {
+    text-decoration: underline;
+    background: transparent !important;
+    &:hover,
+    &:focus {
+      color: $xiketic-30;
+      path {
+        fill: $xiketic-30;
+      }
     }
   }
 
-  &.tertiary {
-    background: transparent;
-    border: 1.5px solid $dark-base-2;
-    &:hover {
-      color: $xiketic-20;
-      border: 1.5px solid $xiketic-50;
-    }
-  }
-
-  &.icon {
-    background: transparent;
-
-    &:hover {
-      background: $xiketic;
-      border: 1.5px solid $xk-60;
-    }
-  }
-
-  &.disabled {
+  &:disabled {
+    pointer-events: none;
     background: $dark-base-1;
     color: $dark-placeholder-text;
-    border: none;
-    pointer-events: none;
-    box-shadow: none;
+    path {
+      fill: $dark-placeholder-text;
+    }
+    &.light {
+      background: $light-base-2;
+      color: $light-placeholder-text;
+      path {
+        fill: $light-placeholder-text;
+      }
+    }
   }
 }
