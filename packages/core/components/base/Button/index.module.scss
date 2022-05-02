@@ -25,6 +25,11 @@
     }
   }
 
+  @include smallMedia {
+    padding: 9px 10px;
+    height: 48px;
+  }
+
   &.primary {
     background: $forward-red;
     z-index: 0;
@@ -63,6 +68,13 @@
     font-weight: $font-medium;
     font-size: $text-small;
     line-height: $line-height-small;
+
+    @include smallMedia {
+      padding: 6px 10px;
+      height: 36px;
+      font-size: $text-body;
+      line-height: $line-height-body;
+    }
   }
   &.medium {
     height: 32px;
