@@ -8,16 +8,16 @@ import { ReactComponent as ForwardMan } from '../../../assets/icons/ForwardMan.s
 import styles from './index.module.scss';
 
 export interface IAvatarProps extends Omit<HTMLProps<HTMLDivElement>, 'size'> {
-  variant: 'default' | 'name' | 'forward';
-  size: 'XL' | 'L' | 'M' | 'S';
+  variant?: 'default' | 'name' | 'forward';
+  size?: 'XL' | 'L' | 'M' | 'S';
   name?: string;
   className?: string;
 }
 
 const Avatar: FC<IAvatarProps> = ({
-  variant,
   name,
-  size,
+  variant = 'default',
+  size = 'M',
   className,
   ...props
 }) => {

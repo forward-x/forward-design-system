@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import styles from './index.module.scss';
 
 export interface IBreadcrumbsProps {
-  variant: 'default' | 'truncate';
+  variant?: 'default' | 'truncate';
   color: 'dark' | 'light';
   children: ReactNode[];
   className?: string;
@@ -14,8 +14,8 @@ export interface IBreadcrumbsProps {
 const Breadcrumbs: FC<IBreadcrumbsProps> = ({
   className,
   children,
-  variant,
-  color,
+  variant = 'dafault',
+  color = 'dark',
 }) => {
   const components: ReactNode[] = [...children];
   if (variant === 'truncate') components.splice(1, children.length - 3, '...');
