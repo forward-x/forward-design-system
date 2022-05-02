@@ -22,7 +22,7 @@ const Button: FC<IButtonProps> = ({
   startIcon,
   endIcon,
   size = 'L',
-  color = 'light',
+  color = 'dark',
   type = 'button',
   variant = 'primary',
   ...props
