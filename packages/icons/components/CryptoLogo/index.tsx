@@ -13,10 +13,14 @@ export interface ICryptoLogoProps {
 const CryptoLogo: FC<ICryptoLogoProps> = ({ size, className, logo }) => {
   return (
     <div
-      className={clsx(styles.logo, className, {
-        [styles.large]: size === 'L',
-        [styles.extra_large]: size === 'XL',
-      })}
+      className={clsx(
+        styles.logo,
+        {
+          [styles.large]: size === 'L',
+          [styles.extra_large]: size === 'XL',
+        },
+        className
+      )}
     >
       {logo}
     </div>

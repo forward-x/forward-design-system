@@ -45,12 +45,16 @@ const Avatar: FC<IAvatarProps> = ({
 
   return (
     <div
-      className={clsx(styles.avatar, className, {
-        [styles.small]: size === 'S',
-        [styles.large]: size === 'L',
-        [styles.extra_large]: size === 'XL',
-        [styles.forward_man]: variant === 'forward',
-      })}
+      className={clsx(
+        styles.avatar,
+        {
+          [styles.small]: size === 'S',
+          [styles.large]: size === 'L',
+          [styles.extra_large]: size === 'XL',
+          [styles.forward_man]: variant === 'forward',
+        },
+        className
+      )}
       {...props}
     >
       {content}

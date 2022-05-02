@@ -22,9 +22,13 @@ const Breadcrumbs: FC<IBreadcrumbsProps> = ({
 
   return (
     <li
-      className={clsx(styles.breadcrumbs, className, {
-        [styles.light]: color === 'light',
-      })}
+      className={clsx(
+        styles.breadcrumbs,
+        {
+          [styles.light]: color === 'light',
+        },
+        className
+      )}
     >
       {components.map((child, index) => (
         <>

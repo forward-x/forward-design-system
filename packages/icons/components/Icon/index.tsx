@@ -19,13 +19,17 @@ const Icon: FC<IIconProps> = ({
 }) => {
   return (
     <div
-      className={clsx(styles.icon, className, {
-        [styles.light]: color === 'light',
-        [styles.large]: size === 'L',
-        [styles.small]: size === 'S',
-        [styles.extra_small]: size === 'XS',
-        [styles.extra_extra_small]: size === 'XXS',
-      })}
+      className={clsx(
+        styles.icon,
+        {
+          [styles.light]: color === 'light',
+          [styles.large]: size === 'L',
+          [styles.small]: size === 'S',
+          [styles.extra_small]: size === 'XS',
+          [styles.extra_extra_small]: size === 'XXS',
+        },
+        className
+      )}
     >
       {icon}
     </div>
