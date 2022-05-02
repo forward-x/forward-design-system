@@ -7,11 +7,16 @@ import styles from './index.module.scss';
 export interface IIconProps {
   className?: string;
   icon: ReactNode;
-  size: 'XXS' | 'XS' | 'S' | 'M' | 'L';
+  size?: 'XXS' | 'XS' | 'S' | 'M' | 'L';
   color?: 'dark' | 'light';
 }
 
-const Icon: FC<IIconProps> = ({ size, color, className, icon }) => {
+const Icon: FC<IIconProps> = ({
+  size = 'M',
+  color = 'dark',
+  className,
+  icon,
+}) => {
   return (
     <div
       className={clsx(styles.icon, className, {
