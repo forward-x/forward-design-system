@@ -38,10 +38,8 @@
   }
 }
 
-.user_icon {
-  svg * {
-    fill: $xiketic-30;
-  }
+.user_icon path {
+  fill: $xiketic-30;
 }
 
 .icon {

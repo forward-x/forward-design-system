@@ -5,15 +5,11 @@
   width: 24px;
   height: 24px;
 
-  svg {
-    width: 100%;
-    height: 100%;
-    * {
-      fill: #454561;
-    }
+  path {
+    fill: #454561;
   }
 
-  &.light svg * {
+  &.light path {
     fill: white;
   }
 
