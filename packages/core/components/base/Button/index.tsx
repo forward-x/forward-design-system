@@ -48,9 +48,11 @@ const Button: FC<IButtonProps> = ({
       {...props}
       disabled={disabled}
     >
-      {variant !== 'icon' && startIcon}
+      {variant !== 'icon' && (
+        <span className={styles.startIcon}>{startIcon}</span>
+      )}
       {children}
-      {variant !== 'icon' && endIcon}
+      {variant !== 'icon' && <span className={styles.endIcon}>{endIcon}</span>}
     </button>
   );
 };
