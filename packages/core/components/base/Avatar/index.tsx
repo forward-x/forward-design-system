@@ -1,9 +1,10 @@
 import React, { FC, HTMLProps } from 'react';
 
-import { UserIcon } from '@forward-ui/icons';
+import { Icon } from '@forward-ui/icons';
 import clsx from 'clsx';
 
 import { ReactComponent as ForwardMan } from '../../../assets/icons/ForwardMan.svg';
+import { ReactComponent as UserIcon } from '../../../assets/icons/UserIcon.svg';
 
 import styles from './index.module.scss';
 
@@ -38,7 +39,11 @@ const Avatar: FC<IAvatarProps> = ({
       break;
     default:
       content = (
-        <UserIcon className={styles.user_icon} size={avatarSize[size]} />
+        <Icon
+          className={styles.user_icon}
+          icon={<UserIcon />}
+          size={avatarSize[size]}
+        />
       );
       break;
   }
