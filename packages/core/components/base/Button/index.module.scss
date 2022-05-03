@@ -13,55 +13,18 @@
   font-weight: $font-bold;
   font-size: $text-title;
   line-height: $line-height-title;
-  svg {
-    width: 24px;
-    height: 24px;
-    path {
-      transition: all 0.8s ease;
-      fill: $dark-primary-text;
-    }
-    &.light {
-      color: $light-secondary-text;
-      path {
-        fill: $light-secondary-text;
-      }
-    }
-  }
 
   @include smallMedia {
     padding: 9px 10px;
     height: 48px;
   }
 
-  &.primary {
-    background: $forward-red;
-    z-index: 0;
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      border-radius: inherit;
-      z-index: -1;
-
-      background: $gradient-forward-red;
-      opacity: 0;
-      transition: opacity 0.8s ease;
-    }
-
-    &:hover,
-    &:focus {
-      &::after {
-        opacity: 1;
-      }
-    }
-    &.light {
-      color: $light-base-1;
-      path {
-        fill: $light-base-1;
-      }
+  svg {
+    width: 24px;
+    height: 24px;
+    path {
+      transition: all 0.8s ease;
+      fill: $dark-primary-text;
     }
   }
 
@@ -99,15 +62,39 @@
     }
   }
 
+  &.primary {
+    background: $forward-red;
+    z-index: 0;
+    color: $light-base-1;
+    path {
+      fill: $light-base-1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: inherit;
+      z-index: -1;
+
+      background: $gradient-forward-red;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    &:hover,
+    &:focus {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
   &.secondary,
   &.icon {
     background: $dark-base-2;
-    &.light {
-      background: $light-base-2;
-      path {
-        fill: $light-primary-text;
-      }
-    }
 
     &:hover,
     &:focus {
@@ -116,22 +103,11 @@
       path {
         fill: $xiketic-20;
       }
-
-      &.light {
-        color: $xiketic-30;
-        background: $light-base-2;
-        path {
-          fill: $xiketic-30;
-        }
-      }
     }
   }
   &.tertiary {
     background: transparent !important;
     border: 1.5px solid $dark-base-2;
-    &.light {
-      border-color: $light-base-2;
-    }
 
     &:hover,
     &:focus {
@@ -140,40 +116,25 @@
       path {
         fill: $xiketic-20;
       }
-      &.light {
-        color: $xiketic-30;
-        border-color: $xiketic-10;
-        path {
-          fill: $xiketic-30;
-        }
-      }
     }
 
     &:disabled {
       border-color: $dark-base-1;
-      &.light {
-        border-color: $light-base-2;
-      }
     }
   }
   &.danger {
     color: $dark-primary-text;
     background: $forward-red-50;
-    &.light {
-      background: $forward-red-40;
-    }
 
     &:hover,
     &:focus {
       background: $forward-red-40;
-      &.light {
-        background: $forward-red-50;
-      }
     }
   }
   &.link {
     text-decoration: underline;
     background: transparent !important;
+
     &:hover,
     &:focus {
       color: $xiketic-30;
@@ -190,7 +151,66 @@
     path {
       fill: $dark-placeholder-text;
     }
-    &.light {
+  }
+
+  &.light {
+    color: $light-secondary-text;
+    path {
+      fill: $light-secondary-text;
+    }
+    
+    &.primary {
+      color: $light-base-1;
+      path {
+        fill: $light-base-1;
+      }
+    }
+    &.secondary,
+    &.icon {
+      background: $light-base-2;
+      path {
+        fill: $light-primary-text;
+      }
+
+      &:hover,
+      &:focus {
+        color: $xiketic-30;
+        background: $light-base-2;
+        path {
+          fill: $xiketic-30;
+        }
+      }
+    }
+    &.tertiary {
+      border-color: $light-base-2;
+
+      &:hover,
+      &:focus {
+        color: $xiketic-30;
+        border-color: $xiketic-10;
+        path {
+          fill: $xiketic-30;
+        }
+      }
+
+      &:disabled {
+        border-color: $light-base-2;
+      }
+    }
+    &.danger {
+      background: $forward-red-40;
+      color: $dark-primary-text;
+      path {
+        fill: $dark-primary-text;
+      }
+
+      &:hover,
+      &:focus {
+        background: $forward-red-50;
+      }
+    }
+
+    &:disabled {
       background: $light-base-2;
       color: $light-placeholder-text;
       path {
@@ -198,7 +218,6 @@
       }
     }
   }
-
   .startIcon {
     margin-right: 8px;
   }
