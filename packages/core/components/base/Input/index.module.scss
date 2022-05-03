@@ -6,21 +6,45 @@
   padding: 8px 16px;
   height: 40px;
   border-radius: 8px;
+  position: relative;
+  
+  &:focus-within,
+  &:hover {
+    border-color: $xiketic-40;
+    &.light {
+      border-color: $xiketic-20;
+    }
+  }
 
   &.small {
     height: 24px;
     padding: 1px 8px;
+    .prefix svg {
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+    }
+    .suffix svg {
+      width: 16px;
+      height: 16px;
+      margin-left: 8px;
+    }
   }
   &.medium {
     height: 32px;
     font-size: $text-small;
     line-height: $line-height-small;
     padding: 4px 12px;
-  }
-
-  &:focus-within,
-  &:hover {
-    border-color: $xiketic-40;
+    .prefix svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 4px;
+    }
+    .suffix svg {
+      width: 20px;
+      height: 20px;
+      margin-left: 8px;
+    }
   }
 
   input {
@@ -53,33 +77,36 @@
 
   .prefix {
     margin-right: 8px;
-    width: 24px;
-    height: 24px;
-
-    &.small {
-      width: 16px;
-      height: 16px;
-      margin-right: 4px;
+    path {
+      fill: $dark-placeholder-text;
     }
-    &.medium {
-      width: 20px;
-      height: 20px;
-      margin-right: 4px;
+  }
+  .suffix {
+    margin-left: 10px;
+    color: $dark-placeholder-text;
+    background-color: transparent;
+    path {
+      fill: $dark-primary-text;
     }
   }
 
-  .suffix {
-    margin-left: 10px;
-
-    &.small {
-      width: 16px;
-      height: 16px;
-      margin-right: 8px;
+  &.light {
+    border-color: $light-base-2;
+    input {
+      color: $light-primary-text;
+      &::placeholder {
+        color: $light-placeholder-text;
+      }
     }
-    &.medium {
-      width: 20px;
-      height: 20px;
-      margin-right: 8px;
+
+    .prefix path {
+      fill: $light-placeholder-text;
+    }
+    .suffix {
+      color: $light-placeholder-text;
+      path {
+        fill: $light-primary-text;
+      }
     }
   }
 }

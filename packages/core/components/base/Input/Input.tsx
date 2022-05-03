@@ -5,11 +5,15 @@ import clsx from 'clsx';
 import styles from './index.module.scss';
 
 export interface IInputProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'prefix' | 'type'> {
+  extends Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    'prefix' | 'type' | 'size'
+  > {
   className?: string;
   disabled?: boolean;
   prefix?: ReactNode;
   suffix?: ReactNode;
+  size?: 'L' | 'M' | 'S';
   color?: 'dark' | 'light';
 }
 
@@ -18,6 +22,7 @@ const Input: FC<IInputProps> = ({
   disabled,
   prefix,
   suffix,
+  size = 'L',
   color = 'dark',
   ...props
 }) => {
@@ -32,6 +37,8 @@ const Input: FC<IInputProps> = ({
         styles.container,
         {
           [styles.light]: color === 'light',
+          [styles.medium]: size === 'M',
+          [styles.small]: size === 'S',
         },
         className
       )}

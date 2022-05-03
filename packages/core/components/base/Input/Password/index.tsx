@@ -6,15 +6,20 @@ import clsx from 'clsx';
 import styles from './index.module.scss';
 
 export interface IInputPasswordProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'prefix' | 'type'> {
+  extends Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    'prefix' | 'type' | 'size'
+  > {
   className?: string;
   disabled?: boolean;
+  size?: 'L' | 'M' | 'S';
   color?: 'dark' | 'light';
 }
 
 const Password: FC<IInputPasswordProps> = ({
   className,
   disabled,
+  size = 'L',
   color = 'dark',
   ...props
 }) => {
@@ -30,6 +35,8 @@ const Password: FC<IInputPasswordProps> = ({
         styles.container,
         {
           [styles.light]: color === 'light',
+          [styles.medium]: size === 'M',
+          [styles.small]: size === 'S',
         },
         className
       )}
@@ -44,13 +51,13 @@ const Password: FC<IInputPasswordProps> = ({
         type={isShown ? 'text' : 'password'}
         ref={inputRef}
       />
-      <div
+      <button
         className={styles.suffix}
         onClick={() => setShow(!isShown)}
-        style={{ cursor: 'pointer' }}
+        tabIndex={0}
       >
         {isShown ? <ViewIcon /> : <ViewOffIcon />}
-      </div>
+      </button>
     </div>
   );
 };
