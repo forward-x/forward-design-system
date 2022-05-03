@@ -1,0 +1,43 @@
+@import "../index.module.scss";
+
+.container {
+  .suffix {
+    position: absolute;
+    top: -1.5px;
+    right: -1.5px;
+    width: 48px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 8px 8px 0;
+    background-color: $xiketic-50;
+
+    svg {
+      margin: 0 !important;
+    }
+  }
+
+  input:not(:placeholder-shown) ~ .suffix {
+    background-color: $xiketic-40;
+  }
+
+  &.small .suffix {
+    width: 40px;
+    height: 24px;
+  }
+  &.medium .suffix {
+    width: 44px;
+    height: 32px;
+  }
+
+  &.light {
+    .suffix {
+      background-color: $light-base-2 !important;
+    }
+
+    input:not(:placeholder-shown) ~ .suffix path {
+      fill: $xiketic-30;
+    }
+  }
+}
