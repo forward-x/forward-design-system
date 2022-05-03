@@ -1,0 +1,85 @@
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1.5px solid $dark-base-2;
+  padding: 8px 16px;
+  height: 40px;
+  border-radius: 8px;
+
+  &.small {
+    height: 24px;
+    padding: 1px 8px;
+  }
+  &.medium {
+    height: 32px;
+    font-size: $text-small;
+    line-height: $line-height-small;
+    padding: 4px 12px;
+  }
+
+  &:focus-within,
+  &:hover {
+    border-color: $xiketic-40;
+  }
+
+  input {
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    color: $dark-primary-text;
+    font-family: $basier-circle;
+    font-size: $text-body;
+    line-height: $line-height-body;
+    display: flex;
+    background: transparent;
+
+    &:invalid {
+      border-color: $forward-red-40;
+    }
+
+    &::placeholder {
+      color: $dark-placeholder-text;
+    }
+
+    &[type="password"] {
+      &::-ms-reveal,
+      &::-ms-clear {
+        display: none;
+      }
+    }
+  }
+
+  .prefix {
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+
+    &.small {
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+    }
+    &.medium {
+      width: 20px;
+      height: 20px;
+      margin-right: 4px;
+    }
+  }
+
+  .suffix {
+    margin-left: 10px;
+
+    &.small {
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+    }
+    &.medium {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+  }
+}
