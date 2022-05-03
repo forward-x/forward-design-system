@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, Fragment, ReactNode } from 'react';
 
 import clsx from 'clsx';
 
@@ -21,7 +21,7 @@ const Breadcrumbs: FC<IBreadcrumbsProps> = ({
   if (variant === 'truncate') components.splice(1, children.length - 3, '...');
 
   return (
-    <li
+    <ul
       className={clsx(
         styles.breadcrumbs,
         {
@@ -31,21 +31,18 @@ const Breadcrumbs: FC<IBreadcrumbsProps> = ({
       )}
     >
       {components.map((child, index) => (
-        <>
-          <ul
-            key={`link-${index}`}
+        <Fragment key={index}>
+          <li
             className={clsx(styles.item, {
               [styles.active]: index === components.length - 1,
             })}
           >
             {child}
-          </ul>
-          {index !== components.length - 1 && (
-            <ul key={`seperator-${index}`}>/</ul>
-          )}
-        </>
+          </li>
+          {index !== components.length - 1 && <li>/</li>}
+        </Fragment>
       ))}
-    </li>
+    </ul>
   );
 };
 
