@@ -6,14 +6,14 @@ import copy from 'rollup-plugin-copy';
 import postcss from 'rollup-plugin-postcss';
 
 export default defineConfig({
-  input: './index.ts',
+  input: 'src/index.ts',
   output: [
     {
       dir: 'dist',
       format: 'commonjs',
       sourcemap: true,
       preserveModules: true,
-      preserveModulesRoot: '.',
+      preserveModulesRoot: 'src',
     },
   ],
   plugins: [
@@ -22,14 +22,14 @@ export default defineConfig({
     typescript({
       declaration: true,
       declarationDir: 'dist',
-      rootDir: '.',
+      rootDir: 'src',
     }),
     postcss({
       extract: 'assets/styles/index.css',
       modules: true,
       use: {
         sass: {
-          data: '@import "assets/styles/index.scss";',
+          data: '@import "src/assets/styles/index.scss";',
         },
         less: null,
         stylus: null,
@@ -38,12 +38,12 @@ export default defineConfig({
     copy({
       targets: [
         {
-          src: 'assets/styles/_colors.scss',
+          src: 'src/assets/styles/_colors.scss',
           dest: 'dist/assets/styles',
         },
-        { src: 'assets/styles/_fonts.scss', dest: 'dist/assets/styles' },
-        { src: 'assets/styles/_mixins.scss', dest: 'dist/assets/styles' },
-        { src: 'assets/fonts/*', dest: 'dist/assets/fonts' },
+        { src: 'src/assets/styles/_fonts.scss', dest: 'dist/assets/styles' },
+        { src: 'src/assets/styles/_mixins.scss', dest: 'dist/assets/styles' },
+        { src: 'src/assets/fonts/*', dest: 'dist/assets/fonts' },
       ],
     }),
   ],
