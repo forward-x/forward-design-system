@@ -33,7 +33,7 @@ const Breadcrumbs: FC<IBreadcrumbsProps> = ({
       {components.map((child, index) => (
         <>
           <ul
-            key={index}
+            key={`link-${index}`}
             className={clsx(styles.item, {
               [styles.active]: index === components.length - 1,
               [styles.light]: color === 'light',
@@ -41,7 +41,9 @@ const Breadcrumbs: FC<IBreadcrumbsProps> = ({
           >
             {child}
           </ul>
-          {index !== components.length - 1 && <ul>/</ul>}
+          {index !== components.length - 1 && (
+            <ul key={`seperator-${index}`}>/</ul>
+          )}
         </>
       ))}
     </li>
