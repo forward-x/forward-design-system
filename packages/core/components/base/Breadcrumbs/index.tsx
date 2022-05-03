@@ -36,7 +36,6 @@ const Breadcrumbs: FC<IBreadcrumbsProps> = ({
             key={`link-${index}`}
             className={clsx(styles.item, {
               [styles.active]: index === components.length - 1,
-              [styles.light]: color === 'light',
             })}
           >
             {child}

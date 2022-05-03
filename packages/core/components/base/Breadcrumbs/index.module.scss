@@ -11,28 +11,26 @@
     line-height: $line-height-body;
   }
 
-  &.light {
-    color: $light-secondary-text;
-  }
-
   .item {
     * {
       color: $dark-secondary-text;
     }
 
-    &.light * {
-      color: $light-secondary-text;
+    &.active * {
+      font-weight: $font-semibold;
+      color: $dark-primary-text;
     }
+  }
 
-    &.active {
-      &.light * {
-        font-weight: $font-semibold;
-        color: $light-primary-text;
+  &.light {
+    color: $light-secondary-text;
+    .item {
+      * {
+        color: $light-secondary-text;
       }
 
-      * {
-        font-weight: $font-semibold;
-        color: $dark-primary-text;
+      &.active * {
+        color: $light-primary-text;
       }
     }
   }
