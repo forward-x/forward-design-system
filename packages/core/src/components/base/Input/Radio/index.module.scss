@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: $dark-primary-text !important;
+    position: relative;
+    cursor: pointer;
+
+    .radio {
+      width: 24px;
+      height: 24px;
+      border: 2px solid $dark-base-2;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  input[type="radio"] {
+    display: none;
+
+    &:checked ~ label .radio {
+      border: 1px solid $forward-red-30;
+
+      &::before {
+        content: '';
+        border-radius: 100%;
+        background-color: $forward-red-30;
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+}
