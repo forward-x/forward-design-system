@@ -1,4 +1,4 @@
-import React, { FC, InputHTMLAttributes } from 'react';
+import React, { FC, InputHTMLAttributes, ReactNode } from 'react';
 
 import clsx from 'clsx';
 
@@ -6,7 +6,7 @@ import styles from './index.module.scss';
 
 export interface IRadioProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: string;
-  text?: string;
+  text?: ReactNode;
   color?: 'dark' | 'light';
 }
 

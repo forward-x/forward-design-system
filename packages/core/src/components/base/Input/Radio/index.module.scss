@@ -14,6 +14,11 @@
     font-size: $text-body;
     line-height: $line-height-body;
 
+    @include smallMedia {
+      font-size: $text-small;
+      line-height: $line-height-small;
+    }
+
     .radio {
       width: 24px;
       height: 24px;
@@ -53,8 +58,6 @@
 
   &.light label {
     color: $light-primary-text !important;
-    font-size: $text-small;
-    line-height: $line-height-small;
 
     .radio {
       border-color: $light-base-2;
