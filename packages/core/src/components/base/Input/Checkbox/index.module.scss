@@ -1,69 +1,67 @@
 .container {
   display: flex;
-  cursor: pointer;
   position: relative;
+  width: fit-content;
+  height: fit-content;
   z-index: 1;
 
-  &:hover {
-    & label {
-      & .checkbox {
-        border: 1.67px solid $xk-60;
+  // &:hover {
+  //   & label {
+  //     & .checkbox {
+  //       border: 1.67px solid $xk-60;
 
-        & .hover_bg {
-          display: block;
+  //       & .hover_bg {
+  //         display: block;
+  //       }
+  //     }
+  //   }
+  // }
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: $dark-tertiary-text !important;
+    position: relative;
+    cursor: pointer;
+
+    .checkbox {
+      width: 24px;
+      height: 24px;
+      border: 1.5px solid $dark-base-2;
+      border-radius: 4px;
+      position: relative;
+
+      .check {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        position: absolute;
+        display: none;
+        background-color: $forward-red-30;
+        border-radius: 2px;
+        width: 15px;
+        height: 15px;
+
+        path {
+          fill: $dark-primary-text;
         }
       }
     }
   }
 
-  label {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    color: $dark-tertiary-text !important;
-    position: relative;
-
-    .checkbox {
-      width: 24px;
-      height: 24px;
-      border: 1.67px solid $icon-grey;
-      border-radius: 1.67px;
-      box-sizing: border-box;
-      position: relative;
-
-      .hover_bg {
-        display: none;
-        position: absolute;
-        z-index: -1;
-        background-color: $dark-grey;
-        border-radius: 50%;
-        width: 44px;
-        height: 44px;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
-  }
-
-  input[type='checkbox'] {
+  input[type="checkbox"] {
     display: none;
 
-    &:checked + label .checkbox {
-      border: 1.67px solid $forward-red;
-      background-color: $forward-red;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      &::before {
-        content: '';
-        background-image: url(../../../assets/images/icon/Check.svg);
-        position: absolute;
-        background-size: 12px 12px;
-        width: 12px;
-        height: 12px;
-        background-color: $forward-red;
+    &:checked ~ label {
+      .checkbox {
+        border-color: $forward-red-30;
+
+        .check {
+          display: block;
+        }
       }
     }
   }
