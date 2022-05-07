@@ -19,6 +19,11 @@
       border-radius: 4px;
       position: relative;
 
+      @include smallMedia {
+        width: 32px;
+        height: 32px;
+      }
+
       .check {
         top: 0;
         bottom: 0;
@@ -31,6 +36,11 @@
         border-radius: 2px;
         width: 15px;
         height: 15px;
+
+        @include smallMedia {
+          width: 20px;
+          height: 20px;
+        }
 
         path {
           fill: $dark-primary-text;
@@ -50,6 +60,14 @@
           display: block;
         }
       }
+    }
+  }
+
+  &.light label {
+    color: $light-tertiary-text !important;
+
+    .checkbox {
+      border-color: $light-base-2;
     }
   }
 }
