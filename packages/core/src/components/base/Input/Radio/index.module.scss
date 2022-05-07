@@ -11,6 +11,8 @@
     color: $dark-primary-text !important;
     position: relative;
     cursor: pointer;
+    font-size: $text-body;
+    line-height: $line-height-body;
 
     .radio {
       width: 24px;
@@ -20,6 +22,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
+      @include smallMedia {
+        width: 32px;
+        height: 32px;
+      }
     }
   }
 
@@ -30,12 +37,27 @@
       border: 1px solid $forward-red-30;
 
       &::before {
-        content: '';
+        content: "";
         border-radius: 100%;
         background-color: $forward-red-30;
         width: 14px;
         height: 14px;
+
+        @include smallMedia {
+          width: 19px;
+          height: 19px;
+        }
       }
+    }
+  }
+
+  &.light label {
+    color: $light-primary-text !important;
+    font-size: $text-small;
+    line-height: $line-height-small;
+
+    .radio {
+      border-color: $light-base-2;
     }
   }
 }
