@@ -12,6 +12,11 @@
     position: relative;
     cursor: pointer;
 
+    @include smallMedia {
+      font-size: $text-small;
+      line-height: $line-height-small;
+    }
+
     .checkbox {
       width: 24px;
       height: 24px;
