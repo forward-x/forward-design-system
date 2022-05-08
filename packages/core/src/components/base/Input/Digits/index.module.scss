@@ -9,8 +9,16 @@
     border-radius: 6px;
     padding: 0;
 
+    @include smallMedia {
+      border-radius: 12px;
+    }
+
     input {
       text-align: center;
+      @include smallMedia {
+        font-size: $text-title;
+        line-height: $line-height-title;
+      }
     }
   }
 
@@ -19,5 +27,15 @@
   }
   &.small .digit {
     width: 23.33px;
+    @include smallMedia {
+      width: 35px;
+    }
+
+    input {
+      @include smallMedia {
+        font-size: $text-body;
+        line-height: $line-height-body;
+      }
+    }
   }
 }
