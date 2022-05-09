@@ -6,7 +6,6 @@ import styles from './index.module.scss';
 
 export interface IBreadcrumbsProps {
   variant?: 'default' | 'truncate';
-  color: 'dark' | 'light';
   children: ReactNode[];
   className?: string;
 }
@@ -15,21 +14,12 @@ const Breadcrumbs: FC<IBreadcrumbsProps> = ({
   className,
   children,
   variant = 'dafault',
-  color = 'dark',
 }) => {
   const components: ReactNode[] = [...children];
   if (variant === 'truncate') components.splice(1, children.length - 3, '...');
 
   return (
-    <ul
-      className={clsx(
-        styles.breadcrumbs,
-        {
-          [styles.light]: color === 'light',
-        },
-        className
-      )}
-    >
+    <ul className={clsx(styles.breadcrumbs, className)}>
       {components.map((child, index) => (
         <Fragment key={index}>
           <li

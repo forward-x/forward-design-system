@@ -13,14 +13,12 @@ export interface IInputPasswordProps
   className?: string;
   disabled?: boolean;
   size?: 'L' | 'M' | 'S';
-  color?: 'dark' | 'light';
 }
 
 const Password: FC<IInputPasswordProps> = ({
   className,
   disabled,
   size = 'L',
-  color = 'dark',
   ...props
 }) => {
   const [isShown, setShow] = useState<boolean>(false);
@@ -34,7 +32,6 @@ const Password: FC<IInputPasswordProps> = ({
       className={clsx(
         styles.container,
         {
-          [styles.light]: color === 'light',
           [styles.medium]: size === 'M',
           [styles.small]: size === 'S',
         },

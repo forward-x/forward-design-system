@@ -20,22 +20,10 @@ export interface IInputProps
   prefix?: ReactNode;
   suffix?: ReactNode;
   size?: 'L' | 'M' | 'S';
-  color?: 'dark' | 'light';
 }
 
 const Input = forwardRef<HTMLInputElement | null, IInputProps>(
-  (
-    {
-      className,
-      disabled,
-      prefix,
-      suffix,
-      size = 'L',
-      color = 'dark',
-      ...props
-    },
-    ref
-  ) => {
+  ({ className, disabled, prefix, suffix, size = 'L', ...props }, ref) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
     const handleClick = () => {
@@ -47,7 +35,6 @@ const Input = forwardRef<HTMLInputElement | null, IInputProps>(
         className={clsx(
           styles.container,
           {
-            [styles.light]: color === 'light',
             [styles.medium]: size === 'M',
             [styles.small]: size === 'S',
           },

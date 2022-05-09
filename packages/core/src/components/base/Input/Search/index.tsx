@@ -9,13 +9,11 @@ export interface IInputPasswordProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'size'> {
   className?: string;
   size?: 'L' | 'M' | 'S';
-  color?: 'dark' | 'light';
 }
 
 const Password: FC<IInputPasswordProps> = ({
   className,
   size = 'L',
-  color = 'dark',
   ...props
 }) => {
   return (
@@ -23,7 +21,6 @@ const Password: FC<IInputPasswordProps> = ({
       className={clsx(
         styles.container,
         {
-          [styles.light]: color === 'light',
           [styles.medium]: size === 'M',
           [styles.small]: size === 'S',
         },

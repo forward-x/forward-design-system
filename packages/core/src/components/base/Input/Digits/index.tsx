@@ -18,7 +18,6 @@ export interface IInputDigitsProps {
   length?: number;
   disabled?: boolean;
   size?: 'L' | 'M' | 'S';
-  color?: 'dark' | 'light';
 }
 
 const Digits: FC<IInputDigitsProps> = ({
@@ -26,7 +25,6 @@ const Digits: FC<IInputDigitsProps> = ({
   disabled,
   size = 'L',
   length = 6,
-  color = 'dark',
 }) => {
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
@@ -35,7 +33,6 @@ const Digits: FC<IInputDigitsProps> = ({
       className={clsx(
         styles.container,
         {
-          [styles.light]: color === 'light',
           [styles.medium]: size === 'M',
           [styles.small]: size === 'S',
         },
@@ -45,7 +42,6 @@ const Digits: FC<IInputDigitsProps> = ({
       {new Array(length).fill(null).map((_, index) => (
         <Input
           key={index}
-          color={color}
           size={size}
           disabled={disabled}
           className={styles.digit}

@@ -6,7 +6,7 @@
   border-radius: 8px;
   width: 100%;
   transition: all 0.8s ease;
-  color: $dark-primary-text;
+  color: var(--button-text);
   font-size: 20px;
   height: 40px;
   padding: 5px 10px;
@@ -24,7 +24,7 @@
     height: 24px;
     path {
       transition: all 0.8s ease;
-      fill: $dark-primary-text;
+      fill: var(--button-text);
     }
   }
 
@@ -94,41 +94,47 @@
   }
   &.secondary,
   &.icon {
-    background: $dark-base-2;
+    background: var(--base-2);
+    path {
+      fill: var(--primary-text);
+    }
 
     &:hover,
     &:focus {
-      background: $xiketic-50;
-      color: $xiketic-20;
+      background: var(--secondary-button-bg);
+      color: var(--hovered-text);
       path {
-        fill: $xiketic-20;
+        fill: var(--hovered-text);
       }
     }
   }
   &.tertiary {
     background: transparent !important;
-    border: 1.5px solid $dark-base-2;
+    border: 1.5px solid var(--base-2);
 
     &:hover,
     &:focus {
-      color: $xiketic-20;
-      border-color: $xiketic-50;
+      color: var(--hovered-text);
+      border-color: var(--hovered-button-border);
       path {
-        fill: $xiketic-20;
+        fill: var(--hovered-text);
       }
     }
 
     &:disabled {
-      border-color: $dark-base-1;
+      border-color: var(--disabled-button);
     }
   }
   &.danger {
     color: $dark-primary-text;
-    background: $forward-red-50;
+    background: var(--danger-bg);
+    path {
+      fill: $dark-primary-text;
+    }
 
     &:hover,
     &:focus {
-      background: $forward-red-40;
+      background: var(--danger-hover);
     }
   }
   &.link {
@@ -146,78 +152,13 @@
 
   &:disabled {
     pointer-events: none;
-    background: $dark-base-1;
-    color: $dark-placeholder-text;
+    background: var(--disabled-button);
+    color: var(--placeholder-text);
     path {
-      fill: $dark-placeholder-text;
+      fill: var(--placeholder-text);
     }
   }
 
-  &.light {
-    color: $light-secondary-text;
-    path {
-      fill: $light-secondary-text;
-    }
-    
-    &.primary {
-      color: $light-base-1;
-      path {
-        fill: $light-base-1;
-      }
-    }
-    &.secondary,
-    &.icon {
-      background: $light-base-2;
-      path {
-        fill: $light-primary-text;
-      }
-
-      &:hover,
-      &:focus {
-        color: $xiketic-30;
-        background: $light-base-2;
-        path {
-          fill: $xiketic-30;
-        }
-      }
-    }
-    &.tertiary {
-      border-color: $light-base-2;
-
-      &:hover,
-      &:focus {
-        color: $xiketic-30;
-        border-color: $xiketic-10;
-        path {
-          fill: $xiketic-30;
-        }
-      }
-
-      &:disabled {
-        border-color: $light-base-2;
-      }
-    }
-    &.danger {
-      background: $forward-red-40;
-      color: $dark-primary-text;
-      path {
-        fill: $dark-primary-text;
-      }
-
-      &:hover,
-      &:focus {
-        background: $forward-red-50;
-      }
-    }
-
-    &:disabled {
-      background: $light-base-2;
-      color: $light-placeholder-text;
-      path {
-        fill: $light-placeholder-text;
-      }
-    }
-  }
   .startIcon {
     margin-right: 8px;
   }

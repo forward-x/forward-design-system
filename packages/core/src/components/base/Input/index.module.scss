@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  border: 1.5px solid $dark-base-2;
+  border: 1.5px solid var(--base-2);
   padding: 8px 16px;
   height: 40px;
   border-radius: 8px;
@@ -14,10 +14,7 @@
 
   &:focus-within,
   &:hover {
-    border-color: $xiketic-40;
-    &.light {
-      border-color: $xiketic-20;
-    }
+    border-color: var(--focused-input);
   }
 
   &.small {
@@ -71,7 +68,7 @@
     border: none;
     width: 100%;
     height: 100%;
-    color: $dark-primary-text;
+    color: var(--primary-text);
     font-family: $basier-circle;
     font-size: $text-body;
     line-height: $line-height-body;
@@ -83,7 +80,7 @@
     }
 
     &::placeholder {
-      color: $dark-placeholder-text;
+      color: var(--placeholder-text);
     }
 
     &[type="password"] {
@@ -97,37 +94,17 @@
   .prefix {
     margin-right: 8px;
     path {
-      fill: $dark-placeholder-text;
+      fill: var(--placeholder-text);
     }
   }
   .suffix {
     margin-left: 10px;
-    color: $dark-placeholder-text;
+    color: var(--placeholder-text);
     background-color: transparent;
     font-size: $text-small;
     line-height: $line-height-small;
     path {
-      fill: $dark-primary-text;
-    }
-  }
-
-  &.light {
-    border-color: $light-base-2;
-    input {
-      color: $light-primary-text;
-      &::placeholder {
-        color: $light-placeholder-text;
-      }
-    }
-
-    .prefix path {
-      fill: $light-placeholder-text;
-    }
-    .suffix {
-      color: $light-placeholder-text;
-      path {
-        fill: $light-primary-text;
-      }
+      fill: var(--primary-text);
     }
   }
 }

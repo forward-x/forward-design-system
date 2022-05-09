@@ -4,7 +4,7 @@
   width: fit-content;
   font-size: $text-small;
   line-height: $line-height-small;
-  color: $dark-secondary-text;
+  color: var(--secondary-text);
 
   @include smallMedia {
     font-size: $text-body;
@@ -13,25 +13,12 @@
 
   .item {
     * {
-      color: $dark-secondary-text;
+      color: var(--secondary-text);
     }
 
     &.active * {
       font-weight: $font-semibold;
-      color: $dark-primary-text;
-    }
-  }
-
-  &.light {
-    color: $light-secondary-text;
-    .item {
-      * {
-        color: $light-secondary-text;
-      }
-
-      &.active * {
-        color: $light-primary-text;
-      }
+      color: var(--primary-text);
     }
   }
 }

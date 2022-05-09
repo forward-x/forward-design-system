@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    color: $dark-primary-text !important;
+    color: var(--primary-text) !important;
     position: relative;
     cursor: pointer;
     font-size: $text-body;
@@ -22,7 +22,7 @@
     .radio {
       width: 24px;
       height: 24px;
-      border: 2px solid $dark-base-2;
+      border: 2px solid var(--base-2);
       border-radius: 100%;
       display: flex;
       justify-content: center;
@@ -53,14 +53,6 @@
           height: 19px;
         }
       }
-    }
-  }
-
-  &.light label {
-    color: $light-primary-text !important;
-
-    .radio {
-      border-color: $light-base-2;
     }
   }
 }

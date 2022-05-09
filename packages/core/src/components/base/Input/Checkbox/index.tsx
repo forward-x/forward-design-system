@@ -8,24 +8,16 @@ import styles from './index.module.scss';
 export interface ICheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: string;
   text?: ReactNode;
-  color?: 'dark' | 'light';
 }
 
 const Checkbox: FC<ICheckboxProps> = ({
   text,
   id = 'default',
-  color = 'dark',
   className,
   ...props
 }) => {
   return (
-    <div
-      className={clsx(
-        styles.container,
-        { [styles.light]: color === 'light' },
-        className
-      )}
-    >
+    <div className={clsx(styles.container, className)}>
       <input type="checkbox" id={id} {...props} />
       <label htmlFor={id}>
         <div className={styles.checkbox}>
