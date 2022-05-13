@@ -2,7 +2,6 @@ import React, {
   ChangeEvent,
   FC,
   FocusEvent,
-  InputHTMLAttributes,
   KeyboardEvent,
   useRef,
 } from 'react';
@@ -15,8 +14,20 @@ import styles from './index.module.scss';
 
 export interface IInputDigitsProps {
   className?: string;
+  /**
+   * @default 6
+   */
   length?: number;
   disabled?: boolean;
+  /**
+   * L - 40px (desktop) / 48px (mobile)
+   *
+   * M - 32px (desktop)
+   *
+   * S - 24px (desktop) / 36px (mobile)
+   *
+   * @default 'L'
+   */
   size?: 'L' | 'M' | 'S';
 }
 

@@ -12,6 +12,15 @@ export interface IInputPasswordProps
   > {
   className?: string;
   disabled?: boolean;
+  /**
+   * L - 40px (desktop) / 48px (mobile)
+   *
+   * M - 32px (desktop)
+   *
+   * S - 24px (desktop) / 36px (mobile)
+   *
+   * @default 'L'
+   */
   size?: 'L' | 'M' | 'S';
 }
 

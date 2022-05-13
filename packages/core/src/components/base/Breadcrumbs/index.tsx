@@ -3,8 +3,10 @@ import React, { FC, Fragment, ReactNode } from 'react';
 import clsx from 'clsx';
 
 import styles from './index.module.scss';
-
 export interface IBreadcrumbsProps {
+  /**
+   * @default 'default'
+   */
   variant?: 'default' | 'truncate';
   children: ReactNode[];
   className?: string;
