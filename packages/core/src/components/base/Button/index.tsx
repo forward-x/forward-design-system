@@ -10,8 +10,19 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
   startIcon?: ReactNode;
   endIcon?: ReactNode;
-  color?: 'dark' | 'light';
+  /**
+   * L - 40px (desktop) / 48px (mobile)
+   *
+   * M - 32px (desktop)
+   *
+   * S - 24px (desktop) / 36px (mobile)
+   *
+   * @default 'L'
+   */
   size?: 'S' | 'M' | 'L';
+  /**
+   * @default 'primary'
+   */
   variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'link' | 'icon';
 }
 
@@ -22,7 +33,6 @@ const Button: FC<IButtonProps> = ({
   startIcon,
   endIcon,
   size = 'L',
-  color = 'dark',
   type = 'button',
   variant = 'primary',
   ...props
@@ -35,7 +45,6 @@ const Button: FC<IButtonProps> = ({
         {
           [styles.small]: size === 'S',
           [styles.medium]: size === 'M',
-          [styles.light]: color === 'light',
           [styles.primary]: variant === 'primary',
           [styles.secondary]: variant === 'secondary',
           [styles.tertiary]: variant === 'tertiary',

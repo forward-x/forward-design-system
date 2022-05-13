@@ -9,7 +9,21 @@ import { ReactComponent as UserIcon } from '../../../assets/icons/UserIcon.svg';
 import styles from './index.module.scss';
 
 export interface IAvatarProps extends Omit<HTMLProps<HTMLDivElement>, 'size'> {
+  /**
+   * @default 'default'
+   */
   variant?: 'default' | 'name' | 'forward';
+  /**
+   * XL - 64px
+   *
+   * L - 40px
+   *
+   * M - 32px
+   *
+   * S - 24px
+   *
+   * @default 'M'
+   */
   size?: 'XL' | 'L' | 'M' | 'S';
   name?: string;
   className?: string;
