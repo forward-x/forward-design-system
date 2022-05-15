@@ -4,6 +4,7 @@ import Default from './Input';
 import Password from './Password';
 import Radio from './Radio';
 import Search from './Search';
+import Switch from './Switch';
 
 const Input = Object.assign(Default, {
   Password,
@@ -11,6 +12,7 @@ const Input = Object.assign(Default, {
   Digits,
   Checkbox,
   Radio,
+  Switch,
 });
 
 export default Input;
