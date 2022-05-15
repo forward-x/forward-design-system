@@ -1,1 +1,1 @@
-export { Avatar, Breadcrumbs, Button, Card, Input } from './base';
+export { Avatar, Breadcrumbs, Button, Input, Chip, Steps } from './base';
