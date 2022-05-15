@@ -1,10 +1,15 @@
 import { useEffect, useRef } from 'react';
 
-export default function useEventListener(
-  eventType: any,
-  callback: any,
+/**
+ * @param eventType Type of event
+ * @param callback Callback function to call when the event is triggered
+ * @param element DOM element to add listener to (default: window)
+ */
+const useEventListener = (
+  eventType: keyof WindowEventMap,
+  callback: (e?: any) => any,
   element = window
-) {
+) => {
   const callbackRef = useRef(callback);
 
   useEffect(() => {
@@ -18,4 +23,6 @@ export default function useEventListener(
 
     return () => element.removeEventListener(eventType, handler);
   }, [eventType, element]);
-}
+};
+
+export default useEventListener;
