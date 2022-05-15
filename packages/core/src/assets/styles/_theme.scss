@@ -10,14 +10,9 @@ body {
 
   --base-2: #{$light-base-2};
 
-  --focused-input: #{$xiketic-40};
-  --secondary-button-bg: #{$light-base-2};
+  --focused: #{$xiketic-40};
   --hovered-text: #{$xiketic-30};
-  --hovered-button-border: #{$xiketic-50};
-  --disabled-button: #{$light-base-2};
-  --danger-hover: #{$forward-red-40};
-  --danger-bg: #{$forward-red-50};
-  --button-text: #{$light-secondary-text};
+  --disabled: #{$light-base-2};
 
   // === Dark theme ===
   &[data-theme="dark"] {
@@ -29,13 +24,8 @@ body {
 
     --base-2: #{$dark-base-2};
 
-    --focused-input: #{$xiketic-20};
-    --secondary-button-bg: #{$xiketic-50};
+    --focused: #{$xiketic-20};
     --hovered-text: #{$xiketic-20};
-    --hovered-button-border: #{$xiketic-10};
-    --disabled-button: #{$dark-base-1};
-    --danger-hover: #{$forward-red-50};
-    --danger-bg: #{$forward-red-40};
-    --button-text: #{$dark-primary-text};
+    --disabled: #{$dark-base-1};
   }
 }

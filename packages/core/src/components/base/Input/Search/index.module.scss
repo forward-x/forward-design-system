@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 0 8px 8px 0;
-    background-color: var(--secondary-button-bg);
+    background-color: $xiketic-50;
 
     svg {
       margin: 0 !important;
@@ -23,7 +23,7 @@
   }
 
   input:not(:placeholder-shown) ~ .suffix {
-    background-color: var(--focused-input);
+    background-color: var(--focused);
   }
 
   &.small .suffix {
@@ -45,6 +45,14 @@
     height: 32px;
     @include smallMedia {
       height: 32px;
+    }
+  }
+}
+
+[data-theme="light"] {
+  .container {
+    .suffix {
+      background-color: $light-base-2;
     }
   }
 }

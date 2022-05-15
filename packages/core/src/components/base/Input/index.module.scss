@@ -14,7 +14,7 @@
 
   &:focus-within,
   &:hover {
-    border-color: var(--focused-input);
+    border-color: var(--focused);
   }
 
   &.small {

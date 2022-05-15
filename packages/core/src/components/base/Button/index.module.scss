@@ -6,7 +6,7 @@
   border-radius: 8px;
   width: 100%;
   transition: all 0.8s ease;
-  color: var(--button-text);
+  color: $dark-primary-text;
   font-size: 20px;
   height: 40px;
   padding: 5px 10px;
@@ -24,7 +24,7 @@
     height: 24px;
     path {
       transition: all 0.8s ease;
-      fill: var(--button-text);
+      fill: $dark-primary-text;
     }
   }
 
@@ -65,9 +65,9 @@
   &.primary {
     background: $forward-red;
     z-index: 0;
-    color: $light-base-1;
+    color: $light-base-1 !important;
     path {
-      fill: $light-base-1;
+      fill: $light-base-1 !important;
     }
 
     &::after {
@@ -101,7 +101,7 @@
 
     &:hover,
     &:focus {
-      background: var(--secondary-button-bg);
+      background: $xiketic-50;
       color: var(--hovered-text);
       path {
         fill: var(--hovered-text);
@@ -115,26 +115,26 @@
     &:hover,
     &:focus {
       color: var(--hovered-text);
-      border-color: var(--hovered-button-border);
+      border-color: $xiketic-10;
       path {
         fill: var(--hovered-text);
       }
     }
 
     &:disabled {
-      border-color: var(--disabled-button);
+      border-color: var(--disabled);
     }
   }
   &.danger {
-    color: $dark-primary-text;
-    background: var(--danger-bg);
+    color: $dark-primary-text !important;
+    background: $forward-red-40;
     path {
       fill: $dark-primary-text;
     }
 
     &:hover,
     &:focus {
-      background: var(--danger-hover);
+      background: $forward-red-50;
     }
   }
   &.link {
@@ -152,10 +152,10 @@
 
   &:disabled {
     pointer-events: none;
-    background: var(--disabled-button);
-    color: var(--placeholder-text);
+    background: var(--disabled);
+    color: var(--placeholder-text) !important;
     path {
-      fill: var(--placeholder-text);
+      fill: var(--placeholder-text) !important;
     }
   }
 
@@ -164,5 +164,40 @@
   }
   .endIcon {
     margin-left: 8px;
+  }
+}
+
+[data-theme="light"] {
+  .button {
+    color: $light-secondary-text;
+    svg {
+      path {
+        fill: $light-secondary-text;
+      }
+    }
+    &.danger {
+      background: $forward-red-50;
+
+      &:hover,
+      &:focus {
+        background: $forward-red-40;
+      }
+    }
+    &.secondary,
+    &.icon {
+      &:hover,
+      &:focus {
+        background: $light-base-2;
+      }
+    }
+    &.tertiary {
+      &:hover,
+      &:focus {
+        border-color: $xiketic-50;
+      }
+    }
+    &:disabled {
+      background: var(--disabled);
+    }
   }
 }
