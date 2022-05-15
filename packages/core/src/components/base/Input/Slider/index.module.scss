@@ -1,0 +1,25 @@
+.switch {
+  :global(.react-switch-bg) {
+    background: transparent !important;
+    border: 1.5px solid #333454;
+  }
+
+  :global(.react-switch-handle) {
+    margin-left: 1px;
+    background: $xiketic-40 !important;
+  }
+}
+
+[data-theme='light'] {
+  .switch {
+    :global(.react-switch-bg) {
+      background: transparent !important;
+      border: 1.5px solid #e9e9f7;
+    }
+
+    :global(.react-switch-handle) {
+      margin-left: 0;
+      background: $orange-10 !important;
+    }
+  }
+}
