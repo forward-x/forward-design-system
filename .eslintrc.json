@@ -82,7 +82,7 @@
       }
     ],
     "prefer-arrow/prefer-arrow-functions": ["error"],
-    "complexity": ["error", 5],
+    "complexity": ["warning", 5],
     "max-depth": "error",
     "prefer-const": "error",
     "no-lonely-if": "error",
