@@ -15,6 +15,6 @@
     "isolatedModules": true,
     "jsx": "react-jsx"
   },
-  "include": ["src/components", "src/index.ts", "src/react-app-env.d.ts"],
+  "include": ["src/components", "src/hooks", "src/index.ts", "src/react-app-env.d.ts"],
   "exclude": ["node_modules"]
 }
