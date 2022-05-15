@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: var(--tertiary-text) !important;
+    position: relative;
+    cursor: pointer;
+
+    @include smallMedia {
+      font-size: $text-small;
+      line-height: $line-height-small;
+    }
+
+    .checkbox {
+      width: 24px;
+      height: 24px;
+      border: 1.5px solid var(--base-2);
+      border-radius: 4px;
+      position: relative;
+
+      @include smallMedia {
+        width: 32px;
+        height: 32px;
+      }
+
+      .check {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        position: absolute;
+        display: none;
+        background-color: $forward-red-30;
+        border-radius: 2px;
+        width: 15px;
+        height: 15px;
+
+        @include smallMedia {
+          width: 20px;
+          height: 20px;
+        }
+
+        path {
+          fill: $dark-primary-text;
+        }
+      }
+    }
+  }
+
+  input[type="checkbox"] {
+    display: none;
+
+    &:checked ~ label {
+      .checkbox {
+        border-color: $forward-red-30;
+
+        .check {
+          display: block;
+        }
+      }
+    }
+  }
+}

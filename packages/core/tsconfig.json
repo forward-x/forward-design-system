@@ -13,9 +13,8 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "baseUrl": "components",
     "jsx": "react-jsx"
   },
-  "include": ["components", "index.ts"],
+  "include": ["src/components", "src/hooks", "src/index.ts", "src/react-app-env.d.ts"],
   "exclude": ["node_modules"]
 }

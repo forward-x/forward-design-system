@@ -1,22 +1,50 @@
-import { defineConfig } from 'rollup';
 import typescript from '@rollup/plugin-typescript';
+import url from '@rollup/plugin-url';
+import svgr from '@svgr/rollup';
+import { defineConfig } from 'rollup';
+import copy from 'rollup-plugin-copy';
 import postcss from 'rollup-plugin-postcss';
 
 export default defineConfig({
-  input: './index.ts',
+  input: 'src/index.ts',
   output: [
-    { dir: 'dist', format: 'esm', sourcemap: true, preserveModules: true },
+    {
+      dir: 'dist',
+      format: 'commonjs',
+      sourcemap: true,
+      preserveModules: true,
+      preserveModulesRoot: 'src',
+    },
   ],
   plugins: [
+    url({ destDir: 'dist/assets' }),
+    svgr({ icon: true }),
     typescript({
       declaration: true,
       declarationDir: 'dist',
-      rootDir: '.',
+      rootDir: 'src',
     }),
     postcss({
-      extract: false,
+      extract: 'assets/styles/index.css',
       modules: true,
-      use: ['sass'],
+      use: {
+        sass: {
+          data: '@import "src/assets/styles/index.scss";',
+        },
+        less: null,
+        stylus: null,
+      },
+    }),
+    copy({
+      targets: [
+        {
+          src: 'src/assets/styles/_colors.scss',
+          dest: 'dist/assets/styles',
+        },
+        { src: 'src/assets/styles/_fonts.scss', dest: 'dist/assets/styles' },
+        { src: 'src/assets/styles/_mixins.scss', dest: 'dist/assets/styles' },
+        { src: 'src/assets/fonts/*', dest: 'dist/assets/fonts' },
+      ],
     }),
   ],
 });

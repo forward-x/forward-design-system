@@ -1,0 +1,55 @@
+// media
+@mixin superLargeMedia { //special for trade page
+  @media screen and (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin extraLargeMedia {
+  @media screen and (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin largeMedia {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin mediumMedia {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin smallMedia {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin extraSmallMedia {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin gradientBorder {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 4px double transparent;
+    border-radius: inherit;
+    @content;
+    -webkit-mask: linear-gradient($white 0 0) padding-box,
+      linear-gradient($white 0 0);
+    mask: linear-gradient($white 0 0) padding-box, linear-gradient($white 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+  }
+}

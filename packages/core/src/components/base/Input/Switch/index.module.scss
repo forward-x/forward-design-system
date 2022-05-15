@@ -1,0 +1,6 @@
+.switch {
+  :global(.react-switch-bg) {
+    background: transparent !important;
+    border: 1.5px solid var(--base-2);
+  }
+}

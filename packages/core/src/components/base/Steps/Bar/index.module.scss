@@ -1,0 +1,28 @@
+.steps {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: $white;
+
+  progress {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    flex-grow: 1;
+    height: 6px;
+    background-color: $dark-base-2;
+    border-radius: 28px;
+    overflow: hidden;
+
+    &::-webkit-progress-bar {
+      background-color: $dark-base-2;
+    }
+    &::-webkit-progress-value {
+      background-color: $forward-red-30;
+    }
+    &::-moz-progress-bar {
+      background-color: $forward-red-30;
+    }
+  }
+}

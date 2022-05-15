@@ -1,0 +1,110 @@
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--base-2);
+  padding: 8px 16px;
+  height: 40px;
+  border-radius: 8px;
+  position: relative;
+
+  @include smallMedia {
+    height: 48px;
+  }
+
+  &:focus-within,
+  &:hover {
+    border-color: var(--focused);
+  }
+
+  &.small {
+    height: 24px;
+    padding: 1px 8px;
+
+    @include smallMedia {
+      height: 36px;
+    }
+
+    input {
+      font-size: $text-small;
+      line-height: $line-height-small;
+
+      @include smallMedia {
+        font-size: $text-body;
+        line-height: $line-height-body;
+      }
+    }
+
+    .prefix svg {
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+    }
+    .suffix svg {
+      width: 16px;
+      height: 16px;
+      margin-left: 8px;
+    }
+  }
+  &.medium {
+    height: 32px;
+    font-size: $text-small;
+    line-height: $line-height-small;
+    padding: 4px 12px;
+    .prefix svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 4px;
+    }
+    .suffix svg {
+      width: 20px;
+      height: 20px;
+      margin-left: 8px;
+    }
+  }
+
+  input {
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    color: var(--primary-text);
+    font-family: $basier-circle;
+    font-size: $text-body;
+    line-height: $line-height-body;
+    display: flex;
+    background: transparent;
+
+    &:invalid {
+      border-color: $forward-red-40;
+    }
+
+    &::placeholder {
+      color: var(--placeholder-text);
+    }
+
+    &[type="password"] {
+      &::-ms-reveal,
+      &::-ms-clear {
+        display: none;
+      }
+    }
+  }
+
+  .prefix {
+    margin-right: 8px;
+    path {
+      fill: var(--placeholder-text);
+    }
+  }
+  .suffix {
+    margin-left: 10px;
+    color: var(--placeholder-text);
+    background-color: transparent;
+    font-size: $text-small;
+    line-height: $line-height-small;
+    path {
+      fill: var(--primary-text);
+    }
+  }
+}

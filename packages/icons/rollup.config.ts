@@ -16,7 +16,7 @@ export default defineConfig({
     },
   ],
   plugins: [
-    url(),
+    url({ destDir: 'dist/assets' }),
     svgr({ icon: true }),
     typescript({
       declaration: true,

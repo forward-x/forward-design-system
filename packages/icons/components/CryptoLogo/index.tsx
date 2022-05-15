@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { cloneElement, FC, ReactElement } from 'react';
 
 import clsx from 'clsx';
 
@@ -6,21 +6,21 @@ import styles from './index.module.scss';
 
 export interface ICryptoLogoProps {
   className?: string;
-  logo: ReactNode;
+  logo: ReactElement;
   size: 'M' | 'L' | 'XL';
 }
 
 const CryptoLogo: FC<ICryptoLogoProps> = ({ size, className, logo }) => {
-  return (
-    <div
-      className={clsx(className, styles.logo, {
-        [styles.logo_large]: size === 'L',
-        [styles.logo_extra_large]: size === 'XL',
-      })}
-    >
-      {logo}
-    </div>
-  );
+  return cloneElement(logo, {
+    className: clsx(
+      styles.logo,
+      {
+        [styles.large]: size === 'L',
+        [styles.extra_large]: size === 'XL',
+      },
+      className
+    ),
+  });
 };
 
 export default CryptoLogo;

@@ -20,8 +20,8 @@
       "version": "detect"
     },
     "import/resolver": {
-      "node": {
-        "paths": ["site/src"]
+      "typescript": {
+        "project": ["packages/**/tsconfig.json", "site/tsconfig.json"]
       }
     }
   },
@@ -48,7 +48,9 @@
     "@typescript-eslint/no-var-requires": "off",
     "react/prop-types": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
+    "react/self-closing-comp": "error",
     "import/no-unresolved": "off",
+    "import/default": "off",
     "semi": [2, "always"],
     "import/order": [
       "error",
@@ -65,6 +67,10 @@
             "pattern": "react",
             "group": "builtin",
             "position": "after"
+          },
+          {
+            "pattern": "@forward-ui/*",
+            "group": "external"
           }
         ],
         "pathGroupsExcludedImportTypes": ["react"],
@@ -76,7 +82,7 @@
       }
     ],
     "prefer-arrow/prefer-arrow-functions": ["error"],
-    "complexity": ["error", 5],
+    "complexity": ["warning", 5],
     "max-depth": "error",
     "prefer-const": "error",
     "no-lonely-if": "error",

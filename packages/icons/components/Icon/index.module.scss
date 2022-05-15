@@ -1,19 +1,35 @@
 .icon {
-  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
 
-  svg * {
+  path {
     fill: #454561;
   }
 
-  &_light svg * {
+  &.light path {
     fill: white;
   }
 
-  &_small {
-    font-size: 20px;
+  &.large {
+    width: 32px;
+    height: 32px;
   }
 
-  &_extra_small {
-    font-size: 16px;
+  &.small {
+    width: 20px;
+    height: 20px;
+  }
+
+  &.extra_small {
+    width: 16px;
+    height: 16px;
+  }
+
+  &.extra_extra_small {
+    width: 12px;
+    height: 12px;
   }
 }

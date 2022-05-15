@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { cloneElement, FC, ReactElement } from 'react';
 
 import clsx from 'clsx';
 
@@ -6,23 +6,30 @@ import styles from './index.module.scss';
 
 export interface IIconProps {
   className?: string;
-  icon: ReactNode;
-  size: 'M' | 'S' | 'XS';
-  color: 'dark' | 'light';
+  icon: ReactElement;
+  size?: 'XXS' | 'XS' | 'S' | 'M' | 'L';
+  color?: 'dark' | 'light';
 }
 
-const Icon: FC<IIconProps> = ({ size, color, className, icon }) => {
-  return (
-    <div
-      className={clsx(className, styles.icon, {
-        [styles.icon_light]: color === 'light',
-        [styles.icon_small]: size === 'S',
-        [styles.icon_extra_small]: size === 'XS',
-      })}
-    >
-      {icon}
-    </div>
-  );
+const Icon: FC<IIconProps> = ({
+  size = 'M',
+  color = 'dark',
+  className,
+  icon,
+}) => {
+  return cloneElement(icon, {
+    className: clsx(
+      styles.icon,
+      {
+        [styles.light]: color === 'light',
+        [styles.large]: size === 'L',
+        [styles.small]: size === 'S',
+        [styles.extra_small]: size === 'XS',
+        [styles.extra_extra_small]: size === 'XXS',
+      },
+      className
+    ),
+  });
 };
 
 export default Icon;

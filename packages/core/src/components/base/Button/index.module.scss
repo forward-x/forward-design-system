@@ -1,0 +1,203 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 8px;
+  width: 100%;
+  transition: all 0.8s ease;
+  color: $dark-primary-text;
+  font-size: 20px;
+  height: 40px;
+  padding: 5px 10px;
+  font-weight: $font-bold;
+  font-size: $text-title;
+  line-height: $line-height-title;
+
+  @include smallMedia {
+    padding: 9px 10px;
+    height: 48px;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    path {
+      transition: all 0.8s ease;
+      fill: $dark-primary-text;
+    }
+  }
+
+  &.small {
+    height: 24px;
+    padding: 2px 10px 1px;
+    font-weight: $font-medium;
+    font-size: $text-small;
+    line-height: $line-height-small;
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    @include smallMedia {
+      padding: 6px 10px;
+      height: 36px;
+      font-size: $text-body;
+      line-height: $line-height-body;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  &.medium {
+    height: 32px;
+    padding: 4px 10px;
+    font-weight: $font-medium;
+    font-size: $text-body;
+    line-height: $line-height-body;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &.primary {
+    background: $forward-red;
+    z-index: 0;
+    color: $light-base-1 !important;
+    path {
+      fill: $light-base-1 !important;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: inherit;
+      z-index: -1;
+
+      background: $gradient-forward-red;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    &:hover,
+    &:focus {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  &.secondary,
+  &.icon {
+    background: var(--base-2);
+    path {
+      fill: var(--primary-text);
+    }
+
+    &:hover,
+    &:focus {
+      background: $xiketic-50;
+      color: var(--hovered-text);
+      path {
+        fill: var(--hovered-text);
+      }
+    }
+  }
+  &.tertiary {
+    background: transparent !important;
+    border: 1.5px solid var(--base-2);
+
+    &:hover,
+    &:focus {
+      color: var(--hovered-text);
+      border-color: $xiketic-10;
+      path {
+        fill: var(--hovered-text);
+      }
+    }
+
+    &:disabled {
+      border-color: var(--disabled);
+    }
+  }
+  &.danger {
+    color: $dark-primary-text !important;
+    background: $forward-red-40;
+    path {
+      fill: $dark-primary-text;
+    }
+
+    &:hover,
+    &:focus {
+      background: $forward-red-50;
+    }
+  }
+  &.link {
+    text-decoration: underline;
+    background: transparent !important;
+
+    &:hover,
+    &:focus {
+      color: $xiketic-30;
+      path {
+        fill: $xiketic-30;
+      }
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+    background: var(--disabled);
+    color: var(--placeholder-text) !important;
+    path {
+      fill: var(--placeholder-text) !important;
+    }
+  }
+
+  .startIcon {
+    margin-right: 8px;
+  }
+  .endIcon {
+    margin-left: 8px;
+  }
+}
+
+[data-theme="light"] {
+  .button {
+    color: $light-secondary-text;
+    svg {
+      path {
+        fill: $light-secondary-text;
+      }
+    }
+    &.danger {
+      background: $forward-red-50;
+
+      &:hover,
+      &:focus {
+        background: $forward-red-40;
+      }
+    }
+    &.secondary,
+    &.icon {
+      &:hover,
+      &:focus {
+        background: $light-base-2;
+      }
+    }
+    &.tertiary {
+      &:hover,
+      &:focus {
+        border-color: $xiketic-50;
+      }
+    }
+    &:disabled {
+      background: var(--disabled);
+    }
+  }
+}

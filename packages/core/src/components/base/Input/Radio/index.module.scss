@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--primary-text) !important;
+    position: relative;
+    cursor: pointer;
+    font-size: $text-body;
+    line-height: $line-height-body;
+
+    @include smallMedia {
+      font-size: $text-small;
+      line-height: $line-height-small;
+    }
+
+    .radio {
+      width: 24px;
+      height: 24px;
+      border: 2px solid var(--base-2);
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include smallMedia {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+
+  input[type="radio"] {
+    display: none;
+
+    &:checked ~ label .radio {
+      border: 1px solid $forward-red-30;
+
+      &::before {
+        content: "";
+        border-radius: 100%;
+        background-color: $forward-red-30;
+        width: 14px;
+        height: 14px;
+
+        @include smallMedia {
+          width: 19px;
+          height: 19px;
+        }
+      }
+    }
+  }
+}

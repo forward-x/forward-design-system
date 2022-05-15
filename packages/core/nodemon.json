@@ -3,5 +3,5 @@
     "ts": "yarn build"
   },
   "ext": "*",
-  "watch": ["index.ts", "components"]
+  "watch": ["src/index.ts", "src"]
 }

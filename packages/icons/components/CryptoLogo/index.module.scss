@@ -1,11 +1,17 @@
 .logo {
-  font-size: 24px;
-  
-  &_large {
-    font-size: 20px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.large {
+    width: 20px;
+    height: 20px;
   }
 
-  &_extra_large {
-    font-size: 16px;
+  &.extra_large {
+    width: 16px;
+    height: 16px;
   }
 }
