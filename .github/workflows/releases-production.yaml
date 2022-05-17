@@ -18,6 +18,10 @@ jobs:
           cache: 'yarn'
           cache-dependency-path: yarn.lock
 
+      - name: Set up npm
+        run: |
+          npm set "//registry.npmjs.org/:_authToken=${{secrets.NPM_TOKEN}}"
+
       - name: Install dependencies
         run: yarn && yarn bootstrap
 
