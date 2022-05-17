@@ -1,14 +1,14 @@
 {
   "name": "@forward-protocol/ui-demo",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "private": true,
   "scripts": {
     "start": "react-app-rewired start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet --fix"
   },
   "dependencies": {
-    "@forward-protocol/ui-icons": "^1.0.6",
-    "@forward-protocol/uikit": "^1.0.6",
+    "@forward-protocol/ui-icons": "^1.0.7",
+    "@forward-protocol/uikit": "^1.0.7",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.1",
