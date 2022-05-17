@@ -22,7 +22,7 @@
     "dev:ui-site": "lerna exec --scope=@forward-protocol/ui-demo -- yarn start",
     "dev:ui-icons": "lerna exec --scope=@forward-protocol/ui-icons -- yarn start",
     "build:all": "lerna run build --npm-client=yarn",
-    "release": "lerna publish --yes --conventional-commits -m \"chore(release): publish %s\""
+    "release": "lerna publish --yes --conventional-commits -m \"chore(release): publish\""
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.20.0",
