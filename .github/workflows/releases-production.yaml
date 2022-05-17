@@ -26,5 +26,8 @@ jobs:
       - name: Install dependencies
         run: yarn && yarn bootstrap
 
+      - name: For testing
+        run: git diff
+
       - name: Publish package to npm
         run: yarn release
