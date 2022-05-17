@@ -29,6 +29,15 @@ export default defineConfig({
       modules: true,
       use: ['sass'],
     }),
-    copy({ targets: [{ src: 'package.json', dest: 'dist' }] }),
+    copy({
+      targets: [
+        { src: 'package.json', dest: 'dist' },
+        // Workaround for 'Can't resolve style-inject
+        {
+          src: __dirname + '../../node_modules/style-inject',
+          dest: 'dist/node_modules/style-inject',
+        },
+      ],
+    }),
   ],
 });
