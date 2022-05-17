@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet --fix",
-    "bootstrap": "lerna clean --yes && yarn link:all && lerna bootstrap",
+    "prebootstrap": "lerna clean --yes && yarn link:all",
+    "bootstrap": "lerna bootstrap",
     "link:all": "yarn link:icons && yarn link:core",
     "link:core": "lerna add @forward-protocol/uikit --scope=@forward-protocol/ui-demo",
     "link:icons": "lerna add @forward-protocol/ui-icons --scope=@forward-protocol/ui-demo && lerna add @forward-protocol/ui-icons --scope=@forward-protocol/uikit",
@@ -19,7 +20,7 @@
     "dev:ui-core": "lerna exec --scope=@forward-protocol/uikit -- yarn start",
     "dev:ui-site": "lerna exec --scope=@forward-protocol/ui-demo -- yarn start",
     "dev:ui-icons": "lerna exec --scope=@forward-protocol/ui-icons -- yarn start",
-    "release": "lerna publish"
+    "release": "lerna publish --yes"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.20.0",
