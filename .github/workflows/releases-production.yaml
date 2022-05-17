@@ -28,15 +28,18 @@ jobs:
           yarn --frozen-lockfile
           yarn bootstrap
 
-      - name: Set up 
+      - name: Install dependencies
         run: |
           yarn --frozen-lockfile
           yarn bootstrap
 
+      - name: Build every package
+        run: yarn build:all
+
       - name: Configure git account
         run: |
-          git config user.name "{{github.actor}}"
-          git config user.email "{{github.actor}}@user.noreply.github.com"
+          git config user.name "${{github.actor}}"
+          git config user.email "${{github.actor}}@user.noreply.github.com"
       
       - name: Who am I on npm
         run: npm whoami
