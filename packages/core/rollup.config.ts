@@ -44,6 +44,7 @@ export default defineConfig({
         { src: 'src/assets/styles/_fonts.scss', dest: 'dist/assets/styles' },
         { src: 'src/assets/styles/_mixins.scss', dest: 'dist/assets/styles' },
         { src: 'src/assets/fonts/*', dest: 'dist/assets/fonts' },
+        { src: 'package.json', dest: 'dist/package.json' },
       ],
     }),
   ],

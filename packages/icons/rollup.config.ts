@@ -2,6 +2,7 @@ import typescript from '@rollup/plugin-typescript';
 import url from '@rollup/plugin-url';
 import svgr from '@svgr/rollup';
 import { defineConfig } from 'rollup';
+import copy from 'rollup-plugin-copy';
 import postcss from 'rollup-plugin-postcss';
 
 export default defineConfig({
@@ -28,5 +29,6 @@ export default defineConfig({
       modules: true,
       use: ['sass'],
     }),
+    copy({ targets: [{ src: 'package.json', dest: 'dist/package.json' }] }),
   ],
 });

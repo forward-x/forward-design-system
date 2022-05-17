@@ -44,6 +44,7 @@
     "nodemon": "^2.0.15",
     "prettier": "^2.6.2",
     "rollup": "^2.70.2",
+    "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-postcss": "^4.0.2",
     "sass": "^1.50.1",
     "ts-node": "^10.7.0"
