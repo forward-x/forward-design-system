@@ -28,11 +28,6 @@ jobs:
           yarn --frozen-lockfile
           yarn bootstrap
 
-      - name: Install dependencies
-        run: |
-          yarn --frozen-lockfile
-          yarn bootstrap
-
       - name: Build every package
         run: yarn build:all
 
