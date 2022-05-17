@@ -20,8 +20,7 @@ jobs:
           cache-dependency-path: yarn.lock
 
       - name: Set up npm
-        run:
-          npm set "//registry.npmjs.org/:_authToken=${{secrets.NPM_TOKEN}}"
+        run: npm set "//registry.npmjs.org/:_authToken=${{secrets.NPM_TOKEN}}"
 
       - name: Install dependencies
         run: |
@@ -35,9 +34,6 @@ jobs:
         run: |
           git config user.name "${{github.actor}}"
           git config user.email "${{github.actor}}@users.noreply.github.com"
-      
-      - name: Who am I on npm
-        run: npm whoami
 
       - name: Publish package to npm
         run: yarn release
