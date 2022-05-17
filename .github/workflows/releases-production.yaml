@@ -1,7 +1,8 @@
 name: Production releases
 on:
   push:
-  
+    branches:
+      - add-publish-script
 jobs:
   releases:
     runs-on: ubuntu-latest
