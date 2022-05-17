@@ -21,7 +21,7 @@
     "dev:ui-core": "lerna exec --scope=@forward-protocol/uikit -- yarn start",
     "dev:ui-site": "lerna exec --scope=@forward-protocol/ui-demo -- yarn start",
     "dev:ui-icons": "lerna exec --scope=@forward-protocol/ui-icons -- yarn start",
-    "release": "lerna publish --yes"
+    "release": "lerna publish --yes --conventional-commits"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.20.0",
