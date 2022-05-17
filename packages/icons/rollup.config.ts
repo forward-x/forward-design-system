@@ -34,7 +34,7 @@ export default defineConfig({
         { src: 'package.json', dest: 'dist' },
         // Workaround for 'Can't resolve style-inject
         {
-          src: __dirname + '../../node_modules/style-inject',
+          src: '../../node_modules/style-inject',
           dest: 'dist/node_modules/style-inject',
         },
       ],
