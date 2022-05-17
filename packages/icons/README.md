@@ -1,4 +1,4 @@
-# @forward-ui/core
+# @forward-protocol/uikit
 
 ## About
 
@@ -14,19 +14,19 @@ This package contains useful icons.
 with npm
 
 ```shell
-  npm install @forward-ui/icons
+  npm install @forward-protocol/ui-icons
 ```
 
 with yarn
 
 ```shell
-  yarn add @forward-ui/icons
+  yarn add @forward-protocol/ui-icons
 ```
 
 ## Example usage
 
 ```typescript
-import { UserIcon } from '@forward-ui/icons';
+import { UserIcon } from '@forward-protocol/ui-icons';
 
 // Then use it as a normal React component
 <UserIcon size="M" />;

@@ -1,5 +1,6 @@
-import { Button } from '@forward-ui/core';
 import React from 'react';
+
+import { Button } from '@forward-protocol/uikit';
 
 import logo from './logo.svg';
 // import './App.scss';

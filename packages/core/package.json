@@ -19,6 +19,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet --fix"
   },
   "dependencies": {
+    "@forward-protocol/ui-icons": "^1.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-merge-refs": "^1.1.0",
