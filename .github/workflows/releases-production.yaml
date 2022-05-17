@@ -34,7 +34,7 @@ jobs:
       - name: Configure git account
         run: |
           git config user.name "${{github.actor}}"
-          git config user.email "${{github.actor}}@user.noreply.github.com"
+          git config user.email "${{github.actor}}@users.noreply.github.com"
       
       - name: Who am I on npm
         run: npm whoami
