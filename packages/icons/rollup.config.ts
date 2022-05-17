@@ -29,6 +29,6 @@ export default defineConfig({
       modules: true,
       use: ['sass'],
     }),
-    copy({ targets: [{ src: 'package.json', dest: 'dist/package.json' }] }),
+    copy({ targets: [{ src: 'package.json', dest: 'dist' }] }),
   ],
 });
