@@ -1,8 +1,17 @@
 {
-  "name": "@forward-ui/icons",
+  "name": "@forward-protocol/ui-icons",
   "version": "0.1.0",
-  "private": true,
   "main": "dist/index.js",
+  "author": {
+    "name": "forward-protocol"
+  },
+  "license": "MIT",
+  "description": "A project containing icons used in UI",
+  "keywords": [
+    "Forward",
+    "React",
+    "icons"
+  ],
   "scripts": {
     "build": "rollup -c ./rollup.config.ts",
     "start": "nodemon index.ts -L -q",
@@ -44,5 +53,9 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
   }
 }

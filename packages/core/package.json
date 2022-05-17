@@ -1,15 +1,24 @@
 {
-  "name": "@forward-ui/core",
+  "name": "@forward-protocol/uikit",
   "version": "0.1.0",
-  "private": true,
   "main": "dist/index.js",
+  "author": {
+    "name": "forward-protocol"
+  },
+  "license": "MIT",
+  "description": "A React UI package used by Forward Enterprise",
+  "keywords": [
+    "Forward",
+    "React",
+    "UI",
+    "design-systems"
+  ],
   "scripts": {
     "build": "rollup -c ./rollup.config.ts",
     "start": "nodemon src/index.ts -L -q",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet --fix"
   },
   "dependencies": {
-    "@forward-ui/icons": "^0.1.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-merge-refs": "^1.1.0",
@@ -41,5 +50,9 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
   }
 }
