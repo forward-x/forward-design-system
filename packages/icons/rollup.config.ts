@@ -27,7 +27,7 @@ export default defineConfig({
       rootDir: '.',
     }),
     commonjs(),
-    nodeResolve({ preferBuiltins: false }),
+    nodeResolve({ resolveOnly: ['style-inject'] }),
     postcss({
       extract: false,
       modules: true,

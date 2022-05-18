@@ -16,7 +16,6 @@ export default defineConfig({
       sourcemap: true,
       preserveModules: true,
       preserveModulesRoot: 'src',
-      exports: 'named',
     },
   ],
   plugins: [
@@ -29,8 +28,7 @@ export default defineConfig({
     }),
     commonjs(),
     nodeResolve({
-      preferBuiltins: false,
-      resolveOnly: (module) => !module.includes('@forward-protocol/ui-icons'),
+      resolveOnly: ['tslib'],
     }),
     postcss({
       extract: 'assets/styles/index.css',
