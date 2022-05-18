@@ -12,6 +12,14 @@
     "React",
     "icons"
   ],
+  "homepage": "https://github.com/Forward-Protocol/forward-design-system/blob/main/packages/icons/README.md",
+  "bugs": {
+    "url": "https://github.com/Forward-Protocol/forward-design-system/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Forward-Protocol/forward-design-system.git"
+  },
   "scripts": {
     "build": "rollup -c ./rollup.config.ts",
     "start": "nodemon index.ts -L -q",
