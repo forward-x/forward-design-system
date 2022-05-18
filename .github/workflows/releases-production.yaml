@@ -1,0 +1,42 @@
+name: Production packages releases
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/releases-production.yml
+      - packages/**
+jobs:
+  releases:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+          cache: 'yarn'
+          cache-dependency-path: yarn.lock
+
+      - name: Set up npm
+        run: npm set "//registry.npmjs.org/:_authToken=${{secrets.NPM_TOKEN}}"
+
+      - name: Install dependencies
+        run: |
+          yarn --frozen-lockfile
+          yarn bootstrap
+
+      - name: Build every package
+        run: yarn build:all
+
+      - name: Configure git account
+        run: |
+          git config user.name "${{github.actor}}"
+          git config user.email "${{github.actor}}@users.noreply.github.com"
+
+      - name: Publish package to npm
+        run: yarn release

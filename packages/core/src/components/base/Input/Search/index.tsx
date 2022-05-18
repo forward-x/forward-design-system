@@ -1,6 +1,6 @@
 import React, { FC, InputHTMLAttributes } from 'react';
 
-import { SearchIcon } from '@forward-ui/icons';
+import { SearchIcon } from '@forward-protocol/ui-icons';
 import clsx from 'clsx';
 
 import styles from './index.module.scss';

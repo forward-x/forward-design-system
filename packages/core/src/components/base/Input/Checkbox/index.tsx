@@ -1,6 +1,6 @@
 import React, { FC, InputHTMLAttributes, ReactNode } from 'react';
 
-import { CheckmarkIcon } from '@forward-ui/icons';
+import { CheckmarkIcon } from '@forward-protocol/ui-icons';
 import clsx from 'clsx';
 
 import styles from './index.module.scss';

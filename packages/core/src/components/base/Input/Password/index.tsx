@@ -1,6 +1,6 @@
 import React, { FC, InputHTMLAttributes, useRef, useState } from 'react';
 
-import { LockIcon, ViewIcon, ViewOffIcon } from '@forward-ui/icons';
+import { LockIcon, ViewIcon, ViewOffIcon } from '@forward-protocol/ui-icons';
 import clsx from 'clsx';
 
 import styles from './index.module.scss';

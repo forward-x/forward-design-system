@@ -1,4 +1,5 @@
-# @forward-ui/site
+# @forward-protocol/ui-demo
+
 ## About
 
 This package is website for demonstrating how to use this UI library.

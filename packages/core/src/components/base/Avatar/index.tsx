@@ -1,6 +1,6 @@
 import React, { FC, HTMLProps } from 'react';
 
-import { Icon } from '@forward-ui/icons';
+import { Icon } from '@forward-protocol/ui-icons';
 import clsx from 'clsx';
 
 import { ReactComponent as ForwardMan } from '../../../assets/icons/ForwardMan.svg';

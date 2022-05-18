@@ -1,4 +1,4 @@
-# @forward-ui/core
+# @forward-protocol/uikit
 
 ## About
 
@@ -14,31 +14,33 @@ This package provides not only all core UI components, but also scss variables a
 with npm
 
 ```shell
-  npm install @forward-ui/core
+  npm install @forward-protocol/uikit
 ```
 
 with yarn
 
 ```shell
-  yarn add @forward-ui/core
+  yarn add @forward-protocol/uikit
 ```
 
 ## Example usage
 
 Using components
+
 ```typescript
-import { Avatar } from '@forward-ui/core';
+import { Avatar } from '@forward-protocol/uikit';
 
 // Import styles
-import '@forward-ui/core/dist/assets/styles/index.css';
+import '@forward-protocol/uikit/dist/assets/styles/index.css';
 
 // Then use it as a normal React component
 <Avatar variant="Default" size="XL" />;
 ```
 
 Using scss variables and mixins in scss files
+
 ```scss
-@import "~@forward-ui/core/dist/assets/styles/_colors_.scss";
+@import '~@forward-protocol/uikit/dist/assets/styles/_colors_.scss';
 ```
 
 ## Available Scripts
