@@ -1,3 +1,4 @@
+import replace from '@rollup/plugin-replace';
 import typescript from '@rollup/plugin-typescript';
 import url from '@rollup/plugin-url';
 import svgr from '@svgr/rollup';
@@ -46,6 +47,14 @@ export default defineConfig({
         { src: 'src/assets/fonts/*', dest: 'dist/assets/fonts' },
         { src: 'package.json', dest: 'dist' },
       ],
+    }),
+    replace({
+      preventAssignment: true,
+      delimiters: ['', ''],
+      values: {
+        '@forward-protocol/ui-icons/dist/assets/styles/index.css':
+          '@forward-protocol/ui-icons/assets/styles/index.css',
+      },
     }),
   ],
 });
