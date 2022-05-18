@@ -1,8 +1,11 @@
-name: Production releases
+name: Production packages releases
 on:
   push:
     branches:
-      - add-publish-script
+      - main
+    paths:
+      - .github/workflows/releases-production.yml
+      - packages/**
 jobs:
   releases:
     runs-on: ubuntu-latest

@@ -3,7 +3,7 @@
   "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "ignoreChanges": ["**/*.md"],
+  "ignoreChanges": ["**/*.md", ".github/**"],
   "command": {
     "version": {
       "message": "chore(release): publish"
