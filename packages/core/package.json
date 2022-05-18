@@ -1,6 +1,6 @@
 {
   "name": "@forward-protocol/uikit",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "main": "dist/index.js",
   "author": {
     "name": "forward-protocol"
@@ -19,7 +19,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet --fix"
   },
   "dependencies": {
-    "@forward-protocol/ui-icons": "^1.0.10",
+    "@forward-protocol/ui-icons": "^1.0.11",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-merge-refs": "^1.1.0",
