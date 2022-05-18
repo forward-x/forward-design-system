@@ -1,5 +1,3 @@
-import commonjs from '@rollup/plugin-commonjs';
-import { nodeResolve } from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import url from '@rollup/plugin-url';
 import svgr from '@svgr/rollup';
@@ -26,13 +24,29 @@ export default defineConfig({
       declarationDir: 'dist',
       rootDir: '.',
     }),
-    commonjs(),
-    nodeResolve({ resolveOnly: ['style-inject'] }),
     postcss({
       extract: false,
       modules: true,
       use: ['sass'],
     }),
+    {
+      // https://github.com/egoist/rollup-plugin-postcss/issues/381#issuecomment-880771065
+      name: 'Custom rollup plugin by dandrewgarvin',
+      generateBundle: (options, bundle) => {
+        Object.entries(bundle).forEach((entry) => {
+          if (!entry[0].match(/.*(.scss.js)$/)) {
+            return;
+          }
+
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          bundle[entry[0]].code = entry[1].code.replace(
+            '../../node_modules/style-inject/dist/style-inject.es.js',
+            'style-inject'
+          );
+        });
+      },
+    },
     copy({
       targets: [{ src: 'package.json', dest: 'dist' }],
     }),
