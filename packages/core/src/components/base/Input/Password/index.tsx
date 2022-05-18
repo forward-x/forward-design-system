@@ -11,7 +11,6 @@ export interface IInputPasswordProps
     'prefix' | 'type' | 'size'
   > {
   className?: string;
-  disabled?: boolean;
   /**
    * L - 40px (desktop) / 48px (mobile)
    *
@@ -26,7 +25,6 @@ export interface IInputPasswordProps
 
 const Password: FC<IInputPasswordProps> = ({
   className,
-  disabled,
   size = 'L',
   ...props
 }) => {
@@ -51,12 +49,7 @@ const Password: FC<IInputPasswordProps> = ({
       <div className={styles.prefix}>
         <LockIcon />
       </div>
-      <input
-        {...props}
-        disabled={disabled}
-        type={isShown ? 'text' : 'password'}
-        ref={inputRef}
-      />
+      <input {...props} type={isShown ? 'text' : 'password'} ref={inputRef} />
       <button
         className={styles.suffix}
         onClick={() => setShow(!isShown)}
