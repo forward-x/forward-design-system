@@ -29,7 +29,7 @@ export default defineConfig({
     }),
     commonjs(),
     nodeResolve({
-      preferBuiltins: true,
+      preferBuiltins: false,
       resolveOnly: (module) => !module.includes('@forward-protocol/ui-icons'),
     }),
     postcss({
