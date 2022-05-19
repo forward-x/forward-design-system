@@ -1,4 +1,4 @@
-# @forward-protocol/uikit
+# @forward-protocol/ui-icons
 
 ## About
 
@@ -27,6 +27,9 @@ with yarn
 
 ```typescript
 import { UserIcon } from '@forward-protocol/ui-icons';
+
+// Import styles (You can also use without importing it as well)
+import '@forward-protocol/ui-icons/assets/styles/index.css';
 
 // Then use it as a normal React component
 <UserIcon size="M" />;
