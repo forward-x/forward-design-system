@@ -2,7 +2,7 @@ name: Production packages releases
 on:
   push:
     branches:
-      - fix-incorrect-publish-script
+      - main
     paths:
       - .github/workflows/releases-production.yml
       - packages/**
