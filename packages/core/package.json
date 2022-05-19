@@ -22,7 +22,7 @@
     "url": "https://github.com/Forward-Protocol/forward-design-system.git"
   },
   "scripts": {
-    "prepublishOnly": "replace-in-files --string='@forward-protocol/ui-icons/dist/assets/styles/index.css' --replacement='@forward-protocol/ui-icons/assets/styles/index.css' dist./index.js",
+    "prepublishOnly": "replace-in-files --string='@forward-protocol/ui-icons/dist/assets/styles/index.css' --replacement='@forward-protocol/ui-icons/assets/styles/index.css' dist/index.js",
     "build": "rollup -c ./rollup.config.ts",
     "start": "nodemon src/index.ts -L -q",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet --fix"
