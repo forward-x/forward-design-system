@@ -1,0 +1,18 @@
+name: Remove WIP label
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  remove_label:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name:
+        uses: andymckay/labeler@master
+        with:
+          remove-labels: "WIP"
