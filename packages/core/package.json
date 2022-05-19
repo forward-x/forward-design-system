@@ -13,6 +13,14 @@
     "UI",
     "design-systems"
   ],
+  "homepage": "https://github.com/Forward-Protocol/forward-design-system/blob/main/packages/core/README.md",
+  "bugs": {
+    "url": "https://github.com/Forward-Protocol/forward-design-system/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Forward-Protocol/forward-design-system.git"
+  },
   "scripts": {
     "build": "rollup -c ./rollup.config.ts",
     "start": "nodemon src/index.ts -L -q",

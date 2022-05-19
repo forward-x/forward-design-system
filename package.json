@@ -10,6 +10,14 @@
     "packages/*",
     "site"
   ],
+  "homepage": "https://github.com/Forward-Protocol/forward-design-system/blob/main/README.md",
+  "bugs": {
+    "url": "https://github.com/Forward-Protocol/forward-design-system/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Forward-Protocol/forward-design-system.git"
+  },
   "scripts": {
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet --fix",
     "prebootstrap": "lerna clean --yes && yarn link:all",

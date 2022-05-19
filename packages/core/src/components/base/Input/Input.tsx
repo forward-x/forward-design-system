@@ -16,7 +16,6 @@ export interface IInputProps
     'prefix' | 'type' | 'size'
   > {
   className?: string;
-  disabled?: boolean;
   prefix?: ReactNode;
   suffix?: ReactNode;
   /**
@@ -32,7 +31,7 @@ export interface IInputProps
 }
 
 const Input = forwardRef<HTMLInputElement | null, IInputProps>(
-  ({ className, disabled, prefix, suffix, size = 'L', ...props }, ref) => {
+  ({ className, prefix, suffix, size = 'L', ...props }, ref) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
     const handleClick = () => {
@@ -52,12 +51,7 @@ const Input = forwardRef<HTMLInputElement | null, IInputProps>(
         onClick={handleClick}
       >
         {prefix && <div className={styles.prefix}>{prefix}</div>}
-        <input
-          {...props}
-          disabled={disabled}
-          type="text"
-          ref={mergeRefs([inputRef, ref])}
-        />
+        <input {...props} type="text" ref={mergeRefs([inputRef, ref])} />
         {suffix && <div className={styles.suffix}>{suffix}</div>}
       </div>
     );

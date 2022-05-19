@@ -31,27 +31,14 @@ Using components
 import { Avatar } from '@forward-protocol/uikit';
 
 // Import styles
-import '@forward-protocol/uikit/dist/assets/styles/index.css';
+import '@forward-protocol/uikit/assets/styles/index.css';
 
 // Then use it as a normal React component
-<Avatar variant="Default" size="XL" />;
+<Avatar variant="default" size="XL" />;
 ```
 
 Using scss variables and mixins in scss files
 
 ```scss
-@import '~@forward-protocol/uikit/dist/assets/styles/_colors_.scss';
+@import '~@forward-protocol/uikit/assets/styles/_colors.scss';
 ```
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs nodemon on the entry file and watching for changes.\
-It will automatically trigger the build script for further using it in the demo site.
-
-### `yarn build`
-
-Build package and output in `dist` folder using rollup.

@@ -1,4 +1,4 @@
-import React, { FC, HTMLProps } from 'react';
+import React, { FC } from 'react';
 
 import { Icon } from '@forward-protocol/ui-icons';
 import clsx from 'clsx';
@@ -8,7 +8,7 @@ import { ReactComponent as UserIcon } from '../../../assets/icons/UserIcon.svg';
 
 import styles from './index.module.scss';
 
-export interface IAvatarProps extends Omit<HTMLProps<HTMLDivElement>, 'size'> {
+export interface IAvatarProps {
   /**
    * @default 'default'
    */
