@@ -1,6 +1,6 @@
 {
   "name": "@forward-protocol/ui-icons",
-  "version": "1.0.17",
+  "version": "1.0.19",
   "main": "dist/index.js",
   "author": {
     "name": "forward-protocol"
@@ -12,7 +12,7 @@
     "React",
     "icons"
   ],
-  "homepage": "https://github.com/Forward-Protocol/forward-design-system/blob/main/packages/icons/README.md",
+  "homepage": "https://github.com/Forward-Protocol/forward-design-system/tree/main/packages/icons#readme",
   "bugs": {
     "url": "https://github.com/Forward-Protocol/forward-design-system/issues"
   },
