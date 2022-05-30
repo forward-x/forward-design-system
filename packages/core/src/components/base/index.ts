@@ -1,8 +1,22 @@
-import Avatar from './Avatar';
-import Breadcrumbs from './Breadcrumbs';
-import Button from './Button';
-import Chip from './Chip';
-import Input from './Input';
-import Steps from './Steps';
+export type { IAvatarProps } from './Avatar';
+export { default as Avatar } from './Avatar';
 
-export { Avatar, Breadcrumbs, Button, Input, Chip, Steps };
+export type { IBreadcrumbsProps } from './Breadcrumbs';
+export { default as Breadcrumbs } from './Breadcrumbs';
+
+export type { IButtonProps } from './Button';
+export { default as Button } from './Button';
+
+export type {
+  ICheckboxProps,
+  IInputDigitsProps,
+  IInputPasswordProps,
+  IInputProps,
+  IInputSearchProps,
+  IRadioProps,
+  ISwitchProps,
+} from './Input';
+export { default as Input } from './Input';
+
+export type { IStepsBarProps, IStepsRadialProps } from './Steps';
+export { default as Steps } from './Steps';

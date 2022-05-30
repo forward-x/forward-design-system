@@ -1,10 +1,10 @@
-import Checkbox from './Checkbox';
-import Digits from './Digits';
-import Default from './Input';
-import Password from './Password';
-import Radio from './Radio';
-import Search from './Search';
-import Switch from './Switch';
+import Checkbox, { ICheckboxProps } from './Checkbox';
+import Digits, { IInputDigitsProps } from './Digits';
+import Default, { IInputProps } from './Input';
+import Password, { IInputPasswordProps } from './Password';
+import Radio, { IRadioProps } from './Radio';
+import Search, { IInputSearchProps } from './Search';
+import Switch, { ISwitchProps } from './Switch';
 
 const Input = Object.assign(Default, {
   Password,
@@ -15,4 +15,13 @@ const Input = Object.assign(Default, {
   Switch,
 });
 
+export type {
+  ICheckboxProps,
+  IInputDigitsProps,
+  IInputPasswordProps,
+  IInputProps,
+  IRadioProps,
+  IInputSearchProps,
+  ISwitchProps,
+};
 export default Input;

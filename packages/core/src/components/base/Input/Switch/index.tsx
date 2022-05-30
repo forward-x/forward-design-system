@@ -8,11 +8,11 @@ import { useMediaQuery } from '../../../../hooks';
 
 import styles from './index.module.scss';
 
-export interface ISwitch extends ReactSwitchProps {
+export interface ISwitchProps extends ReactSwitchProps {
   className?: string;
 }
 
-const Switch: FC<ISwitch> = (
+const Switch: FC<ISwitchProps> = (
   {
     onChange,
     className,
