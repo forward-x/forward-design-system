@@ -1,4 +1,2 @@
-import useEventListener from './useEventListener';
-import useMediaQuery from './useMediaQuery';
-
-export { useEventListener, useMediaQuery };
+export { default as useEventListener } from './useEventListener';
+export { default as useMediaQuery } from './useMediaQuery';

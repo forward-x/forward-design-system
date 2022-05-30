@@ -1,7 +1,9 @@
 {
   "name": "@forward-protocol/uikit",
   "version": "1.0.21",
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
   "author": {
     "name": "forward-protocol"
   },
@@ -29,6 +31,7 @@
   },
   "dependencies": {
     "@forward-protocol/ui-icons": "^1.0.21",
+    "clsx": "^1.1.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-merge-refs": "^1.1.0",
@@ -56,7 +59,8 @@
     "rollup": "^2.70.2",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-copy": "^3.4.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-node-externals": "^4.0.0",
     "rollup-plugin-postcss": "^4.0.2",
     "sass": "^1.50.1"
   },

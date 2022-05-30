@@ -5,7 +5,7 @@ import clsx from 'clsx';
 
 import styles from './index.module.scss';
 
-export interface IInputPasswordProps
+export interface IInputSearchProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'size'> {
   className?: string;
   /**
@@ -20,7 +20,7 @@ export interface IInputPasswordProps
   size?: 'L' | 'M' | 'S';
 }
 
-const Password: FC<IInputPasswordProps> = ({
+const Password: FC<IInputSearchProps> = ({
   className,
   size = 'L',
   ...props

@@ -1,5 +1,3 @@
-import path from 'path';
-
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import url from '@rollup/plugin-url';
@@ -7,18 +5,22 @@ import svgr from '@svgr/rollup';
 import { defineConfig } from 'rollup';
 import commonjs from 'rollup-plugin-commonjs';
 import copy from 'rollup-plugin-copy';
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import del from 'rollup-plugin-delete';
+import externals from 'rollup-plugin-node-externals';
 import postcss from 'rollup-plugin-postcss';
 
 export default defineConfig({
   input: './index.ts',
   output: [
     {
-      dir: 'dist',
+      file: 'dist/cjs/index.js',
       format: 'commonjs',
-      sourcemap: true,
+    },
+    {
+      dir: 'dist/esm',
+      format: 'esm',
       preserveModules: true,
-      preserveModulesRoot: '.',
+      preserveModulesRoot: 'src',
     },
   ],
   external: ['react', 'react/jsx-runtime', 'clsx'],
@@ -27,24 +29,31 @@ export default defineConfig({
       packageJsonPath: path.resolve(__dirname, './package.json'),
     }),
     url({ destDir: 'dist/assets' }),
-    svgr({ icon: true }),
+    svgr({ icon: true, ref: true, memo: true }),
+    externals(),
     nodeResolve(),
+    commonjs(),
     typescript({
       declaration: true,
-      declarationDir: 'dist',
+      declarationDir: 'dist/esm',
       rootDir: '.',
     }),
-    commonjs(),
     postcss({
-      extract: 'assets/styles/index.css',
+      extract: 'index.css',
       modules: true,
       use: ['sass'],
     }),
     copy({
+      hook: 'writeBundle',
       targets: [
+        { src: 'dist/esm/index.css', dest: 'dist/assets/styles' },
         { src: 'package.json', dest: 'dist' },
         { src: 'README.md', dest: 'dist' },
       ],
+    }),
+    del({
+      hook: 'closeBundle',
+      targets: ['dist/esm/index.css', 'dist/cjs/index.css'],
     }),
   ],
 });
