@@ -3,7 +3,9 @@ import React, {
   FC,
   FocusEvent,
   KeyboardEvent,
+  useEffect,
   useRef,
+  useState,
 } from 'react';
 
 import clsx from 'clsx';
@@ -29,6 +31,7 @@ export interface IInputDigitsProps {
    * @default 'L'
    */
   size?: 'L' | 'M' | 'S';
+  onChange: (value: string) => void;
 }
 
 const Digits: FC<IInputDigitsProps> = ({
@@ -36,8 +39,14 @@ const Digits: FC<IInputDigitsProps> = ({
   disabled,
   size = 'L',
   length = 6,
+  onChange,
 }) => {
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
+  const [trigger, triggerUpdate] = useState<boolean>(false);
+
+  useEffect(() => {
+    onChange(inputRefs.current.map((element) => element?.value).join(''));
+  }, [trigger, onChange]);
 
   return (
     <div
@@ -69,14 +78,18 @@ const Digits: FC<IInputDigitsProps> = ({
             } else {
               e.target.value = e.target.value.replace(/[^\d]/g, '');
             }
+            triggerUpdate(!trigger);
           }}
+          // eslint-disable-next-line complexity
           onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => {
             if (
-              e.key === 'Backspace' &&
               index > 0 &&
-              !inputRefs.current[index]?.value
+              ((e.key === 'Backspace' && !inputRefs.current[index]?.value) ||
+                e.key === 'ArrowLeft')
             ) {
               inputRefs.current[index - 1]?.focus();
+            } else if (e.key === 'ArrowRight' && index < length - 1) {
+              inputRefs.current[index + 1]?.focus();
             }
           }}
         />
