@@ -51,6 +51,7 @@ const Password: FC<IInputPasswordProps> = ({
       </div>
       <input {...props} type={isShown ? 'text' : 'password'} ref={inputRef} />
       <button
+        type="button"
         className={styles.suffix}
         onClick={() => setShow(!isShown)}
         tabIndex={0}
