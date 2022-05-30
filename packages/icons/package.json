@@ -1,7 +1,9 @@
 {
   "name": "@forward-protocol/ui-icons",
   "version": "1.0.20",
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
   "author": {
     "name": "forward-protocol"
   },
@@ -56,7 +58,7 @@
     "rollup": "^2.70.2",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-copy": "^3.4.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-node-externals": "^4.0.0",
     "rollup-plugin-postcss": "^4.0.2",
     "sass": "^1.50.1",
     "ts-node": "^10.7.0"
