@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.22](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/uikit@1.0.21...@forward-protocol/uikit@1.0.22) (2022-05-30)
+
+
+### Bug Fixes
+
+* remove peerExternals ([#11](https://github.com/Forward-Protocol/forward-design-system/issues/11)) ([c2ad3ab](https://github.com/Forward-Protocol/forward-design-system/commit/c2ad3abf18cd3f38f93c5f02150d720ed6d5367e))
+
+
+
+
+
 ## [1.0.21](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/uikit@1.0.20...@forward-protocol/uikit@1.0.21) (2022-05-27)
 
 **Note:** Version bump only for package @forward-protocol/uikit
