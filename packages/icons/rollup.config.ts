@@ -25,9 +25,6 @@ export default defineConfig({
   ],
   external: ['react', 'react/jsx-runtime', 'clsx'],
   plugins: [
-    peerDepsExternal({
-      packageJsonPath: path.resolve(__dirname, './package.json'),
-    }),
     url({ destDir: 'dist/assets' }),
     svgr({ icon: true, ref: true, memo: true }),
     externals(),

@@ -33,9 +33,6 @@ export default defineConfig({
     'react-merge-refs',
   ],
   plugins: [
-    peerDepsExternal({
-      packageJsonPath: path.resolve(__dirname, './package.json'),
-    }),
     url({ destDir: 'dist/assets' }),
     svgr({ icon: true, ref: true, memo: true }),
     externals(),
