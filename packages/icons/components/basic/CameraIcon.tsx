@@ -2,19 +2,19 @@
 
 import React, { FC } from 'react';
 
-import Checkmark from '@iconify-icons/carbon/checkmark';
+import Camera from '@iconify-icons/carbon/camera';
 import { Icon as ReactIcon } from '@iconify/react/offline';
 
 import Icon, { IIconProps } from '../Icon';
 
-const CheckmarkIcon: FC<Omit<IIconProps, 'icon'>> = ({
+const CameraIcon: FC<Omit<IIconProps, 'icon'>> = ({
   size,
   className,
   color,
 }) => {
   return (
     <Icon
-      icon={<ReactIcon icon={Checkmark} />}
+      icon={<ReactIcon icon={Camera} />}
       size={size}
       className={className}
       color={color}
@@ -22,4 +22,4 @@ const CheckmarkIcon: FC<Omit<IIconProps, 'icon'>> = ({
   );
 };
 
-export default CheckmarkIcon;
+export default CameraIcon;

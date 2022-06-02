@@ -1,5 +1,3 @@
-import '@forward-protocol/ui-icons/dist/assets/styles/index.css';
-
 export type {
   IAvatarProps,
   IBreadcrumbsProps,

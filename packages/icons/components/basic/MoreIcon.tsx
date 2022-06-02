@@ -2,19 +2,15 @@
 
 import React, { FC } from 'react';
 
-import Checkmark from '@iconify-icons/carbon/checkmark';
+import More from '@iconify-icons/fluent/more-vertical-20-filled';
 import { Icon as ReactIcon } from '@iconify/react/offline';
 
 import Icon, { IIconProps } from '../Icon';
 
-const CheckmarkIcon: FC<Omit<IIconProps, 'icon'>> = ({
-  size,
-  className,
-  color,
-}) => {
+const MoreIcon: FC<Omit<IIconProps, 'icon'>> = ({ size, className, color }) => {
   return (
     <Icon
-      icon={<ReactIcon icon={Checkmark} />}
+      icon={<ReactIcon icon={More} />}
       size={size}
       className={className}
       color={color}
@@ -22,4 +18,4 @@ const CheckmarkIcon: FC<Omit<IIconProps, 'icon'>> = ({
   );
 };
 
-export default CheckmarkIcon;
+export default MoreIcon;

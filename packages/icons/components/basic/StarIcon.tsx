@@ -2,12 +2,19 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as Add } from '../../assets/icons/basic/Star.svg';
+import Star from '@iconify-icons/fluent/star-16-regular';
+import { Icon as ReactIcon } from '@iconify/react/offline';
+
 import Icon, { IIconProps } from '../Icon';
 
 const StarIcon: FC<Omit<IIconProps, 'icon'>> = ({ size, className, color }) => {
   return (
-    <Icon icon={<Add />} size={size} className={className} color={color} />
+    <Icon
+      icon={<ReactIcon icon={Star} />}
+      size={size}
+      className={className}
+      color={color}
+    />
   );
 };
 

@@ -2,12 +2,19 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as Add } from '../../assets/icons/arrows/Sort.svg';
+import Sort from '@iconify-icons/carbon/chevron-sort';
+import { Icon as ReactIcon } from '@iconify/react/offline';
+
 import Icon, { IIconProps } from '../Icon';
 
 const SortIcon: FC<Omit<IIconProps, 'icon'>> = ({ size, className, color }) => {
   return (
-    <Icon icon={<Add />} size={size} className={className} color={color} />
+    <Icon
+      icon={<ReactIcon icon={Sort} />}
+      size={size}
+      className={className}
+      color={color}
+    />
   );
 };
 

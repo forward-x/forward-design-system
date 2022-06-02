@@ -38,6 +38,7 @@ export default defineConfig({
       extract: 'index.css',
       modules: true,
       use: ['sass'],
+      minimize: true,
     }),
     copy({
       hook: 'writeBundle',
