@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/ui-icons@1.0.23...@forward-protocol/ui-icons@2.0.0) (2022-06-02)
+
+
+* Refactor icon package (#13) ([d148bcd](https://github.com/Forward-Protocol/forward-design-system/commit/d148bcd374068832d6a7833d4f8d7d4eeb00b72d)), closes [#13](https://github.com/Forward-Protocol/forward-design-system/issues/13)
+
+
+### BREAKING CHANGES
+
+* depends on @iconify instead of svg for icons
+
+* fix: icon's css not being used in core
+* change ChocolateBar and Info component name
+* remove Loading icon
+
+* feat: add Scan, Camera, Image, More, and Time icon
+
+
+
+
+
 ## [1.0.23](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/ui-icons@1.0.22...@forward-protocol/ui-icons@1.0.23) (2022-05-30)
 
 **Note:** Version bump only for package @forward-protocol/ui-icons
