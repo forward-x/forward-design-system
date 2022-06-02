@@ -2,7 +2,9 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as Add } from '../../assets/icons/security/ViewOff.svg';
+import ViewOff from '@iconify-icons/carbon/view-off';
+import { Icon as ReactIcon } from '@iconify/react/offline';
+
 import Icon, { IIconProps } from '../Icon';
 
 const ViewOffIcon: FC<Omit<IIconProps, 'icon'>> = ({
@@ -11,7 +13,12 @@ const ViewOffIcon: FC<Omit<IIconProps, 'icon'>> = ({
   color,
 }) => {
   return (
-    <Icon icon={<Add />} size={size} className={className} color={color} />
+    <Icon
+      icon={<ReactIcon icon={ViewOff} />}
+      size={size}
+      className={className}
+      color={color}
+    />
   );
 };
 

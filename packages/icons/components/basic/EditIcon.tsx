@@ -2,12 +2,19 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as Add } from '../../assets/icons/basic/Edit.svg';
+import Edit from '@iconify-icons/carbon/edit';
+import { Icon as ReactIcon } from '@iconify/react/offline';
+
 import Icon, { IIconProps } from '../Icon';
 
 const EditIcon: FC<Omit<IIconProps, 'icon'>> = ({ size, className, color }) => {
   return (
-    <Icon icon={<Add />} size={size} className={className} color={color} />
+    <Icon
+      icon={<ReactIcon icon={Edit} />}
+      size={size}
+      className={className}
+      color={color}
+    />
   );
 };
 

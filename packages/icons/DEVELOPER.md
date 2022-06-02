@@ -17,4 +17,4 @@ Run eslint in every necessary file.
 
 ### `yarn generate`
 
-Auto-generate React components from svg in 'assets' folder.
+Auto-generate React components from files in 'assets' folder.

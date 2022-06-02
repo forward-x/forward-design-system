@@ -2,7 +2,9 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as Add } from '../../assets/icons/arrows/Import.svg';
+import Import from '@iconify-icons/fluent/arrow-import-20-regular';
+import { Icon as ReactIcon } from '@iconify/react/offline';
+
 import Icon, { IIconProps } from '../Icon';
 
 const ImportIcon: FC<Omit<IIconProps, 'icon'>> = ({
@@ -11,7 +13,12 @@ const ImportIcon: FC<Omit<IIconProps, 'icon'>> = ({
   color,
 }) => {
   return (
-    <Icon icon={<Add />} size={size} className={className} color={color} />
+    <Icon
+      icon={<ReactIcon icon={Import} />}
+      size={size}
+      className={className}
+      color={color}
+    />
   );
 };
 

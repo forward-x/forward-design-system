@@ -2,7 +2,9 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as Add } from '../../assets/icons/banking/Pending.svg';
+import Pending from '@iconify-icons/carbon/pending';
+import { Icon as ReactIcon } from '@iconify/react/offline';
+
 import Icon, { IIconProps } from '../Icon';
 
 const PendingIcon: FC<Omit<IIconProps, 'icon'>> = ({
@@ -11,7 +13,12 @@ const PendingIcon: FC<Omit<IIconProps, 'icon'>> = ({
   color,
 }) => {
   return (
-    <Icon icon={<Add />} size={size} className={className} color={color} />
+    <Icon
+      icon={<ReactIcon icon={Pending} />}
+      size={size}
+      className={className}
+      color={color}
+    />
   );
 };
 

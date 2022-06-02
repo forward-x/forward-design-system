@@ -2,7 +2,9 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as Add } from '../../assets/icons/alerts/Checkmark.svg';
+import Checkmark from '@iconify-icons/carbon/checkmark';
+import { Icon as ReactIcon } from '@iconify/react/offline';
+
 import Icon, { IIconProps } from '../Icon';
 
 const CheckmarkIcon: FC<Omit<IIconProps, 'icon'>> = ({
@@ -11,7 +13,12 @@ const CheckmarkIcon: FC<Omit<IIconProps, 'icon'>> = ({
   color,
 }) => {
   return (
-    <Icon icon={<Add />} size={size} className={className} color={color} />
+    <Icon
+      icon={<ReactIcon icon={Checkmark} />}
+      size={size}
+      className={className}
+      color={color}
+    />
   );
 };
 

@@ -2,34 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 24px;
-  height: 24px;
+  color: #454561;
+  padding: 2px;
+  font-size: 24px;
 
-  path {
-    fill: #454561;
-  }
-
-  &.light path {
-    fill: white;
-  }
-
-  &.large {
-    width: 32px;
-    height: 32px;
-  }
-
-  &.small {
-    width: 20px;
-    height: 20px;
-  }
-
-  &.extra_small {
-    width: 16px;
-    height: 16px;
-  }
-
-  &.extra_extra_small {
-    width: 12px;
-    height: 12px;
+  &.light svg {
+    color: white;
   }
 }

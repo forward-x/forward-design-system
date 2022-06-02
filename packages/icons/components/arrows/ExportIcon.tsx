@@ -2,7 +2,9 @@
 
 import React, { FC } from 'react';
 
-import { ReactComponent as Add } from '../../assets/icons/arrows/Export.svg';
+import Export from '@iconify-icons/carbon/export';
+import { Icon as ReactIcon } from '@iconify/react/offline';
+
 import Icon, { IIconProps } from '../Icon';
 
 const ExportIcon: FC<Omit<IIconProps, 'icon'>> = ({
@@ -11,7 +13,12 @@ const ExportIcon: FC<Omit<IIconProps, 'icon'>> = ({
   color,
 }) => {
   return (
-    <Icon icon={<Add />} size={size} className={className} color={color} />
+    <Icon
+      icon={<ReactIcon icon={Export} />}
+      size={size}
+      className={className}
+      color={color}
+    />
   );
 };
 

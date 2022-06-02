@@ -27,6 +27,7 @@
     { "iconName": "ChevronUp", "iconDirectory": "arrows", "iconifyPath": "carbon/chevron-up" },
     { "iconName": "ChevronRight", "iconDirectory": "arrows", "iconifyPath": "carbon/chevron-right" },
     { "iconName": "Swap", "iconDirectory": "arrows", "iconifyPath": "fluent/arrow-swap-20-regular" },
+    { "iconName": "External", "iconDirectory": "arrows", "iconifyPath": "octicon/link-external-24" },
     { "iconName": "ArrowLeft", "iconDirectory": "arrows", "iconifyPath": "carbon/arrow-left" },
     { "iconName": "ArrowDown", "iconDirectory": "arrows", "iconifyPath": "carbon/arrow-down" },
     { "iconName": "ArrowUp", "iconDirectory": "arrows", "iconifyPath": "carbon/arrow-up" },

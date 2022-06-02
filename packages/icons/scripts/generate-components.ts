@@ -4,13 +4,21 @@ import path from 'path';
 import { Presets, SingleBar } from 'cli-progress';
 import Mustache from 'mustache';
 
+import { icons as iconifyData } from '../assets/icons.json';
+
 type FileInfo = {
   iconPath: string;
   iconName: string;
+  iconDirectory: string;
   directoryPath: string;
   componentName: string;
   componentPath: string;
-  fileExtension: string;
+  fileExtension?: string;
+};
+type IconifyInfo = {
+  iconName: string;
+  iconDirectory: string;
+  iconifyPath: string;
 };
 
 const iconRootPath = path.resolve(__dirname, '../assets');
@@ -35,6 +43,9 @@ const exportTemplate = fs.readFileSync(
 const getFilePaths = (filePath: string): string[] => {
   return fs.readdirSync(filePath, { withFileTypes: true }).flatMap((file) => {
     const currentPath = path.resolve(filePath, file.name);
+
+    if (currentPath.includes('\\assets\\icons')) return [];
+
     if (file.isDirectory()) {
       return [...getFilePaths(currentPath)];
     }
@@ -42,28 +53,54 @@ const getFilePaths = (filePath: string): string[] => {
   });
 };
 
+const getDirectories = (iconDirectory: string, componentName: string) => {
+  const directoryPath = path.join(__dirname, '../components/', iconDirectory);
+  const componentPath = path.join(directoryPath, `${componentName}.tsx`);
+
+  return { directoryPath, componentPath };
+};
+
 const extractFileInfo = (filePaths: string[]): FileInfo[] => {
   return filePaths.map((filePath) => {
-    const [iconPath, iconFile] = filePath
+    const [iconDirectory, iconFile] = filePath
       .replace(iconRootPath, '')
       .replace(/[\\]/g, '/')
       .replace(/^\/[^\/]*\//, '')
       .split(/(?:\/(?!.*\/))+/);
     const [iconName, fileExtension] = iconFile.split('.');
-    const componentName = filePath.includes('logo')
-      ? `${iconName}Logo`
-      : `${iconName}Icon`;
+    const componentName = `${iconName}Logo`;
 
-    const directoryPath = path.join(__dirname, '../components/', iconPath);
-    const componentPath = path.join(directoryPath, `${componentName}.tsx`);
+    const { directoryPath, componentPath } = getDirectories(
+      iconDirectory,
+      componentName
+    );
 
     return {
-      iconPath,
+      iconPath: `${iconDirectory}/${iconName}`,
+      iconDirectory: `${iconDirectory}/${componentName}`,
       iconName,
       componentName,
       directoryPath,
       componentPath,
-      fileExtension: `.${fileExtension}`,
+      fileExtension,
+    };
+  });
+};
+const extractIconInfo = (iconData: IconifyInfo[]): FileInfo[] => {
+  return iconData.map(({ iconName, iconDirectory, iconifyPath }) => {
+    const componentName = `${iconName}Icon`;
+    const { directoryPath, componentPath } = getDirectories(
+      iconDirectory,
+      componentName
+    );
+
+    return {
+      iconPath: iconifyPath,
+      iconDirectory: `${iconDirectory}/${componentName}`,
+      iconName,
+      componentName,
+      directoryPath,
+      componentPath,
     };
   });
 };
@@ -82,7 +119,7 @@ const generateComponents = (fileInfo: FileInfo[]): void => {
     },
     Presets.legacy
   );
-  progressBar.start(iconPaths.length, 0);
+  progressBar.start(iconPaths.length + 2, 0);
 
   fileInfo.forEach(
     ({
@@ -96,21 +133,19 @@ const generateComponents = (fileInfo: FileInfo[]): void => {
       if (!fs.existsSync(componentPath)) {
         let componentData: string;
         fs.mkdirSync(directoryPath, { recursive: true });
-        if (
+        if (!fileExtension) {
+          componentData = Mustache.render(iconTemplate, {
+            iconName,
+            iconPath,
+            componentName,
+          });
+        } else if (
           directoryPath.includes('crypto') ||
           directoryPath.includes('wallet')
         )
-          componentData = injectDataIntoTemplate(cryptoTemplate, {
+          componentData = Mustache.render(cryptoTemplate, {
             iconName,
-            iconPath,
-            fileExtension,
-            componentName,
-          });
-        else
-          componentData = injectDataIntoTemplate(iconTemplate, {
-            iconName,
-            iconPath,
-            fileExtension,
+            iconPath: `${iconPath}.${fileExtension}`,
             componentName,
           });
         fs.writeFileSync(componentPath, componentData, { flag: 'w' });
@@ -126,27 +161,16 @@ const generateComponents = (fileInfo: FileInfo[]): void => {
   progressBar.increment({ prompt: `Created entry file` });
 };
 
-const injectDataIntoTemplate = (
-  template: string,
-  { iconName, iconPath, fileExtension, componentName }: Partial<FileInfo>
-): string =>
-  Mustache.render(template, {
-    iconName,
-    iconPath: `${iconPath}/${iconName}${fileExtension}`,
-    componentName,
-  });
-
 const generateExportFile = (fileInfo: FileInfo[]): void => {
   fs.writeFileSync(
     path.resolve(__dirname, '../components/index.ts'),
     Mustache.render(exportTemplate, {
-      imports: fileInfo
+      exports: fileInfo
         .map(
-          ({ iconPath, componentName }) =>
-            `import ${componentName} from './${iconPath}/${componentName}';`
+          ({ iconDirectory, componentName }) =>
+            `export { default as ${componentName} } from './${iconDirectory}';`
         )
         .join('\n'),
-      exports: fileInfo.map(({ componentName }) => componentName).join(', '),
     }),
     { flag: 'w' }
   );
@@ -163,6 +187,10 @@ const generateEntryFile = (fileInfo: FileInfo[]): void => {
 };
 
 const iconPaths = getFilePaths(iconRootPath);
-const fileInfo = extractFileInfo(iconPaths);
+
+const fileInfo = [
+  ...extractFileInfo(iconPaths),
+  ...extractIconInfo(iconifyData),
+];
 
 generateComponents(fileInfo);

@@ -1192,6 +1192,58 @@
   resolved "https://registry.yarnpkg.com/@hutson/parse-repository-url/-/parse-repository-url-3.0.2.tgz#98c23c950a3d9b6c8f0daed06da6c3af06981340"
   integrity sha512-H9XAx3hc0BQHY6l+IFSWHDySypcXsvsuLhgYLUGywmJ5pswRVQJUHpOsobnLYp2ZUaUlKiKDrgWWhosOwAEM8Q==
 
+"@iconify-icons/carbon@^1.2.6":
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/@iconify-icons/carbon/-/carbon-1.2.6.tgz#ebc795e575844c9dd109e4650539322c09fcc27c"
+  integrity sha512-8WxpTKwbcXLM835xIG5MR4kpcdO1YhlP2doocaaTJtOY1k7rGvqQDZfLuJLTrOfTBFGjKPK02f5eTocU5Q0OwQ==
+  dependencies:
+    "@iconify/types" "^1.1.0"
+
+"@iconify-icons/clarity@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@iconify-icons/clarity/-/clarity-1.2.4.tgz#2a38fb32b2bbe825048c09fddaa049131dfaf40c"
+  integrity sha512-ygRWMD1EXhS4ozS6CQuBXLq6gYIQR7m+LxSqPWJ7HGtPcwRQxTjFvhyWmvRlqpipzWBG6kl1rBPxOQeN1JOS/w==
+  dependencies:
+    "@iconify/types" "^1.0.12"
+
+"@iconify-icons/fluent@^1.2.10":
+  version "1.2.10"
+  resolved "https://registry.yarnpkg.com/@iconify-icons/fluent/-/fluent-1.2.10.tgz#4e559f815d5d6caea10a7969d89d67e790b2d89a"
+  integrity sha512-wDGPfTrdve1wTzZw3kAVN6EWm4q//Qj3idTVL7TdHLk7tGX66Fp2w1JSKIWu0GQG9OPcs5EbGR29dsrFNtHjbw==
+  dependencies:
+    "@iconify/types" "^1.1.0"
+
+"@iconify-icons/healthicons@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@iconify-icons/healthicons/-/healthicons-1.2.1.tgz#0760a6dc6b7a5096203ad8adc4b8681ddb2541c9"
+  integrity sha512-WlwxlhnRlqRIc1xOzBGaF5fwpYhi9xEA9kR13BjQ9TjQn1dzycwCvbP0C36yglL+yUwTU48/I76EYPdqcuCD3Q==
+  dependencies:
+    "@iconify/types" "^1.0.12"
+
+"@iconify-icons/ic@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@iconify-icons/ic/-/ic-1.2.5.tgz#7fd138b777047c22cfd49f1039df2e26a4f2f992"
+  integrity sha512-dsDVBZjGkaAHMkB5wZVsalGvGK/QsloTUxtoY6mZgFJ/wL6m4mKkFHKKciFThWq/Vtgca77PPw87EEAlnUI2IA==
+  dependencies:
+    "@iconify/types" "^1.1.0"
+
+"@iconify-icons/octicon@^1.2.10":
+  version "1.2.10"
+  resolved "https://registry.yarnpkg.com/@iconify-icons/octicon/-/octicon-1.2.10.tgz#d7ac4e77bb1254a7e4b6f978181f33ab98921670"
+  integrity sha512-II/VB3XHV3WDFyRsTarPNvm8Te0UYraicuDbNSF4Od2JeTuOdi0z0Qu0GTc/8kKZ7uVCvgKd1+tbtrPpSL4iIA==
+  dependencies:
+    "@iconify/types" "^1.1.0"
+
+"@iconify/react@^3.2.2":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@iconify/react/-/react-3.2.2.tgz#ab5241dc01562076bae3b0c22238aff7e5f029cc"
+  integrity sha512-z3+Jno3VcJzgNHsN5mEvYMsgCkOZkydqdIwOxjXh45+i2Vs9RGH68Y52vt39izwFSfuYUXhaW+1u7m7+IhCn/g==
+
+"@iconify/types@^1.0.12", "@iconify/types@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@iconify/types/-/types-1.1.0.tgz#dc15fc988b1b3fd558dd140a24ede7e0aac11280"
+  integrity sha512-Jh0llaK2LRXQoYsorIH8maClebsnzTcve+7U3rQUSnC11X4jtPnFuyatqFLvMxZ8MLG8dB4zfHsbPfuvxluONw==
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"
