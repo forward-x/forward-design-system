@@ -17,6 +17,11 @@
     height: 24px;
     font-size: 10px;
     line-height: 16px;
+
+    .user_icon {
+      width: 12px;
+      height: 12px;
+    }
   }
 
   &.large {
@@ -24,6 +29,11 @@
     height: 40px;
     font-size: $text-tiny;
     line-height: $line-height-tiny;
+
+    .user_icon {
+      width: 20px;
+      height: 20px;
+    }
   }
 
   &.extra_large {
@@ -31,15 +41,27 @@
     height: 64px;
     font-size: $text-title;
     line-height: $line-height-title;
+
+    .user_icon {
+      width: 32px;
+      height: 32px;
+    }
   }
 
   &.forward_man {
     border: none;
   }
+
+  .user_icon {
+    width: 16px;
+    height: 16px;
+  }
 }
 
-.user_icon path {
-  fill: $xiketic-30;
+.user_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .icon {
