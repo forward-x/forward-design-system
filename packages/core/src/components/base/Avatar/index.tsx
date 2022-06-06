@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 
-import { Icon } from '@forward-protocol/ui-icons';
 import clsx from 'clsx';
 
 import { ReactComponent as ForwardMan } from '../../../assets/icons/ForwardMan.svg';
@@ -36,13 +35,6 @@ const Avatar: FC<IAvatarProps> = ({
   className,
   ...props
 }) => {
-  const avatarSize = {
-    XL: 'L',
-    L: 'S',
-    M: 'XS',
-    S: 'XXS',
-  } as const;
-
   let content;
   switch (variant) {
     case 'name':
@@ -52,13 +44,7 @@ const Avatar: FC<IAvatarProps> = ({
       content = <ForwardMan className={styles.icon} />;
       break;
     default:
-      content = (
-        <Icon
-          className={styles.user_icon}
-          icon={<UserIcon />}
-          size={avatarSize[size]}
-        />
-      );
+      content = <UserIcon className={styles.user_icon} />;
       break;
   }
 

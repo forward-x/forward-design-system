@@ -1,13 +1,53 @@
 .chip {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  border-radius: 4px;
-  border-width: 1.5px;
-  border-style: solid;
-  color: $xk-30;
-  font-size: $text-small;
-  height: 21px;
-  box-sizing: border-box;
-  padding: 2px 4px;
+  border-radius: 8px;
+  height: 32px;
+  padding: 6px 12px;
+  color: var(--primary-text);
+  font-size: $text-body;
+  background-color: var(--base-2);
+
+  @include smallMedia {
+    height: 36px;
+  }
+
+  svg {
+    color: var(--primary-text);
+  }
+
+  .content {
+    display: flex;
+    flex-grow: 1;
+    gap: 8px;
+    &:only-child {
+      justify-content: center;
+    }
+  }
+
+  &.toggle {
+    cursor: pointer;
+    &.disabled {
+      pointer-events: initial;
+    }
+  }
+
+  &.disabled {
+    color: var(--placeholder-text);
+    pointer-events: none;
+
+    svg {
+      color: var(--placeholder-text);
+    }
+  }
+
+  &.prefix {
+    width: 20px;
+    height: 20px;
+  }
+  &.suffix {
+    width: 20px;
+    height: 20px;
+  }
 }

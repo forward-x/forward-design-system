@@ -3,6 +3,7 @@ export type {
   IBreadcrumbsProps,
   IButtonProps,
   ICheckboxProps,
+  IChipProps,
   IInputDigitsProps,
   IInputPasswordProps,
   IInputProps,
@@ -12,6 +13,6 @@ export type {
   IStepsRadialProps,
   ISwitchProps,
 } from './components';
-export { Avatar, Breadcrumbs, Button, Input, Steps } from './components';
+export { Avatar, Breadcrumbs, Button, Chip, Input, Steps } from './components';
 
 export { useEventListener, useMediaQuery } from './hooks';

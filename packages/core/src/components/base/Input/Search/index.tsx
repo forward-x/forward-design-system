@@ -20,11 +20,7 @@ export interface IInputSearchProps
   size?: 'L' | 'M' | 'S';
 }
 
-const Password: FC<IInputSearchProps> = ({
-  className,
-  size = 'L',
-  ...props
-}) => {
+const Search: FC<IInputSearchProps> = ({ className, size = 'L', ...props }) => {
   return (
     <div
       className={clsx(
@@ -44,4 +40,4 @@ const Password: FC<IInputSearchProps> = ({
   );
 };
 
-export default Password;
+export default Search;
