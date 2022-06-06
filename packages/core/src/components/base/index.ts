@@ -7,6 +7,9 @@ export { default as Breadcrumbs } from './Breadcrumbs';
 export type { IButtonProps } from './Button';
 export { default as Button } from './Button';
 
+export type { IChipProps } from './Chip';
+export { default as Chip } from './Chip';
+
 export type {
   ICheckboxProps,
   IInputDigitsProps,
