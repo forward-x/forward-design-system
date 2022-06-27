@@ -31,7 +31,7 @@ export interface IInputDigitsProps {
    * @default 'L'
    */
   size?: 'L' | 'M' | 'S';
-  onChange: (value: string) => void;
+  onChange?: (value: string) => void;
 }
 
 const Digits: FC<IInputDigitsProps> = ({
@@ -45,7 +45,8 @@ const Digits: FC<IInputDigitsProps> = ({
   const [trigger, triggerUpdate] = useState<boolean>(false);
 
   useEffect(() => {
-    onChange(inputRefs.current.map((element) => element?.value).join(''));
+    if (onChange)
+      onChange(inputRefs.current.map((element) => element?.value).join(''));
   }, [trigger, onChange]);
 
   return (

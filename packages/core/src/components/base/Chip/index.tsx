@@ -11,7 +11,7 @@ export interface IChipProps {
   prefix?: ReactNode;
   suffix?: ReactNode;
   variant?: 'default' | 'toggle';
-  onChange: (isSelected: boolean) => void;
+  onChange?: (isSelected: boolean) => void;
 }
 
 const Chip: FC<IChipProps> = ({
@@ -37,7 +37,7 @@ const Chip: FC<IChipProps> = ({
       )}
       onClick={() => {
         if (variant === 'toggle') {
-          onChange && onChange(!isActive);
+          if (onChange) onChange(!isActive);
           setIsActive(!isActive);
         }
       }}
