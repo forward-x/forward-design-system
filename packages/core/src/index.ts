@@ -2,6 +2,7 @@ export type {
   IAvatarProps,
   IBreadcrumbsProps,
   IButtonProps,
+  ICalendarProps,
   ICheckboxProps,
   IChipProps,
   IInputDigitsProps,
@@ -13,6 +14,14 @@ export type {
   IStepsRadialProps,
   ISwitchProps,
 } from './components';
-export { Avatar, Breadcrumbs, Button, Chip, Input, Steps } from './components';
+export {
+  Avatar,
+  Breadcrumbs,
+  Calendar,
+  Button,
+  Chip,
+  Input,
+  Steps,
+} from './components';
 
 export { useEventListener, useMediaQuery } from './hooks';

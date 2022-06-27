@@ -2,6 +2,7 @@ export type {
   IAvatarProps,
   IBreadcrumbsProps,
   IButtonProps,
+  ICalendarProps,
   IChipProps,
   ICheckboxProps,
   IInputDigitsProps,
@@ -13,4 +14,12 @@ export type {
   IStepsRadialProps,
   ISwitchProps,
 } from './base';
-export { Avatar, Breadcrumbs, Button, Chip, Input, Steps } from './base';
+export {
+  Avatar,
+  Breadcrumbs,
+  Button,
+  Calendar,
+  Chip,
+  Input,
+  Steps,
+} from './base';
