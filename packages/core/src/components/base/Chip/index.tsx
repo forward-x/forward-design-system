@@ -8,16 +8,16 @@ export interface IChipProps {
   text: string;
   className?: string;
   disabled?: boolean;
-  prefix?: ReactNode;
-  suffix?: ReactNode;
+  startAdornment?: ReactNode;
+  endAdornment?: ReactNode;
   variant?: 'default' | 'toggle';
   onChange?: (isSelected: boolean) => void;
 }
 
 const Chip: FC<IChipProps> = ({
   text,
-  prefix,
-  suffix,
+  startAdornment,
+  endAdornment,
   onChange,
   variant = 'default',
   disabled = false,
@@ -43,10 +43,12 @@ const Chip: FC<IChipProps> = ({
       }}
     >
       <div className={styles.content}>
-        {prefix && <div className={styles.prefix}>{prefix}</div>}
+        {startAdornment && (
+          <div className={styles.prefix}>{startAdornment}</div>
+        )}
         {text}
       </div>
-      {suffix && <div className={styles.suffix}>{suffix}</div>}
+      {endAdornment && <div className={styles.suffix}>{endAdornment}</div>}
     </div>
   );
 };
