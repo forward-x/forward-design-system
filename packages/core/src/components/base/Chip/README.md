@@ -9,5 +9,5 @@
 | prefix    | Element before text (string is also supported)                                      | ReactNode                     |           |     No    |
 | suffix    | Element after text (string is also supported)                                       | ReactNode                     |           |     No    |
 | disabled  | Whether this component should be disabled                                           | boolean                       | false     |     No    |
-| onChange  | A function that triggers every changes                                              | (isSelected: boolean) => void |           |    Yes    |
+| onChange  | A function that triggers every changes                                              | (isSelected: boolean) => void |           |    No    |
 | className | Class name for overriding Chip's style                                              | string                        |           |     No    |

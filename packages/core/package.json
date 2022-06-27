@@ -32,7 +32,9 @@
   "dependencies": {
     "@forward-protocol/ui-icons": "^2.0.0",
     "clsx": "^1.1.1",
+    "date-fns": "^2.28.0",
     "react": "^18.0.0",
+    "react-calendar": "^3.7.0",
     "react-dom": "^18.0.0",
     "react-merge-refs": "^1.1.0",
     "react-scripts": "^5.0.1",
@@ -51,6 +53,7 @@
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.25",
     "@types/react": "^18.0.6",
+    "@types/react-calendar": "^3.5.1",
     "@types/react-dom": "^18.0.2",
     "eslint": "^8.13.0",
     "nodemon": "^2.0.15",
