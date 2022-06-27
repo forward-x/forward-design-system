@@ -16,8 +16,8 @@ export interface IInputProps
     'prefix' | 'type' | 'size'
   > {
   className?: string;
-  prefix?: ReactNode;
-  suffix?: ReactNode;
+  startAdornment?: ReactNode;
+  endAdornment?: ReactNode;
   /**
    * L - 40px (desktop) / 48px (mobile)
    *
@@ -31,7 +31,7 @@ export interface IInputProps
 }
 
 const Input = forwardRef<HTMLInputElement | null, IInputProps>(
-  ({ className, prefix, suffix, size = 'L', ...props }, ref) => {
+  ({ className, startAdornment, endAdornment, size = 'L', ...props }, ref) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
     const handleClick = () => {
@@ -50,9 +50,11 @@ const Input = forwardRef<HTMLInputElement | null, IInputProps>(
         )}
         onClick={handleClick}
       >
-        {prefix && <div className={styles.prefix}>{prefix}</div>}
+        {startAdornment && (
+          <div className={styles.prefix}>{startAdornment}</div>
+        )}
         <input {...props} type="text" ref={mergeRefs([inputRef, ref])} />
-        {suffix && <div className={styles.suffix}>{suffix}</div>}
+        {endAdornment && <div className={styles.suffix}>{endAdornment}</div>}
       </div>
     );
   }
