@@ -16405,6 +16405,13 @@ rollup-plugin-delete@^2.0.0:
   dependencies:
     del "^5.1.0"
 
+rollup-plugin-mv@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-mv/-/rollup-plugin-mv-0.0.2.tgz#58b8dcc23b997bc08bf4d2a791e173e35f41f617"
+  integrity sha512-QareI4ipd41g5g0kifhdDyxlaA2c2r9dbAKWzlaaDR0cL+L4ZBnLJFxoHD4pl6weYxIm/UBsKGTL0cJKIfBPlQ==
+  dependencies:
+    fs-extra "^9.0.1"
+
 rollup-plugin-node-externals@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/rollup-plugin-node-externals/-/rollup-plugin-node-externals-4.0.0.tgz#cd4d30f9868eb542be8289880dacbbbecc3d9fa3"
