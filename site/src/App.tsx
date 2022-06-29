@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { Button } from '@forward-protocol/uikit';
+import { Avatar, Button } from '@forward-protocol/uikit';
 
-import logo from './logo.svg';
+// import logo from './logo.svg';
 // import './App.scss';
 
 const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/*<img src={logo} className="App-logo" alt="logo" />*/}
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -21,7 +21,8 @@ const App = () => {
         >
           Learn React
         </a>
-        <Button />
+        <Button>hi</Button>
+        <Avatar variant="default" size="XL" />;
       </header>
     </div>
   );
