@@ -21,7 +21,7 @@ const App = () => {
         >
           Learn React
         </a>
-        <Button />
+        <Button>Hello world</Button>
       </header>
     </div>
   );

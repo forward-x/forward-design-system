@@ -63,6 +63,7 @@
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-mv": "^0.0.2",
     "rollup-plugin-node-externals": "^4.0.0",
     "rollup-plugin-postcss": "^4.0.2",
     "sass": "^1.50.1"
