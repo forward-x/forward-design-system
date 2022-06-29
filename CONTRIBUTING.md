@@ -33,6 +33,10 @@ Lerna will concurrently run `yarn start` in all packages. \
 Each package is already set to re-build whenever there are any changes in the source code (using nodemon). \
 A website should be ready in [http://localhost:3000](http://localhost:3000)
 
+## Committing
+Please follow [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) for commit messages. \
+Lerna will detect keywords in commit history and will update packages' version accordingly.
+
 ## Known issues
 
 1. `You may need an additional loader to handle the result of these loaders.`
