@@ -25,10 +25,11 @@
     "link:all": "yarn link:icons && yarn link:core",
     "link:core": "lerna add @forward-protocol/uikit --scope=@forward-protocol/ui-demo",
     "link:icons": "lerna add @forward-protocol/ui-icons --scope=@forward-protocol/ui-demo && lerna add @forward-protocol/ui-icons --scope=@forward-protocol/uikit",
-    "dev": "concurrently \"yarn dev:ui-icons\" \"yarn dev:ui-core\" \"yarn dev:ui-site\"",
+    "dev": "concurrently \"yarn dev:ui-icons\" \"yarn dev:ui-core\"",
     "dev:ui-core": "lerna exec --scope=@forward-protocol/uikit -- yarn start",
     "dev:ui-site": "lerna exec --scope=@forward-protocol/ui-demo -- yarn start",
     "dev:ui-icons": "lerna exec --scope=@forward-protocol/ui-icons -- yarn start",
+    "dev:storybook": "lerna exec --scope=@forward-protocol/uikit -- yarn storybook",
     "build:all": "lerna run build --npm-client=yarn",
     "release": "lerna publish --yes --conventional-commits --no-verify-access"
   },

@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  border-radius: 8px;
+  border-radius: 6px;
   width: 100%;
   transition: all 0.8s ease;
   color: $dark-primary-text;
@@ -22,6 +22,7 @@
   svg {
     width: 24px;
     height: 24px;
+
     path {
       transition: all 0.8s ease;
       fill: $dark-primary-text;
@@ -34,6 +35,7 @@
     font-weight: $font-medium;
     font-size: $text-small;
     line-height: $line-height-small;
+
     svg {
       width: 16px;
       height: 16px;
@@ -50,12 +52,14 @@
       }
     }
   }
+
   &.medium {
     height: 32px;
     padding: 4px 10px;
     font-weight: $font-medium;
     font-size: $text-body;
     line-height: $line-height-body;
+
     svg {
       width: 20px;
       height: 20px;
@@ -63,9 +67,10 @@
   }
 
   &.primary {
-    background: $forward-red;
+    background: $primary;
     z-index: 0;
     color: $light-base-1 !important;
+
     path {
       fill: $light-base-1 !important;
     }
@@ -80,7 +85,7 @@
       border-radius: inherit;
       z-index: -1;
 
-      background: $gradient-forward-red;
+      background: $gradient-primary;
       opacity: 0;
       transition: opacity 0.8s ease;
     }
@@ -92,22 +97,22 @@
       }
     }
   }
+
   &.secondary,
   &.icon {
-    background: var(--base-2);
+    background: $dark-base-2;
+    color: $light-base-1 !important;
+
     path {
-      fill: var(--primary-text);
+      fill: $light-base-1 !important;
     }
 
     &:hover,
     &:focus {
-      background: $xiketic-50;
-      color: var(--hovered-text);
-      path {
-        fill: var(--hovered-text);
-      }
+      border: 1.5px solid $primary;
     }
   }
+
   &.tertiary {
     background: transparent !important;
     border: 1.5px solid var(--base-2);
@@ -116,6 +121,7 @@
     &:focus {
       color: var(--hovered-text);
       border-color: $xiketic-10;
+
       path {
         fill: var(--hovered-text);
       }
@@ -125,9 +131,11 @@
       border-color: var(--disabled);
     }
   }
+
   &.danger {
     color: $dark-primary-text !important;
     background: $forward-red-40;
+
     path {
       fill: $dark-primary-text;
     }
@@ -137,6 +145,7 @@
       background: $forward-red-50;
     }
   }
+
   &.link {
     text-decoration: underline;
     background: transparent !important;
@@ -144,6 +153,7 @@
     &:hover,
     &:focus {
       color: $xiketic-30;
+
       path {
         fill: $xiketic-30;
       }
@@ -154,6 +164,7 @@
     pointer-events: none;
     background: var(--disabled);
     color: var(--placeholder-text) !important;
+
     path {
       fill: var(--placeholder-text) !important;
     }
@@ -162,6 +173,7 @@
   .startIcon {
     margin-right: 8px;
   }
+
   .endIcon {
     margin-left: 8px;
   }
@@ -170,11 +182,13 @@
 [data-theme="light"] {
   .button {
     color: $light-secondary-text;
+
     svg {
       path {
         fill: $light-secondary-text;
       }
     }
+
     &.danger {
       background: $forward-red-50;
 
@@ -183,6 +197,7 @@
         background: $forward-red-40;
       }
     }
+
     &.secondary,
     &.icon {
       &:hover,
@@ -190,12 +205,14 @@
         background: $light-base-2;
       }
     }
+
     &.tertiary {
       &:hover,
       &:focus {
         border-color: $xiketic-50;
       }
     }
+
     &:disabled {
       background: var(--disabled);
     }

@@ -1,13 +1,21 @@
 $black: black;
 $white: white;
 
-$forward-red: #fb3a70;
-$forward-red-10: #fecedb;
-$forward-red-20: #fd9db8;
-$forward-red-30: #fb3a70;
-$forward-red-40: #e30543;
-$forward-red-50: #97032d;
-$forward-red-60: #4c0216;
+$forward-red: #E30543;
+$forward-red-10: #FFE8EE;
+$forward-red-20: #FFBFD1;
+$forward-red-30: #FF6D96;
+$forward-red-40: #E30543;
+$forward-red-50: #BA0034;
+$forward-red-60: #69001D;
+
+$primary: #9D4EDD;
+$primary-10: #F8F0FF;
+$primary-20: #DBAEFF;
+$primary-30: #BD6CFF;
+$primary-40: #9D4EDD;
+$primary-50: #7330AA;
+$primary-60: #4D1A77;
 
 $xiketic: #4b4b9a;
 $xiketic-10: #d6d6ff;
@@ -81,12 +89,8 @@ $light-secondary-text: #6e6e91;
 $light-primary-text: #454561;
 
 //gradient color
-$gradient-forward-red: linear-gradient(
-  85.7deg,
-  #aa448f 0%,
-  #ff1665 54.13%,
-  #fa6c81 101.89%
-);
+$gradient-primary: linear-gradient(113.94deg, #FE9051 -49.32%, #9D4EDD 29.63%, #3D1DBE 96.42%);
+$gradient-forward-red: linear-gradient(113.94deg, #FE9051 -49.32%, #9D4EDD 29.63%, #3D1DBE 96.42%);
 
 $gradient-cherry-blossom: linear-gradient(
   86.34deg,
@@ -152,7 +156,7 @@ $grey-5: #f9f9f9;
 $grey-0: #ffffff;
 
 //Accent
-$red-primary: #fa2256;
+$red-primary: #9D4EDD;
 $green-primary: #11cabe;
 $green-light: #30e0a1;
 $purple: #bd47fb;
