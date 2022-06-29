@@ -6,6 +6,7 @@ import { defineConfig } from 'rollup';
 import commonjs from 'rollup-plugin-commonjs';
 import copy from 'rollup-plugin-copy';
 import del from 'rollup-plugin-delete';
+import mv from 'rollup-plugin-mv';
 import externals from 'rollup-plugin-node-externals';
 import postcss from 'rollup-plugin-postcss';
 
@@ -41,16 +42,23 @@ export default defineConfig({
       minimize: true,
     }),
     copy({
-      hook: 'writeBundle',
       targets: [
-        { src: 'dist/esm/index.css', dest: 'dist/assets/styles' },
         { src: 'package.json', dest: 'dist' },
         { src: 'README.md', dest: 'dist' },
       ],
     }),
+    mv(
+      [
+        {
+          src: 'dist/esm/index.css',
+          dest: 'dist/assets/styles/index.css',
+        },
+      ],
+      { once: true, overwrite: true }
+    ),
     del({
       hook: 'closeBundle',
-      targets: ['dist/esm/index.css', 'dist/cjs/index.css'],
+      targets: ['dist/cjs/index.css'],
     }),
   ],
 });
