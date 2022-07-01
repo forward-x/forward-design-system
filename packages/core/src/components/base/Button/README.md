@@ -4,7 +4,7 @@
 
 | Name      | Description                                                                                                               | Types                                                                  | Default   | Required? |
 |-----------|---------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|-----------|:---------:|
-| variant   | Button appearance<br>- 'primary'<br>- 'secondary'<br>- 'tertiary'<br>- 'danger'<br>- 'link'<br>- 'icon'                   | 'primary' \| 'secondary' \| 'tertiary' \| 'danger' \| 'link' \| 'icon' | 'primary' |     No    |
+| variant   | Button appearance<br>- 'primary'<br>- 'secondary'<br>- 'danger'<br>- 'link'<br>- 'icon'                   | 'primary' \| 'secondary' \| 'danger' \| 'link' \| 'icon' | 'primary' |     No    |
 | size      | Size of Button<br>- 'L': 40px (desktop) / 48px (mobile)<br>- 'M': 32px (desktop)<br>- 'S': 24px (desktop) / 36px (mobile) | 'S' \| 'M' \| 'L'                                                      | 'L'       |     No    |
 | disabled  | Whether Button is disabled                                                                                                | boolean                                                                | false     |     No    |
 | startIcon | Icon before the children element (Will be ignored if variant is 'icon'                                                    | ReactNode                                                              |           |     No    |

@@ -23,7 +23,7 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   /**
    * @default 'primary'
    */
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'link' | 'icon';
+  variant?: 'primary' | 'secondary' | 'danger' | 'link' | 'icon';
 }
 
 const Button: FC<IButtonProps> = ({
@@ -47,7 +47,6 @@ const Button: FC<IButtonProps> = ({
           [styles.medium]: size === 'M',
           [styles.primary]: variant === 'primary',
           [styles.secondary]: variant === 'secondary',
-          [styles.tertiary]: variant === 'tertiary',
           [styles.danger]: variant === 'danger',
           [styles.link]: variant === 'link',
           [styles.icon]: variant === 'icon',
