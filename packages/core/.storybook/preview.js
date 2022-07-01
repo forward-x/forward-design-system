@@ -1,8 +1,10 @@
-import { themes } from '@storybook/theming'
+import { themes } from '@storybook/theming';
+import { useEffect } from 'react';
+import { useDarkMode } from 'storybook-dark-mode';
 import '../dist/assets/styles/index.css';
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -15,9 +17,19 @@ export const parameters = {
     dark: { ...themes.dark, appBg: 'black' },
     // Override the default light theme
     light: { ...themes.normal, appBg: 'light' },
-    darkClass: 'dark',
-    lightClass: 'light',
-    classTarget: 'html',
-    stylePreview: true
-  }
-}
+    stylePreview: true,
+  },
+};
+
+export const decorators = [
+  (Story) => {
+    const isDarkMode = useDarkMode();
+
+    useEffect(() => {
+      const root = document.getElementsByTagName('body');
+      root.item(0).dataset.theme = isDarkMode ? 'dark' : 'light';
+    }, [isDarkMode]);
+
+    return <Story />;
+  },
+];
