@@ -12,6 +12,8 @@
   }
 
   .item {
+    white-space: nowrap;
+
     * {
       color: var(--secondary-text);
     }

@@ -3,26 +3,6 @@ import React from 'react';
 import { Avatar } from '@forward-protocol/uikit';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-// export interface IAvatarProps {
-//   /**
-//    * @default 'default'
-//    */
-//   variant?: 'default' | 'name' | 'forward';
-//   /**
-//    * XL - 64px
-//    *
-//    * L - 40px
-//    *
-//    * M - 32px
-//    *
-//    * S - 24px
-//    *
-//    * @default 'M'
-//    */
-//   size?: 'XL' | 'L' | 'M' | 'S';
-//   name?: string;
-//   className?: string;
-// }
 export default {
   title: 'Base/Avatar',
   component: Avatar,
