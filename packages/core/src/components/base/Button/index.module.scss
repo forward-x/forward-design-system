@@ -107,6 +107,10 @@
     &:focus {
       border: 1.5px solid $primary;
     }
+
+    path {
+      fill: var(--primary-text);
+    }
   }
 
   &.danger {

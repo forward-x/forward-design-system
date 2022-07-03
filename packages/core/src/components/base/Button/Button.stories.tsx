@@ -7,6 +7,22 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 export default {
   title: 'Base/Button',
   component: Button,
+  argTypes: {
+    variant: {
+      options: ['primary', 'secondary', 'danger', 'link', 'icon'],
+      control: { type: 'radio' },
+      defaultValue: 'primary',
+    },
+    size: {
+      options: ['S', 'M', 'L'],
+      control: { type: 'inline-radio' },
+      defaultValue: 'L',
+    },
+    disabled: {
+      control: { type: 'boolean' },
+      defaultValue: false,
+    },
+  },
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => (
@@ -15,22 +31,28 @@ const Template: ComponentStory<typeof Button> = (args) => (
   </div>
 );
 
-export const Default = Template.bind({});
+export const Default: ComponentStory<typeof Button> = Template.bind({});
 Default.args = {
   variant: 'primary',
   children: 'Button',
 };
 
-export const WithStartIcon = Template.bind({});
+export const WithStartIcon: ComponentStory<typeof Button> = Template.bind({});
 WithStartIcon.args = {
   variant: 'primary',
   children: 'Button',
-  startIcon: <UserIcon size={'S'} />,
+  startIcon: <UserIcon />,
 };
 
-export const WithEndIcon = Template.bind({});
+export const WithEndIcon: ComponentStory<typeof Button> = Template.bind({});
 WithEndIcon.args = {
   variant: 'primary',
   children: 'Button',
-  endIcon: <UserIcon size={'S'} />,
+  endIcon: <UserIcon />,
+};
+
+export const Icon: ComponentStory<typeof Button> = Template.bind({});
+Icon.args = {
+  variant: 'icon',
+  children: <UserIcon />,
 };
