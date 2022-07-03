@@ -16,10 +16,7 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src/components",
-    "src/hooks",
-    "src/index.ts",
-    "src/react-app-env.d.ts"
+    "src"
   ],
   "exclude": ["node_modules", "**/*.stories.*"]
 }
