@@ -29,7 +29,7 @@
     "dev:ui-core": "lerna exec --scope=@forward-protocol/uikit -- yarn start",
     "dev:ui-site": "lerna exec --scope=@forward-protocol/ui-demo -- yarn start",
     "dev:ui-icons": "lerna exec --scope=@forward-protocol/ui-icons -- yarn start",
-    "dev:storybook": "lerna exec --scope=@forward-protocol/uikit -- yarn storybook",
+    "dev:storybook": "lerna exec --scope=@forward-protocol/ui-demo -- yarn start",
     "build:all": "lerna run build --npm-client=yarn",
     "release": "lerna publish --yes --conventional-commits --no-verify-access"
   },

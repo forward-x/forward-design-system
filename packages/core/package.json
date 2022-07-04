@@ -27,9 +27,7 @@
     "prepublishOnly": "replace-in-files --string='~@forward-protocol/ui-icons/dist/assets/styles/index.css' --replacement='~@forward-protocol/ui-icons/assets/styles/index.css' dist/assets/styles/index.css",
     "build": "rollup -c ./rollup.config.ts",
     "start": "nodemon src/index.ts -L -q",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet --fix",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet --fix"
   },
   "dependencies": {
     "@forward-protocol/ui-icons": "^2.0.0",
@@ -48,17 +46,6 @@
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.2",
     "@rollup/plugin-url": "^6.1.0",
-    "@storybook/addon-actions": "^6.5.9",
-    "@storybook/addon-essentials": "^6.5.9",
-    "@storybook/addon-interactions": "^6.5.9",
-    "@storybook/addon-links": "^6.5.9",
-    "@storybook/builder-webpack5": "^6.5.9",
-    "@storybook/manager-webpack5": "^6.5.9",
-    "@storybook/node-logger": "^6.5.9",
-    "@storybook/preset-create-react-app": "^4.1.2",
-    "@storybook/react": "^6.5.9",
-    "@storybook/testing-library": "^0.0.13",
-    "@storybook/theming": "^6.5.9",
     "@svgr/rollup": "^6.2.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
@@ -68,12 +55,10 @@
     "@types/react": "^18.0.6",
     "@types/react-calendar": "^3.5.1",
     "@types/react-dom": "^18.0.2",
-    "babel-plugin-named-exports-order": "^0.0.2",
     "eslint": "^8.13.0",
     "eslint-plugin-storybook": "^0.5.13",
     "nodemon": "^2.0.15",
     "prettier": "^2.6.2",
-    "prop-types": "^15.8.1",
     "replace-in-files-cli": "^2.0.0",
     "rollup": "^2.70.2",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -81,10 +66,7 @@
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-mv": "^0.0.2",
     "rollup-plugin-node-externals": "^4.0.0",
-    "rollup-plugin-postcss": "^4.0.2",
-    "sass": "^1.50.1",
-    "storybook-dark-mode": "^1.1.0",
-    "webpack": "^5.73.0"
+    "rollup-plugin-postcss": "^4.0.2"
   },
   "eslintConfig": {
     "extends": [

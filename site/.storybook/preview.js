@@ -1,7 +1,7 @@
 import { themes } from '@storybook/theming';
 import { useEffect } from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
-import '../dist/assets/styles/index.css';
+import '@forward-protocol/uikit/dist/assets/styles/index.css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
