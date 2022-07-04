@@ -1,3 +1,6 @@
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const path = require('path');
+
 module.exports = {
   stories: ['../../**/*.stories.mdx', '../../**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
@@ -12,22 +15,23 @@ module.exports = {
     builder: '@storybook/builder-webpack5',
   },
   webpackFinal: (config) => {
+    config.plugins.push(
+      new ForkTsCheckerWebpackPlugin({
+        typescript: {
+          configFile: path.resolve(__dirname, '../tsconfig.json'),
+        },
+      })
+    );
+
     config.module.rules.push({
-      test: /\.tsx?$/,
+      test: /\.(ts|tsx)$/,
       exclude: /node_modules/,
       use: [
         {
-          loader: require.resolve('babel-loader'),
+          loader: require.resolve('ts-loader'),
           options: {
-            presets: [
-              require('@babel/preset-typescript').default,
-              [
-                require('@babel/preset-react').default,
-                { runtime: 'automatic' },
-              ],
-              require('@babel/preset-env').default,
-            ],
-          },
+            transpileOnly: true,
+          }
         },
       ],
     });
