@@ -22,7 +22,7 @@
     .radio {
       width: 24px;
       height: 24px;
-      border: 2px solid var(--base-2);
+      border: 1.5px solid var(--base-2);
       border-radius: 100%;
       display: flex;
       justify-content: center;
@@ -39,20 +39,7 @@
     display: none;
 
     &:checked ~ label .radio {
-      border: 1px solid $forward-red-30;
-
-      &::before {
-        content: "";
-        border-radius: 100%;
-        background-color: $forward-red-30;
-        width: 14px;
-        height: 14px;
-
-        @include smallMedia {
-          width: 19px;
-          height: 19px;
-        }
-      }
+      border: 6px solid $primary;
     }
   }
 }
