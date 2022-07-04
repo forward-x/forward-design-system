@@ -1,4 +1,4 @@
-import React, { FC, InputHTMLAttributes, ReactNode } from 'react';
+import React, { FC, InputHTMLAttributes, ReactNode, useId } from 'react';
 
 import clsx from 'clsx';
 
@@ -9,16 +9,13 @@ export interface IRadioProps extends InputHTMLAttributes<HTMLInputElement> {
   text?: ReactNode;
 }
 
-const Radio: FC<IRadioProps> = ({
-  text,
-  id = 'default',
-  className,
-  ...props
-}) => {
+const Radio: FC<IRadioProps> = ({ text, id, className, ...props }) => {
+  const randomId = useId();
+
   return (
     <div className={clsx(styles.container, className)}>
-      <input type="radio" id={id} {...props} />
-      <label htmlFor={id}>
+      <input type="radio" id={id ?? randomId} {...props} />
+      <label htmlFor={id ?? randomId}>
         <div className={styles.radio} />
         {text}
       </label>
