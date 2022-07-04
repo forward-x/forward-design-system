@@ -4,7 +4,7 @@ import { Input } from '@forward-protocol/uikit';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
-  title: 'Base/Data entry/Search',
+  title: 'Compose/Data entry/Search',
   component: Input.Search,
   argTypes: {
     size: {

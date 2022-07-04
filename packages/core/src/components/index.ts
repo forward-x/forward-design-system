@@ -1,3 +1,21 @@
+import {
+  Checkbox,
+  Input as DefaultInput,
+  Password,
+  Radio,
+  Switch,
+} from './base';
+import { Digits, Search } from './compose';
+
+export const Input = Object.assign(DefaultInput, {
+  Password,
+  Search,
+  Digits,
+  Checkbox,
+  Radio,
+  Switch,
+});
+
 export type {
   IAvatarProps,
   IBreadcrumbsProps,
@@ -5,21 +23,13 @@ export type {
   ICalendarProps,
   IChipProps,
   ICheckboxProps,
-  IInputDigitsProps,
-  IInputPasswordProps,
   IInputProps,
-  IInputSearchProps,
+  IInputPasswordProps,
   IRadioProps,
   IStepsBarProps,
   IStepsRadialProps,
   ISwitchProps,
 } from './base';
-export {
-  Avatar,
-  Breadcrumbs,
-  Button,
-  Calendar,
-  Chip,
-  Input,
-  Steps,
-} from './base';
+export { Avatar, Breadcrumbs, Button, Calendar, Chip, Steps } from './base';
+
+export type { IInputDigitsProps, IInputSearchProps } from './compose';

@@ -10,7 +10,7 @@ import React, {
 
 import clsx from 'clsx';
 
-import Input from '../Input';
+import { Input } from '../../../base';
 
 import styles from './index.module.scss';
 

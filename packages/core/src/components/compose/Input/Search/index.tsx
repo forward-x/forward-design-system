@@ -3,7 +3,7 @@ import React, { forwardRef, InputHTMLAttributes } from 'react';
 import { SearchIcon } from '@forward-protocol/ui-icons';
 import clsx from 'clsx';
 
-import Input from '../Input';
+import { Input } from '../../../base';
 
 import styles from './index.module.scss';
 
