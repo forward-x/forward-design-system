@@ -10,11 +10,12 @@
 
   @include smallMedia {
     height: 48px;
+    padding: 12px 16px;
   }
 
   &:focus-within,
   &:hover {
-    border-color: var(--focused);
+    border-color: $primary;
   }
 
   &.small {
@@ -23,16 +24,20 @@
 
     @include smallMedia {
       height: 36px;
+      padding: 6px 8px;
+      input {
+        font-size: $text-body;
+        line-height: $line-height-body;
+      }
+      svg {
+        width: 20px !important;
+        height: 20px !important;
+      }
     }
 
     input {
       font-size: $text-small;
       line-height: $line-height-small;
-
-      @include smallMedia {
-        font-size: $text-body;
-        line-height: $line-height-body;
-      }
     }
 
     .prefix svg {
@@ -48,9 +53,18 @@
   }
   &.medium {
     height: 32px;
-    font-size: $text-small;
-    line-height: $line-height-small;
     padding: 4px 12px;
+
+    @include smallMedia {
+      height: 36px;
+      padding: 6px 8px;
+    }
+
+    input {
+      font-size: $text-body;
+      line-height: $line-height-body;
+    }
+
     .prefix svg {
       width: 20px;
       height: 20px;

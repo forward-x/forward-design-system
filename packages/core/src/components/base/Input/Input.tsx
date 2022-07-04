@@ -21,7 +21,7 @@ export interface IInputProps
   /**
    * L - 40px (desktop) / 48px (mobile)
    *
-   * M - 32px (desktop)
+   * M - 32px (desktop) / 36px (mobile)
    *
    * S - 24px (desktop) / 36px (mobile)
    *
