@@ -1,7 +1,9 @@
-import React, { FC, InputHTMLAttributes } from 'react';
+import React, { forwardRef, InputHTMLAttributes } from 'react';
 
 import { SearchIcon } from '@forward-protocol/ui-icons';
 import clsx from 'clsx';
+
+import Input from '../Input';
 
 import styles from './index.module.scss';
 
@@ -20,24 +22,30 @@ export interface IInputSearchProps
   size?: 'L' | 'M' | 'S';
 }
 
-const Search: FC<IInputSearchProps> = ({ className, size = 'L', ...props }) => {
-  return (
-    <div
-      className={clsx(
-        styles.container,
-        {
-          [styles.medium]: size === 'M',
-          [styles.small]: size === 'S',
-        },
-        className
-      )}
-    >
-      <input {...props} type="text" />
-      <button className={styles.suffix} type="submit">
-        <SearchIcon />
-      </button>
-    </div>
-  );
-};
+const Search = forwardRef<HTMLInputElement | null, IInputSearchProps>(
+  ({ className, size = 'L', ...props }, ref) => {
+    return (
+      <Input
+        {...props}
+        className={clsx(styles.input, className)}
+        ref={ref}
+        size={size}
+        endAdornment={
+          <button
+            className={clsx(styles.suffix, {
+              [styles.small]: size === 'S',
+              [styles.medium]: size === 'M',
+            })}
+            type="submit"
+          >
+            <SearchIcon />
+          </button>
+        }
+      />
+    );
+  }
+);
+
+Search.displayName = 'Search';
 
 export default Search;

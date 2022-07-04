@@ -1,6 +1,6 @@
 @import "../index.module.scss";
 
-.container {
+.input {
   .suffix {
     position: absolute;
     top: -1.5px;
@@ -20,38 +20,36 @@
     @include smallMedia {
       height: 48px;
     }
-  }
 
-  input:not(:placeholder-shown) ~ .suffix {
-    background-color: $primary;
-  }
+    &.small {
+      width: 40px;
+      height: 24px;
 
-  &.small .suffix {
-    width: 40px;
-    height: 24px;
+      @include smallMedia {
+        height: 36px;
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+    &.medium {
+      width: 44px;
+      height: 32px;
 
-    @include smallMedia {
-      height: 36px;
-      svg {
-        width: 20px;
-        height: 20px;
+      @include smallMedia {
+        height: 32px;
       }
     }
   }
-  &.medium .suffix {
-    width: 44px;
-    height: 32px;
 
-    @include smallMedia {
-      height: 32px;
-    }
+  &:not(:placeholder-shown) ~ .suffix {
+    background-color: $primary;
   }
 }
 
 [data-theme="light"] {
-  .container {
-    .suffix {
-      background-color: $light-base-2;
-    }
+  .input .suffix {
+    background-color: $light-base-2;
   }
 }
