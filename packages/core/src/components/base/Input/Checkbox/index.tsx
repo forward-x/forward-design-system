@@ -1,4 +1,4 @@
-import React, { FC, InputHTMLAttributes, ReactNode } from 'react';
+import React, { FC, InputHTMLAttributes, ReactNode, useId } from 'react';
 
 import { CheckmarkIcon } from '@forward-protocol/ui-icons';
 import clsx from 'clsx';
@@ -22,10 +22,12 @@ export interface ICheckboxProps
 const Checkbox: FC<ICheckboxProps> = ({
   size = 'M',
   text,
-  id = 'default',
+  id,
   className,
   ...props
 }) => {
+  const randomId = useId();
+
   return (
     <div
       className={clsx(
@@ -34,8 +36,8 @@ const Checkbox: FC<ICheckboxProps> = ({
         className
       )}
     >
-      <input type="checkbox" id={id} {...props} />
-      <label htmlFor={id}>
+      <input type="checkbox" id={id ?? randomId} {...props} />
+      <label htmlFor={id ?? randomId}>
         <div className={styles.checkbox}>
           <CheckmarkIcon className={styles.check} />
         </div>
