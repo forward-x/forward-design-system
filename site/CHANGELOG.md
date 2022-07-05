@@ -3,6 +3,83 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/ui-demo@1.0.29...@forward-protocol/ui-demo@2.0.0) (2022-07-05)
+
+
+### Features
+
+* update most component's color to new CI ([#19](https://github.com/Forward-Protocol/forward-design-system/issues/19)) ([0047c44](https://github.com/Forward-Protocol/forward-design-system/commit/0047c44b45ce3f90115cddc714c6d6d739db3995))
+
+
+### BREAKING CHANGES
+
+* `tertiary` on Button is no longer valid
+
+* chore: button style
+
+* chore: avatar
+
+* chore: update breadcrumbs style
+
+* chore: update button style
+
+* chore: add chip to storybook
+
+* chore: add step to storybook
+
+* fix: add mobile size for Button's with medium size
+
+* chore: ignore stories file when building and versioning
+
+* chore: move storybook to site folder instead
+
+* chore: change Input, Password, and Search's color and add mobile size
+
+* chore: change Radio's color
+
+* fix: use useId on Radio instead to prevent id duplication
+
+* chore: add Calendar story
+
+* chore: remove unused variables in theme
+
+* chore: update Radio's doc
+
+* chore: update Input's doc
+
+* chore: update Switch's color
+
+* chore: update Checkbox's color, add another size
+
+* fix: use useId on Checkbox instead to prevent id duplication
+
+* chore: update Search's color
+
+* chore: change typescript loader on storybook
+
+* fix: forwardRef on Checkbox, Password, and Radio
+
+* fix: forwardRef and refactor Search
+
+* chore: update yarn.lock
+
+* chore: change file structure
+
+* fix: unexpected cursor on Digits
+
+* chore: bump eslint complexity to 6
+
+* feat: add Input.Crypto component
+
+* chore: update Chip's color
+* `variant` is no longer valid
+
+Co-authored-by: Passakon Puttasuwan <passakon_p@hotmail.com>
+
+
+
+
+
 ## [1.0.29](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/ui-demo@1.0.28...@forward-protocol/ui-demo@1.0.29) (2022-06-29)
 
 **Note:** Version bump only for package @forward-protocol/ui-demo
