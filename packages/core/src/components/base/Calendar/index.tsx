@@ -31,7 +31,11 @@ const Calendar: FC<ICalendarProps> = ({
 }) => {
   const [selectedDay, setSelectedDay] = useState<CalendarProps['value']>();
 
-  // eslint-disable-next-line complexity
+  const isAllOnToday = (dates: Date[]) => {
+    const now = new Date();
+    return dates.every((date) => isSameDay(date, now));
+  };
+
   const displayDate = () => {
     const now = new Date();
 
@@ -40,8 +44,7 @@ const Calendar: FC<ICalendarProps> = ({
       return formatDate(selectedDay);
     }
     if (selectedDay?.[0] && selectedDay?.[1]) {
-      if (isSameDay(selectedDay[0], now) && isSameDay(selectedDay[1], now))
-        return 'Now';
+      if (isAllOnToday([selectedDay[0], selectedDay[1]])) return 'Now';
       return `${formatDate(selectedDay[0])} – ${formatDate(selectedDay[1])}`;
     }
     return 'Now';
