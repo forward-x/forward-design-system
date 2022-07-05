@@ -37,6 +37,7 @@
     "react-calendar": "^3.7.0",
     "react-dom": "^18.0.0",
     "react-merge-refs": "^1.1.0",
+    "react-number-format": "^4.9.3",
     "react-scripts": "^5.0.1",
     "react-switch": "^6.0.0",
     "tslib": "^2.4.0",

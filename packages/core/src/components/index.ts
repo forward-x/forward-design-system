@@ -5,7 +5,7 @@ import {
   Radio,
   Switch,
 } from './base';
-import { Digits, Search } from './compose';
+import { Crypto, Digits, Search } from './compose';
 
 export const Input = Object.assign(DefaultInput, {
   Password,
@@ -14,6 +14,7 @@ export const Input = Object.assign(DefaultInput, {
   Checkbox,
   Radio,
   Switch,
+  Crypto,
 });
 
 export type {
@@ -32,4 +33,8 @@ export type {
 } from './base';
 export { Avatar, Breadcrumbs, Button, Calendar, Chip, Steps } from './base';
 
-export type { IInputDigitsProps, IInputSearchProps } from './compose';
+export type {
+  IInputCryptoProps,
+  IInputDigitsProps,
+  IInputSearchProps,
+} from './compose';

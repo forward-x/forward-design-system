@@ -4,10 +4,11 @@ This component consists of many small components by using jsx dot notation so pl
 
 ### Related components:
 - [Input.Checkbox](./Checkbox)
-- [Input.Digits](./Digits)
+- [Input.Crypto](../../compose/Input/Crypto)
+- [Input.Digits](../../compose/Input/Digits)
 - [Input.Password](./Password)
 - [Input.Radio](./Radio)
-- [Input.Search](./Search)
+- [Input.Search](../../compose/Input/Search)
 - [Input.Switch](./Switch)
 
 ## Props

@@ -35,9 +35,9 @@
       }
     }
 
-    input {
-      font-size: $text-small;
-      line-height: $line-height-small;
+    input, .prefix, .suffix {
+      font-size: $text-tiny;
+      line-height: $line-height-tiny;
     }
 
     .prefix svg {
@@ -58,11 +58,6 @@
     @include smallMedia {
       height: 36px;
       padding: 6px 8px;
-    }
-
-    input {
-      font-size: $text-body;
-      line-height: $line-height-body;
     }
 
     .prefix svg {
@@ -107,6 +102,9 @@
 
   .prefix {
     margin-right: 8px;
+    color: var(--placeholder-text);
+    font-size: $text-body;
+    line-height: $line-height-body;
     path {
       fill: var(--placeholder-text);
     }
@@ -115,8 +113,8 @@
     margin-left: 10px;
     color: var(--placeholder-text);
     background-color: transparent;
-    font-size: $text-small;
-    line-height: $line-height-small;
+    font-size: $text-body;
+    line-height: $line-height-body;
     path {
       fill: var(--primary-text);
     }
