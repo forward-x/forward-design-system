@@ -4,6 +4,10 @@
   gap: 20px;
   color: $white;
 
+  span {
+    white-space: nowrap;
+  }
+
   progress {
     appearance: none;
     -moz-appearance: none;

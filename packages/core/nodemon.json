@@ -2,6 +2,7 @@
   "execMap": {
     "ts": "yarn build"
   },
+  "ignore": ["*.stories.*"],
   "ext": "*",
   "watch": ["src/index.ts", "src"]
 }

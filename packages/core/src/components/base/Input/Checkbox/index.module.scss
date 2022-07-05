@@ -4,6 +4,16 @@
   width: fit-content;
   height: fit-content;
 
+  &.small .checkbox {
+    width: 20px;
+    height: 20px;
+
+    .check {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
   label {
     display: flex;
     align-items: center;
@@ -12,22 +22,12 @@
     position: relative;
     cursor: pointer;
 
-    @include smallMedia {
-      font-size: $text-small;
-      line-height: $line-height-small;
-    }
-
     .checkbox {
       width: 24px;
       height: 24px;
       border: 1.5px solid var(--base-2);
       border-radius: 4px;
       position: relative;
-
-      @include smallMedia {
-        width: 32px;
-        height: 32px;
-      }
 
       .check {
         top: 0;
@@ -37,18 +37,12 @@
         margin: auto;
         position: absolute;
         display: none;
-        background-color: $forward-red-30;
-        border-radius: 2px;
-        width: 15px;
-        height: 15px;
-
-        @include smallMedia {
-          width: 20px;
-          height: 20px;
-        }
+        border-radius: 4px;
+        width: 20px;
+        height: 20px;
 
         path {
-          fill: $dark-primary-text;
+          fill: $white;
         }
       }
     }
@@ -57,13 +51,12 @@
   input[type="checkbox"] {
     display: none;
 
-    &:checked ~ label {
-      .checkbox {
-        border-color: $forward-red-30;
+    &:checked ~ label .checkbox {
+      background-color: $primary;
+      border-color: $primary;
 
-        .check {
-          display: block;
-        }
+      .check {
+        display: block;
       }
     }
   }

@@ -1,27 +1,65 @@
-import Checkbox, { ICheckboxProps } from './Checkbox';
-import Digits, { IInputDigitsProps } from './Digits';
-import Default, { IInputProps } from './Input';
-import Password, { IInputPasswordProps } from './Password';
-import Radio, { IRadioProps } from './Radio';
-import Search, { IInputSearchProps } from './Search';
-import Switch, { ISwitchProps } from './Switch';
+import React, {
+  forwardRef,
+  InputHTMLAttributes,
+  ReactNode,
+  useRef,
+} from 'react';
 
-const Input = Object.assign(Default, {
-  Password,
-  Search,
-  Digits,
-  Checkbox,
-  Radio,
-  Switch,
-});
+import clsx from 'clsx';
+import mergeRefs from 'react-merge-refs';
 
-export type {
-  ICheckboxProps,
-  IInputDigitsProps,
-  IInputPasswordProps,
-  IInputProps,
-  IRadioProps,
-  IInputSearchProps,
-  ISwitchProps,
-};
+import styles from './index.module.scss';
+
+export interface IInputProps
+  extends Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    'prefix' | 'type' | 'size'
+  > {
+  className?: string;
+  startAdornment?: ReactNode;
+  endAdornment?: ReactNode;
+  /**
+   * L - 40px (desktop) / 48px (mobile)
+   *
+   * M - 32px (desktop) / 36px (mobile)
+   *
+   * S - 24px (desktop) / 36px (mobile)
+   *
+   * @default 'L'
+   */
+  size?: 'L' | 'M' | 'S';
+}
+
+const Input = forwardRef<HTMLInputElement | null, IInputProps>(
+  ({ className, startAdornment, endAdornment, size = 'L', ...props }, ref) => {
+    const inputRef = useRef<HTMLInputElement>(null);
+
+    const handleClick = () => {
+      inputRef.current?.focus();
+    };
+
+    return (
+      <div
+        className={clsx(
+          styles.container,
+          {
+            [styles.medium]: size === 'M',
+            [styles.small]: size === 'S',
+          },
+          className
+        )}
+        onClick={handleClick}
+      >
+        {startAdornment && (
+          <div className={styles.prefix}>{startAdornment}</div>
+        )}
+        <input {...props} type="text" ref={mergeRefs([inputRef, ref])} />
+        {endAdornment && <div className={styles.suffix}>{endAdornment}</div>}
+      </div>
+    );
+  }
+);
+
+Input.displayName = 'Input';
+
 export default Input;

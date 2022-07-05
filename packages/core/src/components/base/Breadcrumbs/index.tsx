@@ -15,7 +15,7 @@ export interface IBreadcrumbsProps {
 const Breadcrumbs: FC<IBreadcrumbsProps> = ({
   className,
   children,
-  variant = 'dafault',
+  variant = 'default',
 }) => {
   const components: ReactNode[] = [...children];
   if (variant === 'truncate') components.splice(1, children.length - 3, '...');

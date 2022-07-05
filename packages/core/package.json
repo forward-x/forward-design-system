@@ -37,6 +37,7 @@
     "react-calendar": "^3.7.0",
     "react-dom": "^18.0.0",
     "react-merge-refs": "^1.1.0",
+    "react-number-format": "^4.9.3",
     "react-scripts": "^5.0.1",
     "react-switch": "^6.0.0",
     "tslib": "^2.4.0",
@@ -56,6 +57,7 @@
     "@types/react-calendar": "^3.5.1",
     "@types/react-dom": "^18.0.2",
     "eslint": "^8.13.0",
+    "eslint-plugin-storybook": "^0.5.13",
     "nodemon": "^2.0.15",
     "prettier": "^2.6.2",
     "replace-in-files-cli": "^2.0.0",
@@ -65,13 +67,22 @@
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-mv": "^0.0.2",
     "rollup-plugin-node-externals": "^4.0.0",
-    "rollup-plugin-postcss": "^4.0.2",
-    "sass": "^1.50.1"
+    "rollup-plugin-postcss": "^4.0.2"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "publishConfig": {

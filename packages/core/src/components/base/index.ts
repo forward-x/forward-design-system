@@ -13,16 +13,20 @@ export { default as Calendar } from './Calendar';
 export type { IChipProps } from './Chip';
 export { default as Chip } from './Chip';
 
-export type {
-  ICheckboxProps,
-  IInputDigitsProps,
-  IInputPasswordProps,
-  IInputProps,
-  IInputSearchProps,
-  IRadioProps,
-  ISwitchProps,
-} from './Input';
+export type { ICheckboxProps } from './Input/Checkbox';
+export { default as Checkbox } from './Input/Checkbox';
+
+export type { IInputPasswordProps } from './Input/Password';
+export { default as Password } from './Input/Password';
+
+export type { IInputProps } from './Input';
 export { default as Input } from './Input';
+
+export type { IRadioProps } from './Input/Radio';
+export { default as Radio } from './Input/Radio';
+
+export type { ISwitchProps } from './Input/Switch';
+export { default as Switch } from './Input/Switch';
 
 export type { IStepsBarProps, IStepsRadialProps } from './Steps';
 export { default as Steps } from './Steps';

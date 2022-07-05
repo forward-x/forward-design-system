@@ -10,9 +10,7 @@ body {
 
   --base-2: #{$light-base-2};
 
-  --focused: #{$xiketic-40};
-  --hovered-text: #{$xiketic-30};
-  --disabled: #{$light-base-2};
+  --disabled: #{$light-disabled};
 
   // === Dark theme ===
   &[data-theme="dark"] {
@@ -23,9 +21,7 @@ body {
     --placeholder-text: #{$dark-placeholder-text};
 
     --base-2: #{$dark-base-2};
-
-    --focused: #{$xiketic-20};
-    --hovered-text: #{$xiketic-20};
-    --disabled: #{$dark-base-1};
+    
+    --disabled: #{$dark-disabled};
   }
 }

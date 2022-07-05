@@ -1,21 +1,142 @@
 $black: black;
 $white: white;
 
-$forward-red: #fb3a70;
-$forward-red-10: #fecedb;
-$forward-red-20: #fd9db8;
-$forward-red-30: #fb3a70;
-$forward-red-40: #e30543;
-$forward-red-50: #97032d;
-$forward-red-60: #4c0216;
+//Palette
+$primary-10: #F8F0FF;
+$primary-20: #DBAEFF;
+$primary-30: #BD6CFF;
+$primary-40: #9D4EDD;
+$primary-50: #7330AA;
+$primary-60: #4D1A77;
+$primary: $primary-40;
 
-$xiketic: #4b4b9a;
+$success-10: #78F4EC;
+$success-20: #35EEE3;
+$success-30: #11C9BE;
+$success-40: #0D978F;
+$success-50: #09655F;
+$success-60: #043230;
+$success: $success-30;
+
+$warning-10: #FFF4ED;
+$warning-20: #F59F50;
+$warning-30: #F27F16;
+$warning-40: #BB5F0B;
+$warning-50: #7D4007;
+$warning-60: #3E2004;
+$warning: $warning-30;
+
+$error-10: #FFE8EE;
+$error-20: #FFBFD1;
+$error-30: #FF6D96;
+$error-40: #E30543;
+$error-50: #BA0034;
+$error-60: #69001D;
+$error: $error-30;
+
 $xiketic-10: #d6d6ff;
 $xiketic-20: #b4b4fb;
 $xiketic-30: #7777d4;
 $xiketic-40: #4b4b9a;
 $xiketic-50: #282860;
 $xiketic-60: #141429;
+$xiketic: $xiketic-40;
+
+//Base
+$dark-base-1: #202036;
+$dark-base-2: #333454;
+$dark-base-3: #161624;
+
+$light-base-1: #ffffff;
+$light-base-2: #e9e9f7;
+$light-base-3: #F9F9FF;
+
+$dark-background: #141421;
+$light-background: #f7f7fc;
+
+//Text
+$dark-placeholder-text: #69698a;
+$dark-tertiary-text: #7c7c99;
+$dark-secondary-text: #9797ba;
+$dark-primary-text: #e3e3ed;
+
+$light-placeholder-text: #ababc9;
+$light-tertiary-text: #8f8faf;
+$light-secondary-text: #6e6e91;
+$light-primary-text: #454561;
+
+$dark-disabled: #303049;
+$light-disabled: #E3E3Ed;
+
+//gradient color
+$gradient-primary: linear-gradient(113.94deg, #FE9051 -49.32%, #9D4EDD 29.63%, #3D1DBE 96.42%);
+$gradient-forward-red: linear-gradient(113.94deg, #FE9051 -49.32%, #9D4EDD 29.63%, #3D1DBE 96.42%);
+
+$gradient-cherry-blossom: linear-gradient(
+  86.34deg,
+  #dea3fd 2.97%,
+  #fb3a70 46.54%,
+  #fd9db8 96.96%
+);
+$gradient-lavender-night: linear-gradient(
+  86.34deg,
+  #a280f9 2.97%,
+  #9d05ec 46.54%,
+  #7440f6 96.96%
+);
+$gradient-silver-bullet: linear-gradient(
+  90deg,
+  #8181b9 0%,
+  #ffffff 50.52%,
+  #8181b9 100%
+);
+$gradient-latino: linear-gradient(
+  90deg,
+  #f59f50 0%,
+  #fb3a70 49.48%,
+  #7440f6 100%
+);
+$gradient-gold: linear-gradient(90.04deg, #f2c94c 3.68%, #ebff00 54.19%);
+
+// -------------------------------------------------------- to be delete
+
+//Brand Color
+
+//base
+$base: #121220;
+$white-transparent: rgba(255, 255, 255, 0.8);
+// $dark-background: #080811;
+$light-background: #f3f3fa;
+$xk-90: #1d1d3d;
+$xk-80: #2a2a56;
+$xk-70: #3d3d6e;
+
+$dark-grey: #191929;
+$light-grey: #ededfa;
+$grey-xk: #5e5e89;
+$icon-grey: #3d4259;
+$subtle-text: #8585b9;
+
+$grey-110: #191919;
+$grey-100: #1e1f25;
+$grey-90: #2f3241;
+$grey-85: #24252c;
+$grey-80: #34384c;
+$grey-60: #5d6588;
+$grey-40: #a5adcf;
+$grey-30: #b5b8c9;
+$grey-20: #e5e6ed;
+$grey-10: #fafafa;
+$grey-5: #f9f9f9;
+$grey-0: #ffffff;
+
+$forward-red: #E30543;
+$forward-red-10: #FFE8EE;
+$forward-red-20: #FFBFD1;
+$forward-red-30: #FF6D96;
+$forward-red-40: #E30543;
+$forward-red-50: #BA0034;
+$forward-red-60: #69001D;
 
 $impact: #4a0be8;
 $impact-10: #a280f9;
@@ -56,100 +177,6 @@ $green-30: #11c9be;
 $green-40: #0d978f;
 $green-50: #09655f;
 $green-60: #043230;
-
-//Base
-$dark-base-1: #202036;
-$dark-base-2: #333454;
-$dark-base-3: #161624;
-
-$light-base-1: #ffffff;
-$light-base-2: #e9e9f7;
-$light-base-3: #f9f9ff;
-
-$dark-background: #141421;
-$light-background: #f7f7fc;
-
-//Text
-$dark-placeholder-text: #69698a;
-$dark-tertiary-text: #7c7c99;
-$dark-secondary-text: #9797ba;
-$dark-primary-text: #e3e3ed;
-
-$light-placeholder-text: #ababc9;
-$light-tertiary-text: #8f8faf;
-$light-secondary-text: #6e6e91;
-$light-primary-text: #454561;
-
-//gradient color
-$gradient-forward-red: linear-gradient(
-  85.7deg,
-  #aa448f 0%,
-  #ff1665 54.13%,
-  #fa6c81 101.89%
-);
-
-$gradient-cherry-blossom: linear-gradient(
-  86.34deg,
-  #dea3fd 2.97%,
-  #fb3a70 46.54%,
-  #fd9db8 96.96%
-);
-$gradient-lavender-night: linear-gradient(
-  86.34deg,
-  #a280f9 2.97%,
-  #9d05ec 46.54%,
-  #7440f6 96.96%
-);
-$gradient-silver-bullet: linear-gradient(
-  90deg,
-  #8181b9 0%,
-  #ffffff 50.52%,
-  #8181b9 100%
-);
-$gradient-latino: linear-gradient(
-  90deg,
-  #f59f50 0%,
-  #fb3a70 49.48%,
-  #7440f6 100%
-);
-$gradient-gold: linear-gradient(90.04deg, #f2c94c 3.68%, #ebff00 54.19%);
-
-// -------------------------------------------------------- to be delete
-
-//Brand Color
-
-//base
-$base: #121220;
-$white-transparent: rgba(255, 255, 255, 0.8);
-// $dark-background: #080811;
-$light-background: #f3f3fa;
-$xk-90: #1d1d3d;
-$xk-80: #2a2a56;
-$xk-70: #3d3d6e;
-$xk-60: #4b4b9a;
-$xk-40: #6565b4;
-$xk-30: #e1e1f0;
-$xk-20: #e5e5f5;
-$xk-10: #eeeef7;
-
-$dark-grey: #191929;
-$light-grey: #ededfa;
-$grey-xk: #5e5e89;
-$icon-grey: #3d4259;
-$subtle-text: #8585b9;
-
-$grey-110: #191919;
-$grey-100: #1e1f25;
-$grey-90: #2f3241;
-$grey-85: #24252c;
-$grey-80: #34384c;
-$grey-60: #5d6588;
-$grey-40: #a5adcf;
-$grey-30: #b5b8c9;
-$grey-20: #e5e6ed;
-$grey-10: #fafafa;
-$grey-5: #f9f9f9;
-$grey-0: #ffffff;
 
 //Accent
 $red-primary: #fa2256;
