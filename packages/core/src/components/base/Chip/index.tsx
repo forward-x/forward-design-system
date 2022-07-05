@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useState } from 'react';
+import React, { FC, ReactNode, useEffect, useState } from 'react';
 
 import clsx from 'clsx';
 
@@ -10,7 +10,6 @@ export interface IChipProps {
   disabled?: boolean;
   startAdornment?: ReactNode;
   endAdornment?: ReactNode;
-  variant?: 'default' | 'toggle';
   onChange?: (isSelected: boolean) => void;
 }
 
@@ -19,27 +18,27 @@ const Chip: FC<IChipProps> = ({
   startAdornment,
   endAdornment,
   onChange,
-  variant = 'default',
   disabled = false,
   className,
 }) => {
   const [isActive, setIsActive] = useState<boolean>(disabled);
+
+  useEffect(() => {
+    if (onChange) onChange(!isActive);
+  }, [isActive, onChange]);
 
   return (
     <div
       className={clsx(
         styles.chip,
         {
-          [styles.disabled]: variant === 'toggle' ? isActive : disabled,
-          [styles.toggle]: variant === 'toggle',
+          [styles.disabled]: disabled,
+          [styles.active]: isActive,
         },
         className
       )}
       onClick={() => {
-        if (variant === 'toggle') {
-          if (onChange) onChange(!isActive);
-          setIsActive(!isActive);
-        }
+        setIsActive(!isActive);
       }}
     >
       <div className={styles.content}>

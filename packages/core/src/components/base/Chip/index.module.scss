@@ -8,6 +8,8 @@
   color: var(--primary-text);
   font-size: $text-body;
   background-color: var(--base-2);
+  border: 1.5px solid var(--base-2);
+  cursor: pointer;
 
   @include smallMedia {
     height: 36px;
@@ -26,13 +28,6 @@
     }
   }
 
-  &.toggle {
-    cursor: pointer;
-    &.disabled {
-      pointer-events: initial;
-    }
-  }
-
   &.disabled {
     color: var(--placeholder-text);
     pointer-events: none;
@@ -40,6 +35,15 @@
     svg {
       color: var(--placeholder-text);
     }
+  }
+
+  &.active {
+    font-weight: $font-medium;
+    border-color: $primary-30;
+  }
+
+  &:hover {
+    border-color: $primary-30;
   }
 
   &.prefix {
