@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/uikit@3.0.0...@forward-protocol/uikit@3.0.1) (2022-07-11)
+
+
+### Bug Fixes
+
+* add export for IInputCryptoProps ([7b7b539](https://github.com/Forward-Protocol/forward-design-system/commit/7b7b539f5e0f4a04d5a03613fb9530ab528d0737))
+* icon is not in the center on Button ([68c5e65](https://github.com/Forward-Protocol/forward-design-system/commit/68c5e65b03305c6e6e316a4c12d9cde77fba70e6))
+* incorrect entry point ([0705b9a](https://github.com/Forward-Protocol/forward-design-system/commit/0705b9a4b683f16cc02e0ac1c1e1bf4bcf506c95))
+
+
+
+
+
 # [3.0.0](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/uikit@2.0.5...@forward-protocol/uikit@3.0.0) (2022-07-05)
 
 

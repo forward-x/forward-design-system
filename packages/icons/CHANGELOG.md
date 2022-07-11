@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.2](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/ui-icons@2.0.1...@forward-protocol/ui-icons@2.0.2) (2022-07-11)
+
+
+### Bug Fixes
+
+* incorrect entry point ([0705b9a](https://github.com/Forward-Protocol/forward-design-system/commit/0705b9a4b683f16cc02e0ac1c1e1bf4bcf506c95))
+
+
+
+
+
 ## [2.0.1](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/ui-icons@2.0.0...@forward-protocol/ui-icons@2.0.1) (2022-06-29)
 
 **Note:** Version bump only for package @forward-protocol/ui-icons
