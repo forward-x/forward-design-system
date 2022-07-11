@@ -5,6 +5,7 @@ export type {
   ICalendarProps,
   ICheckboxProps,
   IChipProps,
+  IInputCryptoProps,
   IInputDigitsProps,
   IInputPasswordProps,
   IInputProps,
