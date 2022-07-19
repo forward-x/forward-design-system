@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.5](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/uikit@3.0.4...@forward-protocol/uikit@3.0.5) (2022-07-19)
+
+
+### Bug Fixes
+
+* bg calendar ([965cf83](https://github.com/Forward-Protocol/forward-design-system/commit/965cf83fe7cdd03293422dcad0b532426befee37))
+
+
+
+
+
 ## [3.0.4](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/uikit@3.0.3...@forward-protocol/uikit@3.0.4) (2022-07-19)
 
 **Note:** Version bump only for package @forward-protocol/uikit
