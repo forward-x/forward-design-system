@@ -1,9 +1,9 @@
 $dark-bg: $dark-base-1;
-$light-bg: rgba(255, 255, 255, 0.85);
+$light-bg: $white;
 $dark-table-bg: $dark-base-3;
-$light-table-bg: $grey-10;
+$light-table-bg: $light-base-3;
 $dark-day-range: $dark-base-2;
-$light-day-range: rgba($primary, 0.19);
+$light-day-range: $light-base-2;
 
 .container {
   border-radius: 12px;
@@ -110,7 +110,6 @@ $light-day-range: rgba($primary, 0.19);
           border-radius: 4px;
           background-color: $dark-day-range;
           color: $white;
-          padding: 8px;
         }
       }
 
@@ -122,7 +121,6 @@ $light-day-range: rgba($primary, 0.19);
           border-radius: 4px;
           background-color: $dark-day-range;
           color: $primary;
-          padding: 8px;
         }
       }
 
@@ -137,7 +135,6 @@ $light-day-range: rgba($primary, 0.19);
           border-radius: 4px;
           background-color: $dark-day-range;
           color: $primary;
-          padding: 8px;
           font-weight: $font-semibold;
         }
       }
@@ -149,8 +146,20 @@ $light-day-range: rgba($primary, 0.19);
 
       :global(.react-calendar__tile) {
         @extend %calendar_font;
-
+        padding: 6px;
         min-width: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        abbr {
+          width: 24px;
+          height: 24px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 !important;
+        }
       }
 
       :global(.react-calendar__month-view__weekdays__weekday) {
@@ -168,13 +177,16 @@ $light-day-range: rgba($primary, 0.19);
   .footer {
     display: flex;
     width: 100%;
+    height: 48px;
     justify-content: space-between;
-    padding: 15px 19px;
+    align-items: center;
+    padding: 0 12px;
     background-color: inherit;
 
     .date {
       color: $primary;
       font-weight: $font-semibold;
+      font-size: 12px;
     }
 
     .button_group {
@@ -185,7 +197,11 @@ $light-day-range: rgba($primary, 0.19);
         font-weight: $font-bold;
         background-color: transparent;
         border-radius: 4px;
-        padding: 1px 10px !important;
+        padding: 0 10px !important;
+        height: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
 
       .reset_btn {
@@ -209,31 +225,70 @@ $light-day-range: rgba($primary, 0.19);
 body[data-theme="light"] {
   .container {
     background-color: $light-bg;
+    filter: drop-shadow(0px 6px 14px rgba(119, 119, 212, 0.07));
 
     .calendar :global(.react-calendar__viewContainer) {
       background-color: $light-table-bg;
 
       :global(.react-calendar__tile--range),
-      :global(.react-calendar__tile):enabled:hover,
-      :global(.react-calendar__tile):enabled:focus,
       :global(.react-calendar__tile--hover) {
-        border-radius: 0;
-        background-color: $light-day-range;
+        background: transparent;
+
+        abbr {
+          background-color: $light-day-range;
+          color: $light-primary-text;
+        }
       }
 
+      :global(.react-calendar__tile):enabled:hover,
+      :global(.react-calendar__tile):enabled:focus {
+        background: transparent;
+
+        abbr {
+          background-color: $light-day-range;
+          color: $primary;
+        }
+      }
+
+      :global(.react-calendar__tile--rangeStart),
+      :global(.react-calendar__tile--rangeEnd),
+      :global(.react-calendar__tile--hoverStart),
+      :global(.react-calendar__tile--hoverEnd),
+      :global(.react-calendar__tile--rangeBothEnds) {
+        background: transparent;
+
+        abbr {
+          border-radius: 4px;
+          background-color: $light-day-range;
+          color: $primary;
+          font-weight: $font-semibold;
+        }
+      }
+
+
       :global(.react-calendar__month-view__days__day--neighboringMonth) {
-        color: $dark-placeholder-text !important;
+        color: $light-placeholder-text !important;
+      }
+
+      :global(.react-calendar__month-view__weekdays__weekday) {
+        color: $light-secondary-text !important;
       }
     }
 
     .footer {
       .reset_btn {
-        color: $grey-60;
+        color: $light-primary-text;
+        background-color: $light-base-2;
       }
 
       .select_btn {
-        border: 1px solid $grey-20;
-        color: $grey-90;
+        color: $white;
+        background-color: $primary;
+
+        &.disabled {
+          color: $light-placeholder-text !important;
+          background-color: $light-disabled !important;
+        }
       }
     }
   }
