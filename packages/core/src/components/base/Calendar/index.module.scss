@@ -1,15 +1,13 @@
-$dark-bg: #080811;
-$light-bg: rgba(255, 255, 255, 0.85);
-$dark-table-bg: $dark-grey;
-$light-table-bg: $grey-10;
-$dark-day-range: rgba(251, 58, 112, 0.31);
-$light-day-range: rgba(251, 58, 112, 0.19);
+$dark-bg: $dark-base-1;
+$light-bg: $white;
+$dark-table-bg: $dark-base-3;
+$light-table-bg: $light-base-3;
+$dark-day-range: $dark-base-2;
+$light-day-range: $light-base-2;
 
 .container {
   border-radius: 12px;
-  border: 1.5px solid white;
-  box-shadow: 0px 4px 12px 5px rgba(0, 0, 0, 0.19);
-  backdrop-filter: blur(66px);
+  border: none;
   overflow: hidden;
   background-color: $dark-bg;
 
@@ -79,6 +77,7 @@ $light-day-range: rgba(251, 58, 112, 0.19);
                 border-top-left-radius: 8px;
                 border-bottom-left-radius: 8px;
               }
+
               &:last-child {
                 padding-right: 10px;
                 border-top-right-radius: 8px;
@@ -102,12 +101,27 @@ $light-day-range: rgba(251, 58, 112, 0.19);
         color: inherit;
       }
 
+
       :global(.react-calendar__tile--range),
-      :global(.react-calendar__tile):enabled:hover,
-      :global(.react-calendar__tile):enabled:focus,
       :global(.react-calendar__tile--hover) {
-        border-radius: 0;
-        background-color: $dark-day-range;
+        background: transparent;
+
+        abbr {
+          border-radius: 4px;
+          background-color: $dark-day-range;
+          color: $white;
+        }
+      }
+
+      :global(.react-calendar__tile):enabled:hover,
+      :global(.react-calendar__tile):enabled:focus {
+        background: transparent;
+
+        abbr {
+          border-radius: 4px;
+          background-color: $dark-day-range;
+          color: $primary;
+        }
       }
 
       :global(.react-calendar__tile--rangeStart),
@@ -115,24 +129,42 @@ $light-day-range: rgba(251, 58, 112, 0.19);
       :global(.react-calendar__tile--hoverStart),
       :global(.react-calendar__tile--hoverEnd),
       :global(.react-calendar__tile--rangeBothEnds) {
-        background-color: $forward-red !important;
-        color: white !important;
-        border-radius: 2px !important;
+        background: transparent;
+
+        abbr {
+          border-radius: 4px;
+          background-color: $dark-day-range;
+          color: $primary;
+          font-weight: $font-semibold;
+        }
       }
 
+
       :global(.react-calendar__month-view__days__day--neighboringMonth) {
-        color: $grey-60 !important;
+        color: $dark-placeholder-text !important;
       }
 
       :global(.react-calendar__tile) {
         @extend %calendar_font;
-
+        padding: 6px;
         min-width: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        abbr {
+          width: 24px;
+          height: 24px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 !important;
+        }
       }
 
       :global(.react-calendar__month-view__weekdays__weekday) {
         @extend %calendar_font;
-
+        color: $dark-secondary-text !important;
         text-transform: none;
 
         abbr {
@@ -145,12 +177,16 @@ $light-day-range: rgba(251, 58, 112, 0.19);
   .footer {
     display: flex;
     width: 100%;
+    height: 48px;
     justify-content: space-between;
-    padding: 15px 19px;
+    align-items: center;
+    padding: 0 12px;
     background-color: inherit;
 
     .date {
-      color: $forward-red;
+      color: $primary;
+      font-weight: $font-semibold;
+      font-size: 12px;
     }
 
     .button_group {
@@ -160,17 +196,28 @@ $light-day-range: rgba(251, 58, 112, 0.19);
       button {
         font-weight: $font-bold;
         background-color: transparent;
+        border-radius: 4px;
+        padding: 0 10px !important;
+        height: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
 
       .reset_btn {
-        color: $grey-xk;
+        color: $white;
+        background-color: $dark-base-2;
       }
 
       .select_btn {
-        padding: 5px 16px;
-        border: 1px solid $dark-grey;
-        color: $grey-20;
-        border-radius: 8px;
+        color: $white;
+        background-color: $primary;
+
+        &.disabled {
+          color: $dark-placeholder-text !important;
+          background-color: $dark-disabled !important;
+          cursor: not-allowed;
+        }
       }
     }
   }
@@ -179,31 +226,70 @@ $light-day-range: rgba(251, 58, 112, 0.19);
 body[data-theme="light"] {
   .container {
     background-color: $light-bg;
+    filter: drop-shadow(0px 6px 14px rgba(119, 119, 212, 0.07));
 
     .calendar :global(.react-calendar__viewContainer) {
       background-color: $light-table-bg;
 
       :global(.react-calendar__tile--range),
-      :global(.react-calendar__tile):enabled:hover,
-      :global(.react-calendar__tile):enabled:focus,
       :global(.react-calendar__tile--hover) {
-        border-radius: 0;
-        background-color: $light-day-range;
+        background: transparent;
+
+        abbr {
+          background-color: $light-day-range;
+          color: $light-primary-text;
+        }
       }
 
+      :global(.react-calendar__tile):enabled:hover,
+      :global(.react-calendar__tile):enabled:focus {
+        background: transparent;
+
+        abbr {
+          background-color: $light-day-range;
+          color: $primary;
+        }
+      }
+
+      :global(.react-calendar__tile--rangeStart),
+      :global(.react-calendar__tile--rangeEnd),
+      :global(.react-calendar__tile--hoverStart),
+      :global(.react-calendar__tile--hoverEnd),
+      :global(.react-calendar__tile--rangeBothEnds) {
+        background: transparent;
+
+        abbr {
+          border-radius: 4px;
+          background-color: $light-day-range;
+          color: $primary;
+          font-weight: $font-semibold;
+        }
+      }
+
+
       :global(.react-calendar__month-view__days__day--neighboringMonth) {
-        color: $grey-30 !important;
+        color: $light-placeholder-text !important;
+      }
+
+      :global(.react-calendar__month-view__weekdays__weekday) {
+        color: $light-secondary-text !important;
       }
     }
 
     .footer {
       .reset_btn {
-        color: $grey-60;
+        color: $light-primary-text;
+        background-color: $light-base-2;
       }
 
       .select_btn {
-        border: 1px solid $grey-20;
-        color: $grey-90;
+        color: $white;
+        background-color: $primary;
+
+        &.disabled {
+          color: $light-placeholder-text !important;
+          background-color: $light-disabled !important;
+        }
       }
     }
   }

@@ -19,7 +19,7 @@ export default {
 } as ComponentMeta<typeof Calendar>;
 
 const Template: ComponentStory<typeof Calendar> = (args) => (
-  <div style={{ width: '800px' }}>
+  <div style={{ width: args.showDoubleView ? '600px' : '285px' }}>
     <Calendar {...args} />
   </div>
 );
