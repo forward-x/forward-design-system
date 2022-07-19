@@ -8985,6 +8985,11 @@ es5-shim@^4.5.13:
   resolved "https://registry.yarnpkg.com/es5-shim/-/es5-shim-4.6.7.tgz#bc67ae0fc3dd520636e0a1601cc73b450ad3e955"
   integrity sha512-jg21/dmlrNQI7JyyA2w7n+yifSxBng0ZralnSfVZjoCawgNTCnS+yBCyVM9DL5itm7SUnDGgv7hcq2XCZX4iRQ==
 
+es6-promisify@^6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/es6-promisify/-/es6-promisify-6.1.1.tgz#46837651b7b06bf6fff893d03f29393668d01621"
+  integrity sha512-HBL8I3mIki5C1Cc9QjKUenHtnG0A5/xA8Q/AllRcfiwl2CZFXGK7ddBiCoRwAix4i2KxcQfjtIVcrVbB3vbmwg==
+
 es6-shim@^0.35.5:
   version "0.35.6"
   resolved "https://registry.yarnpkg.com/es6-shim/-/es6-shim-0.35.6.tgz#d10578301a83af2de58b9eadb7c2c9945f7388a0"
@@ -10423,7 +10428,7 @@ globby@^10.0.1:
     merge2 "^1.2.3"
     slash "^3.0.0"
 
-globby@^11.0.2, globby@^11.0.4, globby@^11.1.0:
+globby@^11.0.1, globby@^11.0.2, globby@^11.0.4, globby@^11.1.0:
   version "11.1.0"
   resolved "https://registry.yarnpkg.com/globby/-/globby-11.1.0.tgz#bd4be98bb042f83d796f7e3811991fbe82a0d34b"
   integrity sha512-jhIXaOzy1sb8IyocaruWSn1TjmnBVs8Ayhcy83rmxNJ8q2uWKCAj3CnJY+KpGSXCueAPc0i05kVvVKtP1t9S3g==
@@ -11265,6 +11270,11 @@ is-binary-path@~2.1.0:
   integrity sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==
   dependencies:
     binary-extensions "^2.0.0"
+
+is-binary@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/is-binary/-/is-binary-0.1.0.tgz#8e7d327a7ab907a838f8113e9ce5168dfdbbf3ab"
+  integrity sha512-S5p0zsv2XYP4dntIDW8Q7X7b0zd0Ew+xUb/12iQZ6R+JQyqmjl0V8d/D3cARjFAscJBXXQymUbk6t3J3wp+AbQ==
 
 is-boolean-object@^1.1.0:
   version "1.1.2"
@@ -16232,6 +16242,17 @@ replace-in-files-cli@^2.0.0:
     meow "^10.1.1"
     normalize-path "^3.0.0"
     write-file-atomic "^3.0.3"
+
+replace-in-files@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/replace-in-files/-/replace-in-files-3.0.0.tgz#535f6311c5188b2fb95b488304348a5d989517f2"
+  integrity sha512-f3lb8Fac0JZ56BrebGFoRaGvmSAF+M6Zcj0NZl3Qrd6L8HT2LA8/LObCjbTb4Sof/J/gg0tC9pUD/loW4X5u6w==
+  dependencies:
+    co "^4.6.0"
+    es6-promisify "^6.1.1"
+    globby "^11.0.1"
+    is-binary "^0.1.0"
+    lodash "^4.17.20"
 
 request@^2.88.0, request@^2.88.2:
   version "2.88.2"

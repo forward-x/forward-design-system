@@ -1,9 +1,9 @@
 {
   "name": "@forward-protocol/ui-icons",
   "version": "2.0.2",
-  "main": "cjs/index.js",
-  "module": "esm/index.js",
-  "types": "esm/index.d.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
   "author": {
     "name": "forward-protocol"
   },
@@ -23,6 +23,8 @@
     "url": "https://github.com/Forward-Protocol/forward-design-system.git"
   },
   "scripts": {
+    "prepublishOnly": "yarn remove:dist-package",
+    "remove:dist-package": "replace-in-files --string='dist/' --replacement='' dist/package.json",
     "build": "rollup -c ./rollup.config.ts",
     "start": "nodemon index.ts -L -q",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet --fix",
@@ -62,6 +64,7 @@
     "mustache": "^4.2.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.6.2",
+    "replace-in-files": "^3.0.0",
     "rollup": "^2.70.2",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-copy": "^3.4.0",
