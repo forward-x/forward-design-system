@@ -216,6 +216,7 @@ $light-day-range: $light-base-2;
         &.disabled {
           color: $dark-placeholder-text !important;
           background-color: $dark-disabled !important;
+          cursor: not-allowed;
         }
       }
     }
