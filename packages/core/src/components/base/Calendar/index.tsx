@@ -89,7 +89,9 @@ const Calendar: FC<ICalendarProps> = ({
             )}
             <button
               type="submit"
-              className={styles.select_btn}
+              className={clsx(styles.select_btn, {
+                [styles.disabled]: !selectedDay,
+              })}
               onClick={() => {
                 if (onSubmit) onSubmit(selectedDay);
               }}

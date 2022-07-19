@@ -1,15 +1,13 @@
-$dark-bg: #080811;
+$dark-bg: $dark-base-1;
 $light-bg: rgba(255, 255, 255, 0.85);
-$dark-table-bg: $dark-grey;
+$dark-table-bg: $dark-base-3;
 $light-table-bg: $grey-10;
-$dark-day-range: rgba(251, 58, 112, 0.31);
-$light-day-range: rgba(251, 58, 112, 0.19);
+$dark-day-range: $dark-base-2;
+$light-day-range: rgba($primary, 0.19);
 
 .container {
   border-radius: 12px;
-  border: 1.5px solid white;
-  box-shadow: 0px 4px 12px 5px rgba(0, 0, 0, 0.19);
-  backdrop-filter: blur(66px);
+  border: none;
   overflow: hidden;
   background-color: $dark-bg;
 
@@ -79,6 +77,7 @@ $light-day-range: rgba(251, 58, 112, 0.19);
                 border-top-left-radius: 8px;
                 border-bottom-left-radius: 8px;
               }
+
               &:last-child {
                 padding-right: 10px;
                 border-top-right-radius: 8px;
@@ -102,12 +101,29 @@ $light-day-range: rgba(251, 58, 112, 0.19);
         color: inherit;
       }
 
+
       :global(.react-calendar__tile--range),
-      :global(.react-calendar__tile):enabled:hover,
-      :global(.react-calendar__tile):enabled:focus,
       :global(.react-calendar__tile--hover) {
-        border-radius: 0;
-        background-color: $dark-day-range;
+        background: transparent;
+
+        abbr {
+          border-radius: 4px;
+          background-color: $dark-day-range;
+          color: $white;
+          padding: 8px;
+        }
+      }
+
+      :global(.react-calendar__tile):enabled:hover,
+      :global(.react-calendar__tile):enabled:focus {
+        background: transparent;
+
+        abbr {
+          border-radius: 4px;
+          background-color: $dark-day-range;
+          color: $primary;
+          padding: 8px;
+        }
       }
 
       :global(.react-calendar__tile--rangeStart),
@@ -115,13 +131,20 @@ $light-day-range: rgba(251, 58, 112, 0.19);
       :global(.react-calendar__tile--hoverStart),
       :global(.react-calendar__tile--hoverEnd),
       :global(.react-calendar__tile--rangeBothEnds) {
-        background-color: $forward-red !important;
-        color: white !important;
-        border-radius: 2px !important;
+        background: transparent;
+
+        abbr {
+          border-radius: 4px;
+          background-color: $dark-day-range;
+          color: $primary;
+          padding: 8px;
+          font-weight: $font-semibold;
+        }
       }
 
+
       :global(.react-calendar__month-view__days__day--neighboringMonth) {
-        color: $grey-60 !important;
+        color: $dark-placeholder-text !important;
       }
 
       :global(.react-calendar__tile) {
@@ -132,7 +155,7 @@ $light-day-range: rgba(251, 58, 112, 0.19);
 
       :global(.react-calendar__month-view__weekdays__weekday) {
         @extend %calendar_font;
-
+        color: $dark-secondary-text !important;
         text-transform: none;
 
         abbr {
@@ -150,7 +173,8 @@ $light-day-range: rgba(251, 58, 112, 0.19);
     background-color: inherit;
 
     .date {
-      color: $forward-red;
+      color: $primary;
+      font-weight: $font-semibold;
     }
 
     .button_group {
@@ -160,17 +184,23 @@ $light-day-range: rgba(251, 58, 112, 0.19);
       button {
         font-weight: $font-bold;
         background-color: transparent;
+        border-radius: 4px;
+        padding: 1px 10px !important;
       }
 
       .reset_btn {
-        color: $grey-xk;
+        color: $white;
+        background-color: $dark-base-2;
       }
 
       .select_btn {
-        padding: 5px 16px;
-        border: 1px solid $dark-grey;
-        color: $grey-20;
-        border-radius: 8px;
+        color: $white;
+        background-color: $primary;
+
+        &.disabled {
+          color: $dark-placeholder-text !important;
+          background-color: $dark-disabled !important;
+        }
       }
     }
   }
@@ -192,7 +222,7 @@ body[data-theme="light"] {
       }
 
       :global(.react-calendar__month-view__days__day--neighboringMonth) {
-        color: $grey-30 !important;
+        color: $dark-placeholder-text !important;
       }
     }
 
