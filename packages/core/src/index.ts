@@ -5,6 +5,7 @@ export type {
   ICalendarProps,
   ICheckboxProps,
   IChipProps,
+  IAlertProps,
   IInputCryptoProps,
   IInputDigitsProps,
   IInputPasswordProps,
@@ -21,6 +22,7 @@ export {
   Calendar,
   Button,
   Chip,
+  Alert,
   Input,
   Steps,
 } from './components';

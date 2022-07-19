@@ -1,0 +1,57 @@
+.alert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  height: 32px;
+  padding: 6px 12px;
+  color: var(--primary-text);
+  font-size: $text-body;
+  background-color: var(--base-2);
+  border: 1.5px solid var(--base-2);
+  cursor: pointer;
+
+  @include smallMedia {
+    height: 36px;
+  }
+
+  svg {
+    color: var(--primary-text);
+  }
+
+  .content {
+    display: flex;
+    flex-grow: 1;
+    gap: 8px;
+    &:only-child {
+      justify-content: center;
+    }
+  }
+
+  &.disabled {
+    color: var(--placeholder-text);
+    pointer-events: none;
+
+    svg {
+      color: var(--placeholder-text);
+    }
+  }
+
+  &.active {
+    font-weight: $font-medium;
+    border-color: $primary-30;
+  }
+
+  &:hover {
+    border-color: $primary-30;
+  }
+
+  &.prefix {
+    width: 20px;
+    height: 20px;
+  }
+  &.suffix {
+    width: 20px;
+    height: 20px;
+  }
+}
