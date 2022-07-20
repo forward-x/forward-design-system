@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.6](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/ui-demo@2.0.5...@forward-protocol/ui-demo@2.0.6) (2022-07-20)
+
+**Note:** Version bump only for package @forward-protocol/ui-demo
+
+
+
+
+
 ## [2.0.5](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/ui-demo@2.0.4...@forward-protocol/ui-demo@2.0.5) (2022-07-19)
 
 **Note:** Version bump only for package @forward-protocol/ui-demo
