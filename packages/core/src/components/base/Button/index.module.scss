@@ -5,7 +5,6 @@
   position: relative;
   border-radius: 6px;
   width: 100%;
-  transition: all 0.8s ease;
   color: $white;
   height: 40px;
   padding: 5px 10px;
@@ -113,12 +112,16 @@
   }
 
   &.link {
-    text-decoration: underline;
     background: transparent !important;
     color: $primary-30;
 
     path {
       fill: $primary-30;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
     }
   }
 

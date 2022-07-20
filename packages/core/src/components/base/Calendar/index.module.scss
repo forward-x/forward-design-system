@@ -124,6 +124,7 @@ $light-day-range: $light-base-2;
         }
       }
 
+      :global(.react-calendar__tile--hasActive),
       :global(.react-calendar__tile--rangeStart),
       :global(.react-calendar__tile--rangeEnd),
       :global(.react-calendar__tile--hoverStart),
@@ -257,6 +258,7 @@ body[data-theme="light"] {
         }
       }
 
+      :global(.react-calendar__tile--hasActive),
       :global(.react-calendar__tile--rangeStart),
       :global(.react-calendar__tile--rangeEnd),
       :global(.react-calendar__tile--hoverStart),

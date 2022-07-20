@@ -30,3 +30,6 @@ export { default as Switch } from './Input/Switch';
 
 export type { IStepsBarProps, IStepsRadialProps } from './Steps';
 export { default as Steps } from './Steps';
+
+export type { IAlertProps } from './Alert';
+export { default as Alert } from './Alert';
