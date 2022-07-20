@@ -1,53 +1,79 @@
-import React, { FC, ReactNode, useEffect, useState } from 'react';
+import React, { FC } from 'react';
 
+import { Icon as ReactIcon } from '@iconify/react';
 import clsx from 'clsx';
 
 import styles from './index.module.scss';
 
 export interface IAlertProps {
-  text: string;
+  title: string;
+  description?: string;
   className?: string;
-  disabled?: boolean;
-  startAdornment?: ReactNode;
-  endAdornment?: ReactNode;
-  onChange?: (isSelected: boolean) => void;
+  /**
+   * @default 'success'
+   */
+  variant?: 'success' | 'warning' | 'info' | 'danger';
+  action?: 'approve' | 'retry' | 'accept';
+  onClose?: () => any;
+  onConfirm?: () => any;
 }
 
 const Alert: FC<IAlertProps> = ({
-  text,
-  startAdornment,
-  endAdornment,
-  onChange,
-  disabled = false,
+  title,
+  description,
   className,
+  variant = 'success',
+  onClose,
+  onConfirm,
+  action,
 }) => {
-  const [isActive, setIsActive] = useState<boolean>(disabled);
-
-  useEffect(() => {
-    if (onChange) onChange(!isActive);
-  }, [isActive, onChange]);
-
   return (
     <div
-      className={clsx(
-        styles.chip,
-        {
-          [styles.disabled]: disabled,
-          [styles.active]: isActive,
-        },
-        className
-      )}
-      onClick={() => {
-        setIsActive(!isActive);
-      }}
+      className={clsx(styles.alert, className, {
+        [styles.success]: variant === 'success',
+        [styles.warning]: variant === 'warning',
+        [styles.info]: variant === 'info',
+        [styles.danger]: variant === 'danger',
+      })}
     >
       <div className={styles.content}>
-        {startAdornment && (
-          <div className={styles.prefix}>{startAdornment}</div>
+        {variant === 'success' && (
+          <ReactIcon className={styles.icon} icon="bi:check-circle-fill" />
         )}
-        {text}
+        {variant === 'warning' && (
+          <ReactIcon className={styles.icon} icon="ep:warning-filled" />
+        )}
+        {variant === 'info' && (
+          <ReactIcon className={styles.icon} icon="akar-icons:info-fill" />
+        )}
+        {variant === 'danger' && (
+          <ReactIcon className={styles.icon} icon="ep:circle-close-filled" />
+        )}
+
+        <div className={styles.contentInner}>
+          <p className={styles.title}>{title}</p>
+          {description && <p className={styles.description}>{description}</p>}
+        </div>
+        {!action && (
+          <ReactIcon
+            onClick={onClose}
+            className={styles.close}
+            icon="clarity:window-close-line"
+          />
+        )}
+        {action && (
+          <div className={styles.action}>
+            <p className={styles.cancel} onClick={onClose}>
+              cancel
+            </p>
+            <p className={styles.confirm} onClick={onConfirm}>
+              {action === 'approve' && 'Approve'}
+              {action === 'retry' && 'Retry'}
+              {action === 'accept' && 'Accept'}
+            </p>
+          </div>
+        )}
       </div>
-      {endAdornment && <div className={styles.suffix}>{endAdornment}</div>}
     </div>
   );
 };

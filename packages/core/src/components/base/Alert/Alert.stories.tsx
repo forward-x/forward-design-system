@@ -7,22 +7,37 @@ export default {
   title: 'Base/Alert',
   component: Alert,
   argTypes: {
-    disabled: {
-      control: { type: 'boolean' },
-      defaultValue: false,
+    variant: {
+      options: ['success', 'warning', 'info', 'danger'],
+      control: { type: 'radio' },
+      defaultValue: 'success',
     },
-    text: {
+    action: {
+      options: ['approve', 'retry', 'accept', undefined],
+      control: { type: 'radio' },
+      defaultValue: undefined,
+    },
+    title: {
       control: { type: 'text' },
-      defaultValue: 'October',
+      defaultValue: 'Successful notification',
+    },
+    description: {
+      control: { type: 'text' },
+      defaultValue: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
   },
 } as ComponentMeta<typeof Alert>;
 
 const Template: ComponentStory<typeof Alert> = (args) => (
-  <div style={{ width: '260px' }}>
+  <div style={{ width: '450px' }}>
     <Alert {...args} />
   </div>
 );
 
 export const Default: ComponentStory<typeof Alert> = Template.bind({});
 Default.args = {};
+
+export const WithAction: ComponentStory<typeof Alert> = Template.bind({});
+WithAction.args = {
+  action: 'approve',
+};

@@ -1,57 +1,113 @@
 .alert {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 8px;
-  height: 32px;
-  padding: 6px 12px;
-  color: var(--primary-text);
-  font-size: $text-body;
-  background-color: var(--base-2);
-  border: 1.5px solid var(--base-2);
-  cursor: pointer;
-
-  @include smallMedia {
-    height: 36px;
-  }
-
-  svg {
-    color: var(--primary-text);
-  }
+  border-radius: 6px;
+  background-color: $white;
+  position: relative;
 
   .content {
+    padding: 12px 16px;
     display: flex;
-    flex-grow: 1;
-    gap: 8px;
-    &:only-child {
-      justify-content: center;
-    }
   }
 
-  &.disabled {
-    color: var(--placeholder-text);
-    pointer-events: none;
-
-    svg {
-      color: var(--placeholder-text);
-    }
+  .contentInner {
+    flex: 1;
   }
 
-  &.active {
-    font-weight: $font-medium;
-    border-color: $primary-30;
+  .title {
+    font-weight: $font-semibold;
+    font-size: $text-small;
+    line-height: $line-height-small;
+    color: $light-primary-text;
   }
 
-  &:hover {
-    border-color: $primary-30;
+  .description {
+    font-weight: $font-regular;
+    font-size: $text-tiny;
+    line-height: $line-height-tiny;
+    color: $light-secondary-text;
   }
 
-  &.prefix {
+  .icon {
+    margin-right: 12px;
     width: 20px;
     height: 20px;
   }
-  &.suffix {
+
+  .close {
+    color: $dark-secondary-text;
+    cursor: pointer;
     width: 20px;
     height: 20px;
+  }
+
+  .action {
+    display: flex;
+
+    .cancel {
+      font-weight: $font-semibold;
+      color: $light-primary-text;
+      font-size: $text-small;
+      margin-right: 24px;
+      cursor: pointer;
+    }
+
+    .confirm {
+      font-weight: $font-semibold;
+      font-size: $text-small;
+      cursor: pointer;
+    }
+  }
+
+  &.success {
+    border-left: 8px solid $success;
+
+    .icon,.confirm {
+      color: $success
+    }
+
+  }
+
+  &.danger {
+    border-left: 8px solid $error;
+
+    .icon,.confirm {
+      color: $error
+    }
+  }
+
+  &.warning {
+    border-left: 8px solid $warning;
+
+    .icon,.confirm {
+      color: $warning
+    }
+  }
+
+  &.info {
+    border-left: 8px solid $primary;
+
+    .icon,.confirm {
+      color: $primary
+    }
+  }
+
+
+}
+
+body[data-theme="light"] {
+  .alert {
+    background-color: $dark-base-3;
+
+    .title {
+      color: $light-disabled;
+    }
+
+    .description {
+      color: $dark-secondary-text;
+    }
+
+    .cancel {
+      color: $dark-primary-text;
+    }
   }
 }
+
