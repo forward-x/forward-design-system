@@ -28,21 +28,17 @@
       justify-content: center;
       align-items: center;
       cursor: pointer;
+      height: 32px;
+      width: 31px;
+      @include smallMedia {
+        height: 28px;
+        width: 29px;
+      }
 
       &:hover {
         border-radius: 6px;
         border: 1px solid $dark-base-2;
       }
-    }
-
-    .S {
-      height: 28px;
-      width: 29px;
-    }
-
-    .M {
-      height: 32px;
-      width: 31px;
     }
   }
 }
