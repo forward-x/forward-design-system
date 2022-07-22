@@ -10,8 +10,8 @@ export interface IPaginationProps {
   total: number;
   initialPage?: number;
   forcePage?: number;
-  size?: 'S' | 'M';
   pageRangeDisplayed?: number;
+  marginPagesDisplayed?: number;
   onPageChange?: (page: number) => void;
 }
 
@@ -20,8 +20,8 @@ const Pagination: FC<IPaginationProps> = ({
   onPageChange,
   initialPage = 1,
   pageRangeDisplayed = 5,
-  size = 'M',
   forcePage,
+  marginPagesDisplayed,
 }) => {
   const handlePageClick = ({ selected }: { selected: number }) => {
     onPageChange?.(selected + 1);
@@ -33,17 +33,14 @@ const Pagination: FC<IPaginationProps> = ({
       className={styles.pagination}
       activeLinkClassName={styles.selected}
       activeClassName={styles.selected}
-      pageLinkClassName={clsx(styles.link, styles[size])}
-      breakLinkClassName={styles[size]}
-      disabledLinkClassName={styles[size]}
-      nextLinkClassName={styles[size]}
-      previousLinkClassName={styles[size]}
+      pageLinkClassName={clsx(styles.link)}
       disabledClassName={styles.disabled}
       containerClassName={'pagination'}
       breakLabel="..."
       nextLabel={<ReactIcon icon="akar-icons:chevron-right" />}
       onPageChange={handlePageClick}
       pageRangeDisplayed={pageRangeDisplayed}
+      marginPagesDisplayed={marginPagesDisplayed}
       pageCount={total}
       previousLabel={<ReactIcon icon="akar-icons:chevron-left" />}
       initialPage={initialPage - 1}

@@ -22,11 +22,6 @@ export default {
       control: { type: 'number' },
       defaultValue: 5,
     },
-    size: {
-      options: ['S', 'M'],
-      control: { type: 'radio' },
-      defaultValue: 'M',
-    },
     onPageChange: { action: 'onPageChange' },
   },
 } as ComponentMeta<typeof Pagination>;
