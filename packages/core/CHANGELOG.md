@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.9](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/uikit@3.0.8...@forward-protocol/uikit@3.0.9) (2022-07-22)
+
+
+### Bug Fixes
+
+* icon version ([2770abb](https://github.com/Forward-Protocol/forward-design-system/commit/2770abb5e397a0b509aac4189e6f0ae63410abc3))
+
+
+
+
+
 ## [3.0.8](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/uikit@3.0.7...@forward-protocol/uikit@3.0.8) (2022-07-22)
 
 
