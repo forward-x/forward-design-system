@@ -1,6 +1,6 @@
 {
   "name": "@forward-protocol/ui-demo",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "private": true,
   "scripts": {
     "start": "start-storybook -p 3000",
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@forward-protocol/ui-icons": "^2.0.3",
-    "@forward-protocol/uikit": "^3.0.7",
+    "@forward-protocol/uikit": "^3.0.8",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.1",
