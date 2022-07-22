@@ -1,0 +1,53 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  user-select: none;
+
+  li {
+    margin-right: 6px;
+    margin-left: 6px;
+
+    &.disabled {
+      a {
+        cursor: not-allowed;
+        background-color: transparent;
+      }
+    }
+
+    &.previous {
+    }
+
+    &.selected {
+      border-radius: 6px;
+      background-color: $dark-base-2;
+    }
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      &:hover {
+        border-radius: 6px;
+        border: 1px solid $dark-base-2;
+      }
+    }
+
+    .S {
+      height: 28px;
+      width: 29px;
+    }
+
+    .M {
+      height: 32px;
+      width: 31px;
+    }
+  }
+}
+
+body[data-theme="light"] {
+
+}
+

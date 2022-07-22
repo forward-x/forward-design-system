@@ -6,6 +6,7 @@ export type {
   ICheckboxProps,
   IChipProps,
   IAlertProps,
+  IPaginationProps,
   IInputCryptoProps,
   IInputDigitsProps,
   IInputPasswordProps,
@@ -23,6 +24,7 @@ export {
   Button,
   Chip,
   Alert,
+  Pagination,
   Input,
   Steps,
 } from './components';
