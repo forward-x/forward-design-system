@@ -33,3 +33,6 @@ export { default as Steps } from './Steps';
 
 export type { IAlertProps } from './Alert';
 export { default as Alert } from './Alert';
+
+export type { IPaginationProps } from './Pagination';
+export { default as Pagination } from './Pagination';

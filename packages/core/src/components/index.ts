@@ -24,6 +24,7 @@ export type {
   ICalendarProps,
   IChipProps,
   IAlertProps,
+  IPaginationProps,
   ICheckboxProps,
   IInputProps,
   IInputPasswordProps,
@@ -40,6 +41,7 @@ export {
   Chip,
   Steps,
   Alert,
+  Pagination,
 } from './base';
 
 export type {
