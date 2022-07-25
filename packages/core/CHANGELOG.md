@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.10](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/uikit@3.0.9...@forward-protocol/uikit@3.0.10) (2022-07-25)
+
+**Note:** Version bump only for package @forward-protocol/uikit
+
+
+
+
+
 ## [3.0.9](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/uikit@3.0.8...@forward-protocol/uikit@3.0.9) (2022-07-22)
 
 
