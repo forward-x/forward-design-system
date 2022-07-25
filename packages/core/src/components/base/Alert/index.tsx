@@ -14,6 +14,8 @@ export interface IAlertProps {
    */
   variant?: 'success' | 'warning' | 'info' | 'danger';
   action?: 'approve' | 'retry' | 'accept';
+  cancelText?: string;
+  confirmText?: string;
   onClose?: () => any;
   onConfirm?: () => any;
 }
@@ -26,7 +28,15 @@ const Alert: FC<IAlertProps> = ({
   onClose,
   onConfirm,
   action,
+  cancelText,
+  confirmText,
 }) => {
+  const newCancelText = cancelText || 'Cancel';
+  const actionText =
+    confirmText ||
+    (action === 'approve' && 'Approve') ||
+    (action === 'retry' && 'Retry') ||
+    (action === 'accept' && 'Accept');
   return (
     <div
       className={clsx(styles.alert, className, {
@@ -64,12 +74,10 @@ const Alert: FC<IAlertProps> = ({
         {action && (
           <div className={styles.action}>
             <p className={styles.cancel} onClick={onClose}>
-              cancel
+              {newCancelText}
             </p>
             <p className={styles.confirm} onClick={onConfirm}>
-              {action === 'approve' && 'Approve'}
-              {action === 'retry' && 'Retry'}
-              {action === 'accept' && 'Accept'}
+              {actionText}
             </p>
           </div>
         )}

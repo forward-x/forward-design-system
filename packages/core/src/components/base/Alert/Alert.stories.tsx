@@ -21,6 +21,12 @@ export default {
       control: { type: 'text' },
       defaultValue: 'Successful notification',
     },
+    confirmText: {
+      control: { type: 'text' },
+    },
+    cancelText: {
+      control: { type: 'text' },
+    },
     description: {
       control: { type: 'text' },
       defaultValue: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
