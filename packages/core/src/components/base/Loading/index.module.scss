@@ -1,0 +1,42 @@
+.loading {
+  .icon {
+    animation-name: spin;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    width: 48px;
+    height: 48px;
+  }
+
+  .logo {
+    width: 36px;
+    height: 45px;
+  }
+
+  .progressContainer {
+    width: 250px;
+    border-radius: 28px;
+    height: 8px;
+    margin-top: 30px;
+    background: $dark-base-2;
+
+    @include smallMedia {
+      width: 150px;
+    }
+
+    .progress {
+      background: #FB3A70;
+      border-radius: 28px 4px 4px 28px;
+      height: 8px;
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

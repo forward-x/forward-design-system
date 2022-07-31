@@ -32,6 +32,7 @@ export type {
   IStepsBarProps,
   IStepsRadialProps,
   ISwitchProps,
+  ILoadingProps,
 } from './base';
 export {
   Avatar,
@@ -42,6 +43,7 @@ export {
   Steps,
   Alert,
   Pagination,
+  Loading,
 } from './base';
 
 export type {

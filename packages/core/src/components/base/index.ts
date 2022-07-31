@@ -36,3 +36,6 @@ export { default as Alert } from './Alert';
 
 export type { IPaginationProps } from './Pagination';
 export { default as Pagination } from './Pagination';
+
+export type { ILoadingProps } from './Loading';
+export { default as Loading } from './Loading';

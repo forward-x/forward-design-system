@@ -27,6 +27,7 @@ export {
   Pagination,
   Input,
   Steps,
+  Loading,
 } from './components';
 
 export { useEventListener, useMediaQuery } from './hooks';
