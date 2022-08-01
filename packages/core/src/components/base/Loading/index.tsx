@@ -18,6 +18,8 @@ const Loading: FC<ILoadingProps> = ({
   variant = 'circular',
   percentage = 0,
 }) => {
+  let newPercentage = percentage > 100 ? 100 : percentage;
+  newPercentage = newPercentage < 0 ? 0 : newPercentage;
   return (
     <div className={clsx(styles.loading, className)}>
       {variant === 'circular' ? (
@@ -34,7 +36,7 @@ const Loading: FC<ILoadingProps> = ({
           <div className={styles.progressContainer}>
             <div
               className={styles.progress}
-              style={{ width: `${percentage}%` }}
+              style={{ width: `${newPercentage}%` }}
             />
           </div>
         </div>
