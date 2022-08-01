@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.13](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/uikit@3.0.12...@forward-protocol/uikit@3.0.13) (2022-08-01)
+
+
+### Bug Fixes
+
+* percent loading ([b24c41f](https://github.com/Forward-Protocol/forward-design-system/commit/b24c41f0bec6d959e8f88089e7e44bb07fde332d))
+
+
+
+
+
 ## [3.0.12](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/uikit@3.0.11...@forward-protocol/uikit@3.0.12) (2022-07-31)
 
 **Note:** Version bump only for package @forward-protocol/uikit
