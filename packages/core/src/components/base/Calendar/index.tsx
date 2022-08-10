@@ -5,8 +5,6 @@ import clsx from 'clsx';
 import { format, isSameDay } from 'date-fns';
 import ReactCalendar, { CalendarProps } from 'react-calendar';
 
-import 'react-calendar/dist/Calendar.css';
-
 import styles from './index.module.scss';
 
 export interface ICalendarProps extends Omit<CalendarProps, 'onChange'> {
