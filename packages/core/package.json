@@ -1,6 +1,6 @@
 {
   "name": "@forward-protocol/uikit",
-  "version": "3.0.14",
+  "version": "3.0.15",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "module": "dist/uikit.esm.js",
