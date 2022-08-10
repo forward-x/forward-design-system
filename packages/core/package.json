@@ -38,9 +38,6 @@
     "url": "https://github.com/Forward-Protocol/forward-design-system.git"
   },
   "scripts": {
-    "prepublishOnly": "yarn remove:dist-style && yarn remove:dist-package",
-    "remove:dist-style": "replace-in-files --string='~@forward-protocol/ui-icons/dist/assets/styles/index.css' --replacement='~@forward-protocol/ui-icons/assets/styles/index.css' dist/assets/styles/index.css",
-    "remove:dist-package": "replace-in-files --string='dist/' --replacement='' dist/package.json",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet --fix",
     "start": "tsdx watch",
     "build": "tsdx build",
