@@ -1,13 +1,14 @@
-const postcss = require('rollup-plugin-postcss')
-const svgr = require('@svgr/rollup')
-const url = require('@rollup/plugin-url')
-const static_files = require('rollup-plugin-static-files')
-const { exec } = require("child_process")
+const { exec } = require('child_process');
+
+const url = require('@rollup/plugin-url');
+const svgr = require('@svgr/rollup');
+const postcss = require('rollup-plugin-postcss');
+const static_files = require('rollup-plugin-static-files');
 
 module.exports = {
-  rollup (config, options) {
+  rollup(config, options) {
     if (options.writeMeta) {
-      exec("yarn build-assets", (error, stdout, stderr) => {
+      exec('yarn build-assets', (error, stdout, stderr) => {
         if (error) {
           console.log(`error: ${error.message}`);
           return;
@@ -17,7 +18,7 @@ module.exports = {
           return;
         }
         console.log(`stdout: ${stdout}`);
-      })
+      });
     }
     config.plugins = [
       ...config.plugins,
@@ -27,27 +28,28 @@ module.exports = {
         modules: true,
         use: {
           sass: {
-            data: '@import "src/assets/styles/index.scss";'
+            data: '@import "src/assets/styles/variables.scss";',
           },
           less: null,
-          stylus: null
-        }
+          stylus: null,
+        },
       }),
       url(),
       svgr({
-        exportType: 'named', svgoConfig: {
+        exportType: 'named',
+        svgoConfig: {
           plugins: [
             {
               name: 'removeViewBox',
-              active: false
-            }
-          ]
-        }
+              active: false,
+            },
+          ],
+        },
       }),
       static_files({
-        include: ['./src/assets']
-      })
-    ]
-    return config
-  }
-}
+        include: ['./src/assets'],
+      }),
+    ];
+    return config;
+  },
+};
