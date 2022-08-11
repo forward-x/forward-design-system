@@ -1,6 +1,6 @@
 {
   "name": "@forward-protocol/uikit",
-  "version": "3.0.19",
+  "version": "3.0.20",
   "main": "dist/index.js",
   "umd:main": "dist/uikit.umd.production.js",
   "typings": "dist/index.d.ts",
