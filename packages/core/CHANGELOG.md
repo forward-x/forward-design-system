@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/uikit@3.0.20...@forward-protocol/uikit@3.1.0) (2022-08-11)
+
+
+### Features
+
+* add umd build ([f047893](https://github.com/Forward-Protocol/forward-design-system/commit/f0478930c2cf92b1efb1ed73eca7470a2c14f3c1))
+
+
+
+
+
 ## [3.0.20](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/uikit@3.0.19...@forward-protocol/uikit@3.0.20) (2022-08-11)
 
 **Note:** Version bump only for package @forward-protocol/uikit
