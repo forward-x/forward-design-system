@@ -29,7 +29,7 @@ $warning: $warning-30;
 $error-10: #FFE8EE;
 $error-20: #FFBFD1;
 $error-30: #FF5A78;
-$error-40: #E30543;
+$error-40: #D1194D;
 $error-50: #BA0034;
 $error-60: #69001D;
 $error: $error-30;
@@ -43,19 +43,21 @@ $xiketic-60: #141429;
 $xiketic: $xiketic-40;
 
 //Base
+$dark-base-0: #171726;
 $dark-base-1: #202036;
 $dark-base-2: #333454;
-$dark-base-3: #161624;
+$dark-base-3: #25253B;
 
+$light-base-0: #FAFAFF;
 $light-base-1: #ffffff;
 $light-base-2: #e9e9f7;
-$light-base-3: #F9F9FF;
+$light-base-3: #DDDDEC;
 
 $dark-background: #141421;
-$light-background: #f7f7fc;
+$light-background: #F6F6FB;
 
 //Text
-$dark-placeholder-text: #69698a;
+$dark-placeholder-text: #555570;
 $dark-tertiary-text: #7c7c99;
 $dark-secondary-text: #9797ba;
 $dark-primary-text: #e3e3ed;
@@ -129,14 +131,6 @@ $grey-20: #e5e6ed;
 $grey-10: #fafafa;
 $grey-5: #f9f9f9;
 $grey-0: #ffffff;
-
-$forward-red: #E30543;
-$forward-red-10: #FFE8EE;
-$forward-red-20: #FFBFD1;
-$forward-red-30: #FF6D96;
-$forward-red-40: #E30543;
-$forward-red-50: #BA0034;
-$forward-red-60: #69001D;
 
 $impact: #4a0be8;
 $impact-10: #a280f9;

@@ -4,8 +4,8 @@ import { Input } from '@forward-protocol/uikit';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
-  title: 'Compose/Data entry/Crypto',
-  component: Input.Crypto,
+  title: 'Compose/Data entry/Fiat',
+  component: Input.Fiat,
   argTypes: {
     size: {
       options: ['S', 'M', 'L'],
@@ -21,28 +21,27 @@ export default {
       defaultValue: 'false',
     },
   },
-} as ComponentMeta<typeof Input.Crypto>;
+} as ComponentMeta<typeof Input.Fiat>;
 
-const Template: ComponentStory<typeof Input.Crypto> = (args) => (
+const Template: ComponentStory<typeof Input.Fiat> = (args) => (
   <div style={{ width: '260px' }}>
-    <Input.Crypto {...args} />
+    <Input.Fiat {...args} />
   </div>
 );
 
-export const Default: ComponentStory<typeof Input.Crypto> = Template.bind({});
+export const Default: ComponentStory<typeof Input.Fiat> = Template.bind({});
 Default.args = {
-  variant: 'crypto',
   hasMax: false,
   canChange: false,
 };
 
-export const HasMax: ComponentStory<typeof Input.Crypto> = Template.bind({});
+export const HasMax: ComponentStory<typeof Input.Fiat> = Template.bind({});
 HasMax.args = {
   maxValue: '100',
   hasMax: true,
 };
 
-export const CanChange: ComponentStory<typeof Input.Crypto> = Template.bind({});
+export const CanChange: ComponentStory<typeof Input.Fiat> = Template.bind({});
 CanChange.args = {
   canChange: true,
 };

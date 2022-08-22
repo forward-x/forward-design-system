@@ -8,7 +8,9 @@ body {
   --tertiary-text: #{$light-tertiary-text};
   --placeholder-text: #{$light-placeholder-text};
 
+  --base-0: #{$light-base-0};
   --base-2: #{$light-base-2};
+  --base-3: #{$light-base-3};
 
   --disabled: #{$light-disabled};
 
@@ -20,8 +22,10 @@ body {
     --tertiary-text: #{$dark-tertiary-text};
     --placeholder-text: #{$dark-placeholder-text};
 
+    --base-0: #{$dark-base-0};
     --base-2: #{$dark-base-2};
-    
+    --base-3: #{$dark-base-3};
+
     --disabled: #{$dark-disabled};
   }
 }

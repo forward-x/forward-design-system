@@ -2,10 +2,11 @@
   width: 100%;
   display: flex;
   align-items: center;
-  border: 1.5px solid var(--base-2);
+  border: 1.5px solid var(--base-3);
   padding: 8px 16px;
   height: 40px;
   border-radius: 8px;
+  background-color: var(--base-0);
   position: relative;
 
   @include smallMedia {
@@ -85,7 +86,7 @@
     background: transparent;
 
     &:invalid {
-      border-color: $forward-red-40;
+      border-color: $error;
     }
 
     &::placeholder {

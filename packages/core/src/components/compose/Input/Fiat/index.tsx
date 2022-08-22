@@ -13,7 +13,7 @@ import { Input } from '../../../base';
 
 import styles from './index.module.scss';
 
-export interface IInputCryptoProps
+export interface IInputFiatProps
   extends Omit<
     InputHTMLAttributes<HTMLInputElement>,
     'type' | 'size' | 'onChange' | 'value' | 'defaultValue' | 'max'
@@ -29,9 +29,6 @@ export interface IInputCryptoProps
    * @default 'L'
    */
   size?: 'L' | 'M' | 'S';
-  /**
-   * @default 'crypto'
-   */
   currency?: string;
   symbol?: string;
   maxValue?: string;
@@ -43,15 +40,14 @@ export interface IInputCryptoProps
   onSelectChange?: (isExpanded: boolean) => void;
 }
 
-const Crypto = forwardRef<HTMLInputElement | null, IInputCryptoProps>(
-  // eslint-disable-next-line complexity
+const Fiat = forwardRef<HTMLInputElement | null, IInputFiatProps>(
   (
     {
       className,
       currency = '$',
       size = 'L',
       decimal = 2,
-      symbol = 'BTC',
+      symbol = 'USD',
       placeholder,
       maxValue,
       hasMax = false,
@@ -64,9 +60,6 @@ const Crypto = forwardRef<HTMLInputElement | null, IInputCryptoProps>(
     ref
   ) => {
     const DEFAULT_PLACEHOLDER = `0.${'0'.repeat(decimal)}`;
-    const DEFAULT_CRYPTO_PLACEHOLDER = `${DEFAULT_PLACEHOLDER} ${
-      hasMax ? symbol : ''
-    }`;
 
     const [value, setValue] = useState<string>('');
     const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -114,18 +107,14 @@ const Crypto = forwardRef<HTMLInputElement | null, IInputCryptoProps>(
         value={value}
         onValueChange={handleChange}
         className={clsx(styles.input, className)}
-        placeholder={
-          placeholder ?? isFocused
-            ? DEFAULT_PLACEHOLDER
-            : DEFAULT_CRYPTO_PLACEHOLDER
-        }
+        placeholder={placeholder || DEFAULT_PLACEHOLDER}
         onFocus={handleFocus}
         onBlur={handleBlur}
         endAdornment={
           <div className={styles.suffix}>
             <div
               className={clsx(styles.symbol, {
-                [styles.not_focused]: !isFocused && hasMax,
+                [styles.not_focused]: !isFocused,
               })}
             >
               {symbol}
@@ -156,6 +145,6 @@ const Crypto = forwardRef<HTMLInputElement | null, IInputCryptoProps>(
   }
 );
 
-Crypto.displayName = 'Crypto';
+Fiat.displayName = 'Fiat';
 
-export default Crypto;
+export default Fiat;

@@ -23,10 +23,10 @@
       background-color: $dark-base-2;
     }
     &::-webkit-progress-value {
-      background-color: $forward-red-30;
+      background-color: $error-30;
     }
     &::-moz-progress-bar {
-      background-color: $forward-red-30;
+      background-color: $error-30;
     }
   }
 }

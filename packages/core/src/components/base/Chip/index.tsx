@@ -8,6 +8,7 @@ export interface IChipProps {
   text: string;
   className?: string;
   disabled?: boolean;
+  size?: 'S' | 'M' | 'L';
   startAdornment?: ReactNode;
   endAdornment?: ReactNode;
   onChange?: (isSelected: boolean) => void;
@@ -20,6 +21,7 @@ const Chip: FC<IChipProps> = ({
   onChange,
   disabled = false,
   className,
+  size = 'L',
 }) => {
   const [isActive, setIsActive] = useState<boolean>(disabled);
 
@@ -32,6 +34,9 @@ const Chip: FC<IChipProps> = ({
       className={clsx(
         styles.chip,
         {
+          [styles.small]: size === 'S',
+          [styles.medium]: size === 'M',
+          [styles.large]: size === 'L',
           [styles.disabled]: disabled,
           [styles.active]: isActive,
         },
