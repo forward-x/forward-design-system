@@ -1,6 +1,37 @@
 .input {
-  input:placeholder-shown ~ * .symbol.not_focused {
-    display: none;
+  input {
+    font-weight: $font-semibold;
+    font-size: $text-h5;
+  }
+
+  .symbol {
+    color: var(--primary-text);
+
+    &.canChange {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 8px;
+      height: 24px;
+      font-size: $text-tiny;
+      padding: 0 7.5px;
+      color: var(--primary-text);
+      background-color: var(--base-2);
+      border: 1.5px solid var(--base-2);
+      cursor: pointer;
+    }
+  }
+
+  .bottomAdornment {
+    display: flex;
+    justify-content: space-between;
+    font-size: $text-tiny;
+    color: var(--placeholder-text);
+
+    .walletBalance {
+      color: var(--secondary-text);
+      font-weight: $font-medium;
+    }
   }
 
   .suffix {
@@ -8,17 +39,33 @@
     align-items: center;
 
     .max {
-      color: $primary;
-      font-weight: $font-medium;
       margin-left: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 8px;
+      height: 24px;
+      font-size: $text-tiny;
+      padding: 0 7.5px;
+      color: var(--primary-text);
+      background-color: var(--base-2);
+      border: 1.5px solid var(--base-2);
+      cursor: pointer;
+      //color: $primary;
+      //font-weight: $font-medium;
+      //margin-left: 12px;
     }
+
 
     .change {
       margin-left: 4px;
+      margin-right: -6px;
+
       svg {
         margin: 0;
+
         path {
-          fill: var(--placeholder-text)
+          fill: var(--primary-text)
         }
       }
     }

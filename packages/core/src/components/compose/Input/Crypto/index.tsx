@@ -38,19 +38,19 @@ export interface IInputCryptoProps
   maxValue?: string;
   hasMax?: boolean;
   canChange?: boolean;
+  price?: number;
   decimal?: number;
+  walletBalance?: number;
   onSelectMax?: () => void;
   onChange?: (value: string) => void;
   onSelectChange?: (isExpanded: boolean) => void;
 }
 
 const Crypto = forwardRef<HTMLInputElement | null, IInputCryptoProps>(
-  // eslint-disable-next-line complexity
   (
     {
       className,
       currency = '$',
-      size = 'L',
       decimal = 2,
       symbol = 'BTC',
       placeholder,
@@ -60,18 +60,17 @@ const Crypto = forwardRef<HTMLInputElement | null, IInputCryptoProps>(
       onSelectChange,
       onSelectMax,
       onChange,
+      price = 0.0,
+      walletBalance,
       ...props
     },
     ref
   ) => {
     const DEFAULT_PLACEHOLDER = `0.${'0'.repeat(decimal)}`;
-    const DEFAULT_CRYPTO_PLACEHOLDER = `${DEFAULT_PLACEHOLDER} ${
-      hasMax ? symbol : ''
-    }`;
 
     const [value, setValue] = useState<string>('');
-    const [isFocused, setIsFocused] = useState<boolean>(false);
     const [isExpanded, setExpanded] = useState<boolean>(false);
+    const [isFocused, setIsFocused] = useState<boolean>(false);
 
     const handleSelectMax = () => {
       setValue(maxValue ?? '');
@@ -110,26 +109,43 @@ const Crypto = forwardRef<HTMLInputElement | null, IInputCryptoProps>(
         fixedDecimalScale={true}
         allowNegative={false}
         getInputRef={ref}
-        startAdornment={currency}
-        size={size}
         value={value}
         onValueChange={handleChange}
         className={clsx(styles.input, className)}
-        placeholder={
-          placeholder ?? isFocused
-            ? DEFAULT_PLACEHOLDER
-            : DEFAULT_CRYPTO_PLACEHOLDER
-        }
+        placeholder={placeholder || DEFAULT_PLACEHOLDER}
         onFocus={handleFocus}
         onBlur={handleBlur}
+        bottomAdornment={
+          <div className={styles.bottomAdornment}>
+            <span>
+              {currency}
+              {price.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+            </span>
+            {walletBalance && (
+              <div>
+                Wallet Balance:{' '}
+                <span className={styles.walletBalance}>{walletBalance}</span>
+              </div>
+            )}
+          </div>
+        }
         endAdornment={
           <div className={styles.suffix}>
             <div
               className={clsx(styles.symbol, {
-                [styles.not_focused]: !isFocused && hasMax,
+                [styles.canChange]: canChange === true,
               })}
             >
               {symbol}
+              {canChange && (
+                <button
+                  type="button"
+                  onClick={handleSelectChange}
+                  className={styles.change}
+                >
+                  {isExpanded ? <ChevronUpIcon /> : <ChevronDownIcon />}
+                </button>
+              )}
             </div>
             {hasMax && (
               <button
@@ -138,15 +154,6 @@ const Crypto = forwardRef<HTMLInputElement | null, IInputCryptoProps>(
                 className={styles.max}
               >
                 MAX
-              </button>
-            )}
-            {canChange && (
-              <button
-                type="button"
-                onClick={handleSelectChange}
-                className={styles.change}
-              >
-                {isExpanded ? <ChevronUpIcon /> : <ChevronDownIcon />}
               </button>
             )}
           </div>

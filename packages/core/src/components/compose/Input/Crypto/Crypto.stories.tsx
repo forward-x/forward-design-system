@@ -7,11 +7,6 @@ export default {
   title: 'Compose/Data entry/Crypto',
   component: Input.Crypto,
   argTypes: {
-    size: {
-      options: ['S', 'M', 'L'],
-      control: { type: 'inline-radio' },
-      defaultValue: 'L',
-    },
     hasMax: {
       control: { type: 'boolean' },
       defaultValue: 'false',
@@ -24,11 +19,26 @@ export default {
       control: { type: 'boolean' },
       defaultValue: 'false',
     },
+    price: {
+      control: { type: 'number' },
+      defaultValue: '0.00',
+    },
+    walletBalance: {
+      control: { type: 'number' },
+    },
+    symbol: {
+      control: { type: 'text' },
+      defaultValue: 'USD',
+    },
+    currency: {
+      control: { type: 'text' },
+      defaultValue: '$',
+    },
   },
 } as ComponentMeta<typeof Input.Crypto>;
 
 const Template: ComponentStory<typeof Input.Crypto> = (args) => (
-  <div style={{ width: '260px' }}>
+  <div style={{ width: '280px' }}>
     <Input.Crypto {...args} />
   </div>
 );
