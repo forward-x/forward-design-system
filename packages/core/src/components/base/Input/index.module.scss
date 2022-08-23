@@ -9,6 +9,10 @@
   background-color: var(--base-0);
   position: relative;
 
+  &.invalid {
+    border-color: $error !important;
+  }
+
   @include smallMedia {
     height: 48px;
     padding: 12px 16px;
@@ -84,10 +88,6 @@
     line-height: $line-height-body;
     display: flex;
     background: transparent;
-
-    &:invalid {
-      border-color: $error;
-    }
 
     &::placeholder {
       color: var(--placeholder-text);

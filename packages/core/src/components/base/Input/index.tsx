@@ -16,6 +16,7 @@ export interface IInputProps
     'prefix' | 'type' | 'size'
   > {
   className?: string;
+  invalid?: boolean;
   startAdornment?: ReactNode;
   endAdornment?: ReactNode;
   /**
@@ -45,6 +46,7 @@ const Input = forwardRef<HTMLInputElement | null, IInputProps>(
           {
             [styles.medium]: size === 'M',
             [styles.small]: size === 'S',
+            [styles.invalid]: props.invalid === true,
           },
           className
         )}

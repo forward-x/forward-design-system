@@ -34,6 +34,7 @@ export interface IInputFiatProps
   maxValue?: string;
   hasMax?: boolean;
   canChange?: boolean;
+  invalid?: boolean;
   decimal?: number;
   onSelectMax?: () => void;
   onChange?: (value: string) => void;
@@ -112,13 +113,8 @@ const Fiat = forwardRef<HTMLInputElement | null, IInputFiatProps>(
         onBlur={handleBlur}
         endAdornment={
           <div className={styles.suffix}>
-            <div
-              className={clsx(styles.symbol, {
-                [styles.not_focused]: !isFocused,
-              })}
-            >
-              {symbol}
-            </div>
+            {!hasMax && <div className={clsx(styles.symbol)}>{symbol}</div>}
+
             {hasMax && (
               <button
                 onClick={handleSelectMax}
@@ -128,7 +124,7 @@ const Fiat = forwardRef<HTMLInputElement | null, IInputFiatProps>(
                 MAX
               </button>
             )}
-            {canChange && (
+            {canChange && !hasMax && (
               <button
                 type="button"
                 onClick={handleSelectChange}

@@ -20,6 +20,18 @@ export default {
       control: { type: 'boolean' },
       defaultValue: 'false',
     },
+    invalid: {
+      control: { type: 'boolean' },
+      defaultValue: 'false',
+    },
+    symbol: {
+      control: { type: 'text' },
+      defaultValue: 'USD',
+    },
+    currency: {
+      control: { type: 'text' },
+      defaultValue: '$',
+    },
   },
 } as ComponentMeta<typeof Input.Fiat>;
 

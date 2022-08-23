@@ -16,6 +16,10 @@ export default {
       control: { type: 'boolean' },
       defaultValue: 'false',
     },
+    invalid: {
+      control: { type: 'boolean' },
+      defaultValue: 'false',
+    },
     canChange: {
       control: { type: 'boolean' },
       defaultValue: 'false',

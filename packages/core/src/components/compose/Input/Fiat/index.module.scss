@@ -1,6 +1,5 @@
 .input {
-  input:placeholder-shown ~ * .symbol.not_focused {
-    display: none;
+  .symbol {
   }
 
   .suffix {

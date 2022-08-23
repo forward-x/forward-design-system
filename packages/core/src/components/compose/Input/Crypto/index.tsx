@@ -34,6 +34,7 @@ export interface IInputCryptoProps
    */
   currency?: string;
   symbol?: string;
+  invalid?: boolean;
   maxValue?: string;
   hasMax?: boolean;
   canChange?: boolean;
