@@ -4,14 +4,15 @@ import { Input } from '@forward-protocol/uikit';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
-  title: 'Compose/Data entry/Crypto',
-  component: Input.Crypto,
+  title: 'Compose/Data entry/Fiat',
+  component: Input.Fiat,
   argTypes: {
-    hasMax: {
-      control: { type: 'boolean' },
-      defaultValue: 'false',
+    size: {
+      options: ['S', 'M', 'L'],
+      control: { type: 'inline-radio' },
+      defaultValue: 'L',
     },
-    invalid: {
+    hasMax: {
       control: { type: 'boolean' },
       defaultValue: 'false',
     },
@@ -19,12 +20,9 @@ export default {
       control: { type: 'boolean' },
       defaultValue: 'false',
     },
-    price: {
-      control: { type: 'number' },
-      defaultValue: 0,
-    },
-    walletBalance: {
-      control: { type: 'number' },
+    invalid: {
+      control: { type: 'boolean' },
+      defaultValue: 'false',
     },
     symbol: {
       control: { type: 'text' },
@@ -35,29 +33,27 @@ export default {
       defaultValue: '$',
     },
   },
-} as ComponentMeta<typeof Input.Crypto>;
+} as ComponentMeta<typeof Input.Fiat>;
 
-const Template: ComponentStory<typeof Input.Crypto> = (args) => (
-  <div style={{ width: '280px' }}>
-    <Input.Crypto {...args} />
+const Template: ComponentStory<typeof Input.Fiat> = (args) => (
+  <div style={{ width: '260px' }}>
+    <Input.Fiat {...args} />
   </div>
 );
 
-export const Default: ComponentStory<typeof Input.Crypto> = Template.bind({});
+export const Default: ComponentStory<typeof Input.Fiat> = Template.bind({});
 Default.args = {
   hasMax: false,
   canChange: false,
 };
 
-export const HasMax: ComponentStory<typeof Input.Crypto> = Template.bind({});
+export const HasMax: ComponentStory<typeof Input.Fiat> = Template.bind({});
 HasMax.args = {
   maxValue: '100',
   hasMax: true,
-  canChange: false,
 };
 
-export const CanChange: ComponentStory<typeof Input.Crypto> = Template.bind({});
+export const CanChange: ComponentStory<typeof Input.Fiat> = Template.bind({});
 CanChange.args = {
   canChange: true,
-  hasMax: false,
 };

@@ -12,6 +12,11 @@ export default {
       control: { type: 'boolean' },
       defaultValue: false,
     },
+    size: {
+      options: ['S', 'M', 'L'],
+      control: { type: 'inline-radio' },
+      defaultValue: 'L',
+    },
     text: {
       control: { type: 'text' },
       defaultValue: 'October',
@@ -20,7 +25,7 @@ export default {
 } as ComponentMeta<typeof Chip>;
 
 const Template: ComponentStory<typeof Chip> = (args) => (
-  <div style={{ width: '260px' }}>
+  <div style={{ width: '200px' }}>
     <Chip {...args} />
   </div>
 );

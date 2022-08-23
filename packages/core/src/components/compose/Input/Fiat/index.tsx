@@ -13,7 +13,7 @@ import { Input } from '../../../base';
 
 import styles from './index.module.scss';
 
-export interface IInputCryptoProps
+export interface IInputFiatProps
   extends Omit<
     InputHTMLAttributes<HTMLInputElement>,
     'type' | 'size' | 'onChange' | 'value' | 'defaultValue' | 'max'
@@ -29,30 +29,26 @@ export interface IInputCryptoProps
    * @default 'L'
    */
   size?: 'L' | 'M' | 'S';
-  /**
-   * @default 'crypto'
-   */
   currency?: string;
   symbol?: string;
-  invalid?: boolean;
   maxValue?: string;
   hasMax?: boolean;
   canChange?: boolean;
-  price?: number;
+  invalid?: boolean;
   decimal?: number;
-  walletBalance?: number;
   onSelectMax?: () => void;
   onChange?: (value: string) => void;
   onSelectChange?: (isExpanded: boolean) => void;
 }
 
-const Crypto = forwardRef<HTMLInputElement | null, IInputCryptoProps>(
+const Fiat = forwardRef<HTMLInputElement | null, IInputFiatProps>(
   (
     {
       className,
       currency = '$',
+      size = 'L',
       decimal = 2,
-      symbol = 'BTC',
+      symbol = 'USD',
       placeholder,
       maxValue,
       hasMax = false,
@@ -60,8 +56,6 @@ const Crypto = forwardRef<HTMLInputElement | null, IInputCryptoProps>(
       onSelectChange,
       onSelectMax,
       onChange,
-      price = 0.0,
-      walletBalance,
       ...props
     },
     ref
@@ -69,8 +63,8 @@ const Crypto = forwardRef<HTMLInputElement | null, IInputCryptoProps>(
     const DEFAULT_PLACEHOLDER = `0.${'0'.repeat(decimal)}`;
 
     const [value, setValue] = useState<string>('');
-    const [isExpanded, setExpanded] = useState<boolean>(false);
     const [isFocused, setIsFocused] = useState<boolean>(false);
+    const [isExpanded, setExpanded] = useState<boolean>(false);
 
     const handleSelectMax = () => {
       setValue(maxValue ?? '');
@@ -109,44 +103,18 @@ const Crypto = forwardRef<HTMLInputElement | null, IInputCryptoProps>(
         fixedDecimalScale={true}
         allowNegative={false}
         getInputRef={ref}
+        startAdornment={currency}
+        size={size}
         value={value}
         onValueChange={handleChange}
         className={clsx(styles.input, className)}
         placeholder={placeholder || DEFAULT_PLACEHOLDER}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        bottomAdornment={
-          <div className={styles.bottomAdornment}>
-            <span>
-              {currency}
-              {(price || 0).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-            </span>
-            {walletBalance && (
-              <div>
-                Wallet Balance:{' '}
-                <span className={styles.walletBalance}>{walletBalance}</span>
-              </div>
-            )}
-          </div>
-        }
         endAdornment={
           <div className={styles.suffix}>
-            <div
-              className={clsx(styles.symbol, {
-                [styles.canChange]: canChange === true,
-              })}
-            >
-              {symbol}
-              {canChange && (
-                <button
-                  type="button"
-                  onClick={handleSelectChange}
-                  className={styles.change}
-                >
-                  {isExpanded ? <ChevronUpIcon /> : <ChevronDownIcon />}
-                </button>
-              )}
-            </div>
+            {!hasMax && <div className={clsx(styles.symbol)}>{symbol}</div>}
+
             {hasMax && (
               <button
                 onClick={handleSelectMax}
@@ -154,6 +122,15 @@ const Crypto = forwardRef<HTMLInputElement | null, IInputCryptoProps>(
                 className={styles.max}
               >
                 MAX
+              </button>
+            )}
+            {canChange && !hasMax && (
+              <button
+                type="button"
+                onClick={handleSelectChange}
+                className={styles.change}
+              >
+                {isExpanded ? <ChevronUpIcon /> : <ChevronDownIcon />}
               </button>
             )}
           </div>
@@ -164,6 +141,6 @@ const Crypto = forwardRef<HTMLInputElement | null, IInputCryptoProps>(
   }
 );
 
-Crypto.displayName = 'Crypto';
+Fiat.displayName = 'Fiat';
 
-export default Crypto;
+export default Fiat;

@@ -3,7 +3,7 @@ const { exec } = require('child_process');
 const url = require('@rollup/plugin-url');
 const svgr = require('@svgr/rollup');
 const postcss = require('rollup-plugin-postcss');
-const static_files = require('rollup-plugin-static-files');
+const staticFiles = require('rollup-plugin-static-files');
 
 module.exports = {
   rollup(config, options) {
@@ -46,7 +46,7 @@ module.exports = {
           ],
         },
       }),
-      static_files({
+      staticFiles({
         include: ['./src/assets'],
       }),
     ];

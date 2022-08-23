@@ -1,0 +1,30 @@
+.input {
+  .symbol {
+  }
+
+  .suffix {
+    display: flex;
+    align-items: center;
+
+    .max {
+      color: $primary;
+      font-weight: $font-medium;
+      margin-left: 12px;
+    }
+
+    .change {
+      margin-left: 4px;
+      svg {
+        margin: 0;
+        path {
+          fill: var(--placeholder-text)
+        }
+      }
+    }
+
+    button {
+      background: none;
+      font-size: inherit;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 .alert {
   border-radius: 6px;
-  background-color: $white;
+  background-color: $light-base-0;
   position: relative;
 
   .content {
@@ -95,7 +95,7 @@
 
 body[data-theme="light"] {
   .alert {
-    background-color: $dark-base-3;
+    background-color: $dark-base-0;
 
     .title {
       color: $light-disabled;

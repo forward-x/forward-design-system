@@ -41,7 +41,7 @@
   "scripts": {
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet --fix",
     "start": "tsdx watch",
-    "build": "tsdx build --format cjs,esm,umd",
+    "build": "tsdx build --format cjs,esm,umd --tsconfig ./tsconfig.build.json",
     "build-assets": "rollup -c ./rollup.config.ts",
     "test": "tsdx test --passWithNoTests",
     "prepare": "tsdx build",

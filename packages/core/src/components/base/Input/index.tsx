@@ -16,8 +16,11 @@ export interface IInputProps
     'prefix' | 'type' | 'size'
   > {
   className?: string;
+  invalid?: boolean;
   startAdornment?: ReactNode;
   endAdornment?: ReactNode;
+  topAdornment?: ReactNode;
+  bottomAdornment?: ReactNode;
   /**
    * L - 40px (desktop) / 48px (mobile)
    *
@@ -31,7 +34,18 @@ export interface IInputProps
 }
 
 const Input = forwardRef<HTMLInputElement | null, IInputProps>(
-  ({ className, startAdornment, endAdornment, size = 'L', ...props }, ref) => {
+  (
+    {
+      className,
+      topAdornment,
+      bottomAdornment,
+      startAdornment,
+      endAdornment,
+      size = 'L',
+      ...props
+    },
+    ref
+  ) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
     const handleClick = () => {
@@ -45,16 +59,27 @@ const Input = forwardRef<HTMLInputElement | null, IInputProps>(
           {
             [styles.medium]: size === 'M',
             [styles.small]: size === 'S',
+            [styles.invalid]: props.invalid === true,
           },
           className
         )}
         onClick={handleClick}
       >
-        {startAdornment && (
-          <div className={styles.prefix}>{startAdornment}</div>
-        )}
-        <input {...props} type="text" ref={mergeRefs([inputRef, ref])} />
-        {endAdornment && <div className={styles.suffix}>{endAdornment}</div>}
+        <div
+          style={{ display: 'flex', flexDirection: 'column', width: '100%' }}
+        >
+          {topAdornment && <div>{topAdornment}</div>}
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            {startAdornment && (
+              <div className={styles.prefix}>{startAdornment}</div>
+            )}
+            <input {...props} type="text" ref={mergeRefs([inputRef, ref])} />
+            {endAdornment && (
+              <div className={styles.suffix}>{endAdornment}</div>
+            )}
+          </div>
+          {bottomAdornment && <div>{bottomAdornment}</div>}
+        </div>
       </div>
     );
   }

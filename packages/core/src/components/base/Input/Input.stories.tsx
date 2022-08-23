@@ -13,6 +13,10 @@ export default {
       control: { type: 'inline-radio' },
       defaultValue: 'L',
     },
+    invalid: {
+      control: { type: 'boolean' },
+      defaultValue: 'false',
+    },
   },
 } as ComponentMeta<typeof Input>;
 

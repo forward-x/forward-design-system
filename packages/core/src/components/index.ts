@@ -5,7 +5,7 @@ import {
   Radio,
   Switch,
 } from './base';
-import { Crypto, Digits, Search } from './compose';
+import { Crypto, Digits, Fiat, Search } from './compose';
 
 export const Input = Object.assign(DefaultInput, {
   Password,
@@ -15,6 +15,7 @@ export const Input = Object.assign(DefaultInput, {
   Radio,
   Switch,
   Crypto,
+  Fiat,
 });
 
 export type {
