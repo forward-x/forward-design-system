@@ -31,7 +31,6 @@ const Template: ComponentStory<typeof Input.Crypto> = (args) => (
 
 export const Default: ComponentStory<typeof Input.Crypto> = Template.bind({});
 Default.args = {
-  variant: 'crypto',
   hasMax: false,
   canChange: false,
 };
