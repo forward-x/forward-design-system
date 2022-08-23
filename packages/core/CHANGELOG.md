@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/uikit@3.1.0...@forward-protocol/uikit@3.2.0) (2022-08-23)
+
+
+### Features
+
+* add crypto input ([9b1f4f5](https://github.com/Forward-Protocol/forward-design-system/commit/9b1f4f57b37be292424501de7aa1642b4a215e41))
+
+
+
+
+
 # [3.1.0](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/uikit@3.0.20...@forward-protocol/uikit@3.1.0) (2022-08-11)
 
 
