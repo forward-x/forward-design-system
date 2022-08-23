@@ -21,7 +21,7 @@ export default {
     },
     price: {
       control: { type: 'number' },
-      defaultValue: '0.00',
+      defaultValue: 0,
     },
     walletBalance: {
       control: { type: 'number' },
@@ -53,9 +53,11 @@ export const HasMax: ComponentStory<typeof Input.Crypto> = Template.bind({});
 HasMax.args = {
   maxValue: '100',
   hasMax: true,
+  canChange: false,
 };
 
 export const CanChange: ComponentStory<typeof Input.Crypto> = Template.bind({});
 CanChange.args = {
   canChange: true,
+  hasMax: false,
 };

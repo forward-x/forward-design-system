@@ -9,6 +9,9 @@
 
     &.canChange {
       display: flex;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      justify-items: center;
       justify-content: space-between;
       align-items: center;
       border-radius: 8px;

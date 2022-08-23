@@ -119,7 +119,7 @@ const Crypto = forwardRef<HTMLInputElement | null, IInputCryptoProps>(
           <div className={styles.bottomAdornment}>
             <span>
               {currency}
-              {price.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+              {(price || 0).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
             </span>
             {walletBalance && (
               <div>
