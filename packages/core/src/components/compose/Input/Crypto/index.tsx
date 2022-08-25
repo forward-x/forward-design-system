@@ -41,6 +41,7 @@ export interface IInputCryptoProps
   price?: number;
   decimal?: number;
   walletBalance?: number;
+  walletBalanceText?: string;
   onSelectMax?: () => void;
   onChange?: (value: string) => void;
   onSelectChange?: (isExpanded: boolean) => void;
@@ -59,6 +60,7 @@ const Crypto = forwardRef<HTMLInputElement | null, IInputCryptoProps>(
       canChange = false,
       onSelectChange,
       onSelectMax,
+      walletBalanceText = 'Wallet Balance',
       onChange,
       price = 0.0,
       walletBalance,
@@ -123,7 +125,7 @@ const Crypto = forwardRef<HTMLInputElement | null, IInputCryptoProps>(
             </span>
             {walletBalance && (
               <div>
-                Wallet Balance:{' '}
+                {walletBalanceText || 'Wallet Balance'}:{' '}
                 <span className={styles.walletBalance}>{walletBalance}</span>
               </div>
             )}

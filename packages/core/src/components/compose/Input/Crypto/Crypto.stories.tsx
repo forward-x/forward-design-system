@@ -26,6 +26,10 @@ export default {
     walletBalance: {
       control: { type: 'number' },
     },
+    walletBalanceText: {
+      control: { type: 'text' },
+      defaultValue: 'Wallet Balance',
+    },
     symbol: {
       control: { type: 'text' },
       defaultValue: 'USD',
