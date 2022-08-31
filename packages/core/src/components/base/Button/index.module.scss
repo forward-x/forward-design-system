@@ -94,13 +94,32 @@
 
     &:hover,
     &:focus {
-      border: 1.5px solid $primary;
+      box-shadow: 0 0 0 1.5px $primary;
+      //border: 1.5px solid $primary;
     }
 
     path {
       fill: var(--primary-text);
     }
   }
+
+  &.dangerSecondary,
+  &.icon {
+    background: var(--base-2);
+    color: $error;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 0 1.5px $error;
+      //border: 1.5px solid $primary;
+    }
+
+    path {
+      fill: $error;
+    }
+  }
+
+
 
   &.danger {
     background: $error-40;

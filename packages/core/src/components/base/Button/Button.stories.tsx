@@ -9,7 +9,14 @@ export default {
   component: Button,
   argTypes: {
     variant: {
-      options: ['primary', 'secondary', 'danger', 'link', 'icon'],
+      options: [
+        'primary',
+        'secondary',
+        'danger',
+        'danger-secondary',
+        'link',
+        'icon',
+      ],
       control: { type: 'radio' },
       defaultValue: 'primary',
     },
