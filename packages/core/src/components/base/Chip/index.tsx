@@ -1,41 +1,29 @@
-import React, {
-  FC,
-  HTMLAttributes,
-  InputHTMLAttributes,
-  ReactNode,
-  useEffect,
-  useState,
-} from 'react';
+import React, { FC, HTMLAttributes, ReactNode } from 'react';
 
 import clsx from 'clsx';
 
 import styles from './index.module.scss';
 
-export interface IChipProps {
+export interface IChipProps extends HTMLAttributes<HTMLDivElement> {
   text: string;
   className?: string;
   disabled?: boolean;
+  isActive?: boolean;
   size?: 'S' | 'M' | 'L';
   startAdornment?: ReactNode;
   endAdornment?: ReactNode;
-  onChange?: (isSelected: boolean) => void;
 }
 
 const Chip: FC<IChipProps> = ({
   text,
   startAdornment,
   endAdornment,
-  onChange,
   disabled = false,
   className,
   size = 'L',
+  isActive,
+  ...props
 }) => {
-  const [isActive, setIsActive] = useState<boolean>(disabled);
-
-  useEffect(() => {
-    if (onChange) onChange(!isActive);
-  }, [isActive, onChange]);
-
   return (
     <div
       className={clsx(
@@ -49,9 +37,7 @@ const Chip: FC<IChipProps> = ({
         },
         className
       )}
-      onClick={() => {
-        setIsActive(!isActive);
-      }}
+      {...props}
     >
       <div className={styles.content}>
         {startAdornment && (
