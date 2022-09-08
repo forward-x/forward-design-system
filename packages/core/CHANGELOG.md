@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.5](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/uikit@3.2.4...@forward-protocol/uikit@3.2.5) (2022-09-08)
+
+
+### Bug Fixes
+
+* chip ([d43e168](https://github.com/Forward-Protocol/forward-design-system/commit/d43e1682ec4c13163aceedc5021343d439c07857))
+
+
+
+
+
 ## [3.2.4](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/uikit@3.2.3...@forward-protocol/uikit@3.2.4) (2022-09-08)
 
 
