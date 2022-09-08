@@ -24,6 +24,7 @@ export interface IInputPasswordProps
    * @default 'L'
    */
   size?: 'L' | 'M' | 'S';
+  invalid?: boolean;
 }
 
 const Password = forwardRef<HTMLInputElement | null, IInputPasswordProps>(
@@ -41,6 +42,7 @@ const Password = forwardRef<HTMLInputElement | null, IInputPasswordProps>(
           {
             [styles.medium]: size === 'M',
             [styles.small]: size === 'S',
+            [styles.invalid]: props.invalid === true,
           },
           className
         )}
