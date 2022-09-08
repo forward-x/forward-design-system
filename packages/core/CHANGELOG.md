@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.3](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/uikit@3.2.2...@forward-protocol/uikit@3.2.3) (2022-09-06)
+
+
+### Bug Fixes
+
+* button icon color ([5bb0ac9](https://github.com/Forward-Protocol/forward-design-system/commit/5bb0ac925a50134e5e90973e68f53109317fe5a6))
+
+
+
+
+
 ## [3.2.2](https://github.com/Forward-Protocol/forward-design-system/compare/@forward-protocol/uikit@3.2.1...@forward-protocol/uikit@3.2.2) (2022-08-31)
 
 **Note:** Version bump only for package @forward-protocol/uikit
