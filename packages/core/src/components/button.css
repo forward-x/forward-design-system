@@ -1,0 +1,23 @@
+.btn {
+  @apply flex justify-center items-center relative;
+  &-primary {
+    @apply z-0 bg-[var(--a-40)] text-[var(--p-w)];
+  }
+  &:after {
+    background-image: var(--b-grad);
+    transition: opacity 0.8s ease;
+    @apply absolute inset-0 opacity-0 content-[""] z-[-1] rounded-[inherit];
+  }
+  &:hover:after {
+    @apply opacity-[0.5];
+  }
+  &-l {
+    @apply h-[40px] p-[22px] w-[260px] rounded-md;
+  }
+  &-m {
+    @apply h-[32px] p-[16px] w-[260px] rounded-sm;
+  }
+  &-s {
+    @apply h-[24px] p-[12px] w-[160px] rounded-[4px];
+  }
+}

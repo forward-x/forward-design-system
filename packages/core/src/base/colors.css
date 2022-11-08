@@ -1,0 +1,5 @@
+:root,
+[data-theme] {
+  background-color: var(--b-bg);
+  color: var(--b-1);
+}
