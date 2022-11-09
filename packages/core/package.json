@@ -49,7 +49,7 @@
     "postfull": "lightningcss --minify --targets '> 7%' dist/full.css -o dist/full.css",
     "build": "npm run base && npm run components && npm run merge:components && npm run prejss && npm run themes && npm run full",
     "install:docs": "cd src/docs && npm install",
-    "dev:component": "npm run components && npm run merge:components && npm run prejss && npm run full",
+    "dev:component": "npm run components && npm run merge:components && npm run prejss",
     "dev": "nodemon -w src/components -e css --exec \"pnpm dev:component\"",
     "test": "vitest",
     "test:coverage": "vitest --coverage",

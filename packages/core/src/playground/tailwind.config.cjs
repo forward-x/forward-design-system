@@ -1,7 +1,7 @@
 const uikit = require("../index")
 
 module.exports = {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", "../dist/full.js"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", "../dist/components.js"],
   theme: {
     extend: {},
   },
