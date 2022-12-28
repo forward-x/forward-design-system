@@ -1,14 +1,10 @@
-const uikit = require('../../packages/core/src/index');
+const uikit = require('../../packages/core');
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-  theme: {
-    extend: {},
-  },
-  plugins: [uikit],
-  uikit: {
-    base: true,
-    darkTheme: 'dark',
-    themes: ['light', 'dark'],
-  },
+	content: ['./src/**/*.svelte', './src/**/*.html'],
+	theme: {
+		extend: {}
+	},
+	plugins: [uikit]
 };

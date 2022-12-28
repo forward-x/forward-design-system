@@ -1,4 +1,3 @@
-workspaces:
-  - packages/core
-  - packages/icons
+packages:
+  - packages/*
   - apps/*

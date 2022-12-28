@@ -43,7 +43,7 @@
     "postbase": "prejss-cli dist/base.css --format commonjs",
     "components": "postcss --config src/components src/components/**/*.css --base src --dir dist",
     "merge:components": "cat dist/components/*.css > dist/components.css",
-    "prejss": "prejss-cli dist/{components,}.css --format commonjs",
+    "prejss": "prejss-cli dist/components.css --format commonjs",
     "themes": "postcss src/themes/index.css -o dist/themes.css --config src/themes",
     "full": "postcss src/full/index.css -o dist/full.css --config src/full",
     "postfull": "lightningcss --minify --targets '> 7%' dist/full.css -o dist/full.css",

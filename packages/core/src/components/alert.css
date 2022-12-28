@@ -1,0 +1,15 @@
+.alert {
+    @apply border-l-8 border-l-[var(--success-30)] rounded-md h-full w-full bg-[var(--base-0)] px-4 py-3;
+
+    &.warning {
+        @apply border-l-[var(--warning-30)];
+    }
+    
+    &.error {
+        @apply border-l-[var(--error-30)];
+    }
+
+    .title{
+        @apply font-semibold text-sm text-[var(--primary-text)];
+    }
+}

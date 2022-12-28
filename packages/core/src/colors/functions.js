@@ -25,15 +25,15 @@ module.exports = {
   injectThemes(addBase, config, themes) {
     const includedThemesObj = {}
 
-    if (Boolean(config("daisyui.themes")) === false) {
+    if (Boolean(config("uikit.themes")) === false) {
       Object.entries(themes).forEach(([theme]) => {
         includedThemesObj[theme] = this.makeThemeValues(themes[theme])
       })
     }
 
     let themeOrder = []
-    if (Array.isArray(config("daisyui.themes"))) {
-      config("daisyui.themes").forEach((theme) => {
+    if (Array.isArray(config("uikit.themes"))) {
+      config("uikit.themes").forEach((theme) => {
         if (typeof theme === "object" && theme !== null) {
           Object.entries(theme).forEach(([customThemeName]) => {
             themeOrder.push(customThemeName)
@@ -42,9 +42,9 @@ module.exports = {
           themeOrder.push(theme)
         }
       })
-    } else if (config("daisyui.themes") !== false) {
+    } else if (config("uikit.themes") !== false) {
       themeOrder = ["light", "dark"]
-    } else if (config("daisyui.themes") === false) {
+    } else if (config("uikit.themes") === false) {
       themeOrder.push("light")
     }
 
@@ -57,20 +57,24 @@ module.exports = {
         })
       } else if (index === 1) {
         // auto dark
-        if (config("daisyui.darkTheme")) {
-          if (themeOrder[0] !== config("daisyui.darkTheme") && themeOrder.includes(config("daisyui.darkTheme"))) {
+        if (config("uikit.darkTheme")) {
+          if (themeOrder[0] !== config("uikit.darkTheme") && themeOrder.includes(config("uikit.darkTheme"))) {
             addBase({
               "@media (prefers-color-scheme: dark)": {
-                ":root": includedThemesObj[`[data-theme=${config("daisyui.darkTheme")}]`],
+                ":root": includedThemesObj[`[data-theme=${config("uikit.darkTheme")}]`],
               },
             })
           }
-        } else if (themeOrder[0] !== "dark" && themeOrder.includes("dark")) {
-          addBase({
-            "@media (prefers-color-scheme: dark)": {
-              ":root": includedThemesObj["[data-theme=dark]"],
-            },
-          })
+        } else if (config("daisyui.darkTheme") === false) {
+          // disables prefers-color-scheme: dark
+        } else {
+          if (themeOrder[0] !== "dark" && themeOrder.includes("dark")) {
+            addBase({
+              "@media (prefers-color-scheme: dark)": {
+                ":root": includedThemesObj["[data-theme=dark]"],
+              },
+            })
+          }
         }
         // theme 0 with name
         addBase({
