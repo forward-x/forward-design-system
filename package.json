@@ -1,51 +1,26 @@
 {
-  "name": "@forward-protocol/design-system",
   "private": true,
-  "author": {
-    "name": "forward-protocol"
-  },
-  "license": "MIT",
-  "description": "A project containing ui-related packages",
   "workspaces": [
     "packages/*",
-    "site"
+    "apps/*",
+    "site/*"
   ],
-  "homepage": "https://github.com/Forward-Protocol/forward-design-system/blob/main/README.md",
-  "bugs": {
-    "url": "https://github.com/Forward-Protocol/forward-design-system/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Forward-Protocol/forward-design-system.git"
-  },
   "scripts": {
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet --fix",
-    "prebootstrap": "lerna clean --yes && yarn link:all",
-    "bootstrap": "lerna bootstrap",
-    "link:all": "yarn link:core && yarn link:icons",
-    "link:core": "lerna add @forward-protocol/uikit --scope=@forward-protocol/ui-demo",
-    "link:icons": "lerna add @forward-protocol/ui-icons --scope=@forward-protocol/uikit && lerna add @forward-protocol/ui-icons --scope=@forward-protocol/ui-demo",
-    "dev": "concurrently \"yarn dev:ui-icons\" \"yarn dev:ui-core\"",
-    "dev:ui-core": "lerna exec --scope=@forward-protocol/uikit -- yarn start",
-    "dev:ui-site": "lerna exec --scope=@forward-protocol/ui-demo -- yarn start",
-    "dev:ui-icons": "lerna exec --scope=@forward-protocol/ui-icons -- yarn start",
-    "build:all": "lerna run build --npm-client=yarn --ignore=@forward-protocol/ui-demo",
-    "release": "lerna publish --yes --conventional-commits --no-verify-access"
+    "build": "turbo run build",
+    "dev": "turbo run dev --no-cache --parallel --continue",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build --filter=docs^... && changeset publish"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.20.0",
-    "@typescript-eslint/parser": "^5.20.0",
-    "concurrently": "^7.1.0",
-    "eslint": "^8.13.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-import-resolver-typescript": "^2.7.1",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-prefer-arrow": "^1.2.3",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.29.4",
-    "eslint-plugin-react-hooks": "^4.4.0",
-    "lerna": "^4.0.0",
-    "prettier": "^2.6.2",
-    "typescript": "^4.6.3"
+    "@changesets/cli": "^2.22.0",
+    "eslint": "^8.15.0",
+    "eslint-config-acme": "*",
+    "prettier": "^2.5.1",
+    "stylelint-config-recommended": "^9.0.0",
+    "turbo": "latest"
   }
 }

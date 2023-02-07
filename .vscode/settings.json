@@ -2,5 +2,10 @@
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": true
-  }
+  },
+  "css.validate": false,
+  "less.validate": false,
+  "postcss.validate": false,
+  "scss.validate": false,
+  "stylelint.validate": ["css", "scss", "postcss"]
 }
